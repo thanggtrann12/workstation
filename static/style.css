@@ -12,11 +12,12 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	text-align: left;
 	align-items: left;
 	height: 80px;
 	width: 25%;
 	padding-left: 10px;
-	font-size: x-large;
+	font-size: x-small;
 }
 .row {
 	display: flex;
@@ -100,22 +101,22 @@
 }
 
 .popup {
-  visibility: hidden;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: 200px;
-  background-color: white;
-  border: 1px solid black;
-  z-index: 9999;
+	visibility: hidden;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 200px;
+	background-color: white;
+	border: 1px solid black;
+	z-index: 9999;
 }
 .popup-content {
-  padding: 20px;
-  text-align: center;
+	padding: 20px;
+	text-align: center;
 }
-.upload_input{
+.upload_input {
 	color: white;
 	text-align: center;
 	text-decoration: none;

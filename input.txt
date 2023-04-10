@@ -1,0 +1,1 @@
+{NULL_PTR},// ANT_DEVICE_FM2

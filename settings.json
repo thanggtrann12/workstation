@@ -1,7 +1,7 @@
 {
 	"filePath": {
 		"binary": "static/uploads/bin/",
-		"trace": "static/uploads/trace/"
+		"trace": "static/uploads/trc/"
 	},
 	"voltageRange": {
 		"max": 14,

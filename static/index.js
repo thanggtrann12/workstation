@@ -289,4 +289,33 @@ $(document).ready(function () {
 			}
 		}
 	}
+	$("#flash_btn").click(function (file_type) {
+		console.log("flash click")
+		var file_data = $("#file-dnl-input").prop("files")[0]
+		var form_data = new FormData()
+		form_data.append("file-dnl", file_data)
+		$.ajax({
+			url: "/upload",
+			type: "POST",
+			data: form_data,
+			processData: false,
+			contentType: false,
+			success: function (response) {},
+		})
+	})
+
+	$("#trace_btn").click(function (file_type) {
+		console.log("click")
+		var file_data = $("#file-trc-input").prop("files")[0]
+		var form_data = new FormData()
+		form_data.append("file-trc", file_data)
+		$.ajax({
+			url: "/upload",
+			type: "POST",
+			data: form_data,
+			processData: false,
+			contentType: false,
+			success: function (response) {},
+		})
+	})
 })

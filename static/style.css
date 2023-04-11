@@ -1,105 +1,227 @@
-/* Header Styles
-.header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px;
-	background-color: rgb(108, 107, 107);
-	color: #fff;
-}
-.header-column {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: left;
-	align-items: left;
-	height: 80px;
-	width: 25%;
-	padding-left: 10px;
-	font-size: x-small;
-}
-.row {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding-right: 50px;
-	background-color: rgb(108, 107, 107);
-	color: #fff;
-}
-.inside-colum {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: left;
-	height: 80px;
-	width: 25%;
-	font-size: x-large;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
 }
 
-/* Body Styles */
-.body {
-	display: flex;
-	flex-direction: row;
-	height: 80vh;
-	background-color: #eee;
-}
-/* Footer Styles */
-.footer {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding: 10px;
-	background-color: rgb(248, 236, 236);
-	color: #fff;
-	position: absolute;
-	bottom: 0;
-	width: 99%;
-	height: 8vh;
-}
-.log-area,
-.command-log {
-	flex: 1;
-	padding: 20px;
-	margin: 10px;
-	background-color: lightgray;
-	box-sizing: 3px border-box;
-	overflow: auto;
-}
-#command-input,
-#log_ttfis {
-	height: 90%;
-	width: 100%;
-	box-sizing: border-box;
-	padding: 10px;
-	font-size: x-large;
-	overflow: auto;
-}
-
-#command-entry,
-#entry-zone {
-	flex: 1;
-	height: 90%;
-	width: 99%;
-}
-.button {
-	background-color: #4caf50;
-	border: none;
+header {
+	height: 5%;
+	background-color: #0074d9;
 	color: white;
-	padding: 10px;
 	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 2px 2px;
-	cursor: pointer;
-	height: fit-content;
+	padding: 20px;
 }
-#setVolButton {
-	width: 50%;
-	/* margin-left: 20%; */
-	height: inherit;
+
+main {
+	height: calc(95% - 100px);
+
+	display: flex;
+}
+
+.left-column {
+	width: 15%;
+	background-color: #7fdbff;
+	color: white;
+	text-align: center;
+	padding: 5px 5px;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	border: grey 5px solid;
+}
+
+.block-1 {
+	flex-grow: 0.3;
+	background-color: lightblue;
+	padding: 20px 20px;
+}
+
+.block-2 {
+	flex-grow: 0.1;
+	padding: 20px 20px;
+	background-color: lightblue;
+}
+
+.block-3 {
+	flex-grow: 0.7;
+	padding: 40px 20px;
+	background-color: lightblue;
+}
+.row-1 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.block-1 .row-1 {
+	height: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: calc(40% - 25%);
+}
+
+.input-column {
+	width: 70%;
+}
+
+input {
+	width: 100%;
+	padding: 8px;
+	font-size: 16px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+.button-column {
+	width: 22%;
+	padding-left: 10px;
+}
+
+button {
+	width: 90%;
+	padding: 5px;
+	font-size: 16px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #3e8e41;
+}
+.row-2 {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.button-column {
+	width: 48%;
+}
+
+button {
+	width: 100%;
+	padding: 8px;
+	font-size: 16px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #3e8e41;
+}
+
+.right-column {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+}
+.top-right {
+	height: 90%;
+	background-color: #dddddd;
+	padding: 20px;
+	border: black 5px solid;
+	width: 100%;
+	font-family: Arial, sans-serif;
+	color: black;
+	font-size: large;
+	overflow: auto;
+}
+.abd-column {
+	margin-left: 60px;
+	width: 1%;
+	display: flex;
+	flex-direction: column;
+}
+.abd-right {
+	height: 90%;
+	background-color: black;
+	border: black 5px solid;
+	width: 100%;
+	font-family: Arial, sans-serif;
+	color: white;
+	font-size: large;
+	overflow: auto;
+}
+
+/* Thiết lập layout cho phần tử top-right khi có class split-columns */
+.top-right.split-columns {
+	display: flex;
+}
+
+/* Thiết lập layout cho 2 cột con khi phần tử top-right có class split-columns */
+.top-right.split-columns > * {
+	flex-basis: 50%;
+}
+.split-columns {
+	display: flex;
+	flex-direction: row;
+}
+
+.split-columns > * {
+	flex-basis: 50%;
+}
+.bottom-right {
+	height: 5%;
+	background-color: #aaaaaa;
+	padding: 20px;
+	width: 100%;
+}
+.row-3 {
+	display: grid;
+	margin-top: calc(40% - 20%);
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+	margin-bottom: 10px;
+}
+.row-4 {
+	display: grid;
+	margin-top: calc(40% - 20%);
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+	margin-bottom: 10px;
+}
+
+.button-column {
+	width: 100%;
+}
+
+button {
+	width: 100%;
+	padding: 8px;
+	font-size: 16px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+h3 {
+	width: 80%;
+	padding: 8px;
+	font-size: 16px;
+	color: black;
+	border: solid 2px black;
+	border-radius: 4px;
+	cursor: not-allowed;
+}
+
+button:hover {
+	background-color: #3e8e41;
+}
+
+#command_entry {
+	height: 85%;
+	margin-right: 50px;
+	width: 99%;
 }
 
 .popup {
@@ -117,82 +239,4 @@
 .popup-content {
 	padding: 20px;
 	text-align: center;
-}
-.upload_input {
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 2px 2px;
-	cursor: pointer;
-	height: fit-content;
-}
-*/ body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	background-color: #f2f2f2;
-}
-
-.header {
-	background-color: #333;
-	color: #fff;
-	text-align: center;
-	padding: 20px 0;
-}
-
-.main {
-	display: flex;
-	height: calc(100vh - 80px);
-}
-
-.left-panel {
-	background-color: #555;
-	color: #fff;
-	width: 200px;
-	padding: 20px;
-}
-
-.left-panel h2,
-.edit-menu h2 {
-	margin: 0 0 10px;
-}
-
-.left-panel ul,
-.edit-menu ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.left-panel li,
-.edit-menu li {
-	padding: 5px 0;
-	cursor: pointer;
-}
-
-.left-panel li:hover,
-.edit-menu li:hover {
-	background-color: #666;
-}
-
-.right-panel {
-	flex: 1;
-	padding: 20px;
-}
-
-.right-panel .file-name {
-	margin: 0 0 10px;
-}
-
-.right-panel .text-editor textarea {
-	width: 100%;
-	height: calc(100vh - 220px);
-	resize: none;
-	border: none;
-	padding: 10px;
-	font-size: 16px;
-	font-family: monospace;
-	line-height: 1.5;
 }

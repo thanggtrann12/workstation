@@ -1,17 +1,15 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 from threading import Thread
 import json
 import time
 import eventlet
-from tool.ToellnerDriver import ToellnerDriver
-# from tool.TTFisClient import TTFisClient
-from tool.ArduinoControl import Arduino, Command
 import logging
 import subprocess
 import os
 import psutil
-
+from InstructionSetProcess import *
+from tool.ArduinoControl import Arduino, Command
 with open('settings.json', 'rb') as settingFile:
     settings = json.loads(settingFile.read())
 
@@ -24,26 +22,29 @@ volNormal = settings['voltageRange']['normal']
 
 ALLOWED_FILE = ["dnl", "trc"]
 
-
 logging.basicConfig(filename='log.txt', level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s')
+                    format=('%(filename)s: '
+                            '%(levelname)s: '
+                            '%(funcName)s(): '
+                            '%(lineno)d:\t'
+                            '%(message)s')
+                    )
 eventlet.monkey_patch()
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = binary_path
 socketio = SocketIO(app)
 
-
-sourceStatus = None
+powersourceStatus = False
 sourceConnection = None
 arduinoConnection = None
 
 
 def broadcast_info():
-    global socketio, sourceStatus, sourceConnection
+    global socketio, powersourceStatus, sourceConnection
     while True:
         socketio.emit("message", "assmessage")
         if sourceConnection == None:
-            sourceStatus = "Power OFF"
+            powersourceStatus = False
             logging.debug("Power OFF")
         else:
             voltage = str(float(sourceConnection.GetVoltage().decode()))
@@ -53,16 +54,12 @@ def broadcast_info():
                 "current": current
             },
                 broadcast=True)
-            sourceStatus = "Power ON"
+            powersourceStatus = True
             logging.debug(
                 "Power ON, voltage: {}, current: {}".format(voltage, current))
-        socketio.emit("sourceStatus", data=sourceStatus, broadcast=True)
+        socketio.emit("powersourceStatus",
+                      data=powersourceStatus, broadcast=True)
         time.sleep(1)
-
-
-def update_trace(content):
-    print(content)
-    socketio.send(content, broadcast=True)
 
 
 def get_error_FlashGui(filename):
@@ -103,6 +100,27 @@ def index():
     return render_template('index.html')
 
 
+def process_instruction_file(file_path):
+    cmd, extra_cmd = read_cmd_list(file_path)
+    lkup_table = dict()
+    lkup_table["root"] = extract_cmd(cmd)
+    lkup_table["enum"] = extract_enum(extra_cmd)
+    return lkup_table
+
+
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+
+@app.route("/GetCommandSet/", methods=["GET"])
+def GetCommandSet():
+    global _setting
+    traceFilePath = "txt.trc"
+
+    return process_instruction_file(traceFilePath)
+
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     try:
@@ -135,14 +153,9 @@ def powervalue(payload):
     socketio.emit("powervalue", payload, broadcast=True)
 
 
-@socketio.on('sourceStatus')
+@socketio.on('powersourceStatus')
 def sourceStt(status):
-    socketio.emit("sourceStatus", status, broadcast=True)
-
-
-@socketio.on('status')
-def status(status):
-    socketio.emit("status", statusbroadcast=True)
+    socketio.emit("powersourceStatus", status, broadcast=True)
 
 
 @socketio.on('message')
@@ -187,9 +200,16 @@ def handleOPT2(isOPT2connected):
         socketio.emit("ret", ret, broadcast=True)
 
 
-@ socketio.on('setVolValue')
+@socketio.on("turnPwrSource")
+def setPowerSource(isTurnOn):
+    if powersourceStatus is not None:
+        print("on") if isTurnOn else print("off")
+        # todo: set function to turn of toe
+
+
+@ socketio.on('setvoltagValue')
 def setVolValue(volValue):
-    global sourceConnection, sourceStatus
+    global sourceConnection, powersourceStatus
     if sourceConnection != None:
         if (int(volValue) > volMax) or (int(volValue) <= volMin):
             status = "The voltage value must be in range 0-{}V".format(
@@ -212,12 +232,13 @@ if __name__ == '__main__':
 
     # sourceConnection = ToellnerDriver("COM15", 1)
 
-    if arduino_port:
-        arduinoConnection = Arduino(arduino_port)
-        logging.debug("Connect to {} : {}".format(
-            arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
-
+    # if arduino_port:
+    #     arduinoConnection = Arduino(arduino_port)
+    #     logging.debug("Connect to {} : {}".format(
+    #         arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
+    logging.info("Server start!!!")
     socketio.run(app)
 
     sourceConnection.__del__()
-    arduinoConnection.close()
+    # arduinoConnection.close()
+    logging.info("Server stop!!!")

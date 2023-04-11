@@ -1,7 +1,6 @@
 import json
 
 
-
 def read_cmd_list(file_path):
     base = list()
     enum = list()
@@ -30,7 +29,7 @@ def extract_cmd(cmd):
         except ValueError:
             base = c.strip()
             option = None
-        assert(" " not in base)
+        assert (" " not in base)
         result[base] = option
     return result
 
@@ -57,7 +56,7 @@ def extract_option(op: str):
             pass
 
         if enum_name:
-            assert(" " not in enum_name)
+            assert (" " not in enum_name)
             result.append(enum_name)
         else:
             result.append(None)
@@ -87,8 +86,8 @@ def extract_enum(enum_list):
             if " " in value:
                 value = value.split()[1]
 
-            assert(" " not in value)
-            assert(" " not in name)
+            assert (" " not in value)
+            assert (" " not in name)
 
             try:
                 enum_table[name].append(value)
@@ -105,5 +104,4 @@ def process_instruction_file(file_path):
     lkup_table = dict()
     lkup_table["root"] = extract_cmd(cmd)
     lkup_table["enum"] = extract_enum(extra_cmd)
-
     return lkup_table

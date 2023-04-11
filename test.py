@@ -1,16 +1,69 @@
-from enum import Enum
+body {
+    font-family: Arial, sans-serif
+    margin: 0
+    padding: 0
+}
 
+header {
+    background-color:  # 333;
+    color:  # fff;
+    padding: 10px
+}
 
-class ButtonState(Enum):
-    ACC_ON = 0
-    ACC_OFF = 1
-    IGN_ON = 2
-    IGN_OFF = 3
-    OPT2_ON = 4
-    OPT2_OFF = 5
-    WD_ON = 6
-    WD_OFF = 7
+nav ul {
+    list-style: none
+    margin: 0
+    padding: 0
+}
 
+nav ul li {
+    display: inline-block
+    margin-right: 10px
+}
 
-for state in ButtonState:
-    print(state, state.value)
+nav ul li: last-child {
+    margin-right: 0
+}
+
+nav ul li button {
+    background-color:  # ddd;
+    color:  # 333;
+    border: none
+    padding: 5px 10px
+    cursor: pointer
+}
+
+nav ul li button: hover {
+    background-color:  # 555;
+    color: # fff;
+}
+
+.main {
+    padding: 10px
+}
+
+.editor {
+    border: 1px solid  # ccc;
+    padding: 10px
+}
+
+.toolbar button {
+    background-color:  # ddd;
+    color:  # 333;
+    border: none
+    padding: 5px 10px
+    cursor: pointer
+}
+
+.toolbar button: hover {
+    background-color:  # 555;
+    color: # fff;
+}
+
+.toolbar select {
+    background-color:  # fff;
+    color:  # 333;
+    border: none
+    padding: 5px 10px
+    cursor: pointer
+}

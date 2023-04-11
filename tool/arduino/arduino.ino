@@ -41,7 +41,9 @@ void setup()
     pinMode(IGN_PIN, OUTPUT);
     pinMode(WD_OFF_PIN, OUTPUT);
     pinMode(OPT2_PIN, OUTPUT);
-    for (size_t i = 2; i < 12; i++)
+    digitalWrite(ACC_PIN, LOW);
+    digitalWrite(IGN_PIN, LOW);
+    for (size_t i = 4; i < 12; i++)
     {
         digitalWrite(i, HIGH);
     }

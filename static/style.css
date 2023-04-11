@@ -1,4 +1,4 @@
-/* Header Styles */
+/* Header Styles
 .header {
 	display: flex;
 	flex-direction: row;
@@ -42,7 +42,7 @@
 .body {
 	display: flex;
 	flex-direction: row;
-	height: 90vh;
+	height: 80vh;
 	background-color: #eee;
 }
 /* Footer Styles */
@@ -65,6 +65,7 @@
 	margin: 10px;
 	background-color: lightgray;
 	box-sizing: 3px border-box;
+	overflow: auto;
 }
 #command-input,
 #log_ttfis {
@@ -73,6 +74,7 @@
 	box-sizing: border-box;
 	padding: 10px;
 	font-size: x-large;
+	overflow: auto;
 }
 
 #command-entry,
@@ -125,4 +127,72 @@
 	margin: 2px 2px;
 	cursor: pointer;
 	height: fit-content;
+}
+*/ body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #f2f2f2;
+}
+
+.header {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.main {
+	display: flex;
+	height: calc(100vh - 80px);
+}
+
+.left-panel {
+	background-color: #555;
+	color: #fff;
+	width: 200px;
+	padding: 20px;
+}
+
+.left-panel h2,
+.edit-menu h2 {
+	margin: 0 0 10px;
+}
+
+.left-panel ul,
+.edit-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.left-panel li,
+.edit-menu li {
+	padding: 5px 0;
+	cursor: pointer;
+}
+
+.left-panel li:hover,
+.edit-menu li:hover {
+	background-color: #666;
+}
+
+.right-panel {
+	flex: 1;
+	padding: 20px;
+}
+
+.right-panel .file-name {
+	margin: 0 0 10px;
+}
+
+.right-panel .text-editor textarea {
+	width: 100%;
+	height: calc(100vh - 220px);
+	resize: none;
+	border: none;
+	padding: 10px;
+	font-size: 16px;
+	font-family: monospace;
+	line-height: 1.5;
 }

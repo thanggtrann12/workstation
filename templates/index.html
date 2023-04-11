@@ -56,13 +56,16 @@
 					<div>Trace</div>
 				</div>
 				<div class="inside-colum">
-					<input class = "upload_input" type="file">
-					<input class = "upload_input" type="file">
+					<form id="file-form" enctype="multipart/form-data">
+            <input type="file" name="file-dnl" id="file-dnl-input">
+            <input type="button" value="Flash"  class="button" id="upload-dnl">
+         </form>
 				</div>
 				<div class="inside-colum">
-         
-					<button class="button">Flash</button>
-					<button class="button">Upload Trace</button>
+          <form method="post" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="file-trc" id="file-trc-input">
+            <input type="button" value="Upload Trace"  class="button" id="upload-trc">
+         </form>
 				</div>
 			</div>
 			
@@ -88,16 +91,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="body">
-		<div class="log-area">
-			<h3 style="text-align: center;">TTFis Log</h3>
+  <div class="body">
+    <div class="log-area" id = "downloaderId">
+      <h3 style="text-align: center;">TTFis Log</h3>
       <textarea id="log_ttfis" disabled></textarea>
-			<div></div>
-		</div>
-		<div class="command-log">
-			<h3 style="text-align: center;">Command Log</h3>
-			<textarea id="command-input" ></textarea>
+      
+    </div>
   </div>
+
 
   <div id = "popup_box" class="popup">
     <div class="popup-content">
@@ -111,12 +112,12 @@
 
   </div> -->
 
-	<div class="footer">
+	<!-- <div class="footer">
 		<div id="command-entry">
-			<input id ="entry-zone"type="text" placeholder="Command...">
+			<input id ="entry-zone"type="text" placeholder="Command..." >
 		</div>
 		<button id = "execute_btn" class="button">Execute</button>
-	</div>
+	</div> -->
 
 </body>
 </html>

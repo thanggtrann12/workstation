@@ -1,12 +1,12 @@
 {
 	"filePath": {
-		"binary": "/static/uploads/bin/",
-		"trace": "/static/uploads/trace"
+		"binary": "static/uploads/bin/",
+		"trace": "static/uploads/trace/"
 	},
 	"voltageRange": {
 		"max": 14,
 		"min": 0,
 		"normal": 12
 	},
-	"arduino_port": "COM3"
+	"arduino_port": "COM23"
 }

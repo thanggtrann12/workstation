@@ -1,4 +1,81 @@
+"""
+Python COM Client for TTFis CSM
+Initially created by Frank Gilbert (CM-AI/PJ-VW32), March 2009
 
+Create a TTFisClient object for TTFis remote control (send and receive) by MS Windows COM Interface. \
+Supported TTFis versions are 3.12 or newer (older versions are not working).
+
+Example:
+import TTFisClient
+
+ttfis = TTFisClient.TTFisClient()
+p     = ttfis.Connect('paramount@usb')
+...
+
+Important: For trace output recording, configure a logging object in the using module (cf. Python documentation for logging module). \
+This module uses INFO-level for trace messages and DEBUG-level for internal details.
+
+
+Design Rule 1:
+
+Always enclose all TTFis Activity in an exception handler. Make sure, that after the object was created \
+finally the Quit()-method is called before the script terminates. Otherwise the client does not de-register \
+at the COM server. In this case the process csm.exe will continue to run and pile up all further traces \
+message for this client.
+
+If you run your Python scripts in a separate command-box, do not terminate your script by closing the window.
+Use CTRL + C to terminate your script first.
+
+
+Design Rule 2:
+
+Communication problems between TTFisClient and COM-Server will not lead to exceptions any more. \
+So check your connection to the target before starting any test case. Also, during test execution repeatedly \
+check the connection again. The test sequence itself should analyze, resolve, and escalate communication \
+problems to the target.
+
+
+Example:
+
+import os.path, exceptions
+import TTFisClient
+from TTFisClient import Wait
+
+ttfis  = None
+try:
+    ttfis = TTFisClient.TTFisClient()
+
+    trcfiles = []
+    for file in ['master.trc', 'memadr_navi.trc', 'navapp.trc']:
+        newfile = cfg[ 'TRCPath' ] + '\\' + file
+        if os.path.exists( newfile ):
+            trcfiles.append( newfile )
+    del file, newfile
+    p = ttfis.Connect('paramount@usb', trcfiles)
+
+    Wait(5, 's')
+    retry = 0
+    while retry < 3:
+        retry += 1
+        match = ttfis.Wait4Trace('get connection', 2.0, ttfis.Cmd, 'TR_TEST_CONNECTION')
+        if match:
+            break
+    else:
+        raise RuntimeError, 'No connection to target. Stop test execution'
+
+    # Start test execution
+    ...
+except:
+    print 'Script terminated due to exception'
+else:
+    print 'Script completed successfully'
+finally:
+    if ttfis:
+        ttfis.Quit()
+        del ttfis
+
+# This is the end
+"""
 # pylint: disable=W0212
 from inspect import currentframe
 from win32com import storagecon as stc
@@ -44,9 +121,6 @@ class LOGDBG:
     def error(farg, *args):
         _print(farg, *args)
 
-    def fatal(farg, *args):
-        _print(farg, *args)
-
 
 class LOGTRACE:
     def print(farg, *args):
@@ -59,10 +133,9 @@ class LOGCMD:
         _print(farg, *args)
         pass
 
-
-def error(farg, *args):
-    _print(farg, *args)
-    pass
+    def error(farg, *args):
+        _print(farg, *args)
+        pass
 
 
 def Wait(time2wait, unit='ms'):
@@ -798,15 +871,15 @@ class TTFisClient(Singleton):
                 # Per default try to create the interface-wrapper files in the gen_py folder.
                 # If this fails, then try to use the files existing in the folder.
                 temp_csm_object = win32com.client.Dispatch('CSM.CoCSM')
+                print(temp_csm_object)
                 self.__class__._csm = win32com.client.gencache.EnsureDispatch(
                     temp_csm_object)
             except Exception as emsg:  # pylint: disable=W0703
                 # Creating of the interface files in gen_py failed. Try now to use the existing files.
-                LOGCMD.info(
+                LOGDBG.debug(
                     'Creating of CSM.exe interface files in gen_py failed!')
-                LOGCMD.info('Error Message: %s', repr(emsg))
+                LOGDBG.debug('Error Message: %s', repr(emsg))
                 self.__class__._csm = win32com.client.Dispatch('CSM.CoCSM')
-            print(dir(self._csm.CoCSM))
             self.__class__._coma = pythoncom.CoMarshalInterThreadInterfaceInStream(
                 self._csm.CLSID, self._csm)
             self.__class__._csm_client_id = self._csm.Initialize(0x1)
@@ -815,9 +888,9 @@ class TTFisClient(Singleton):
             self.__class__._csmdevprop = win32com.client.CastTo(
                 self._csm, 'ICSMDevProp')
         except Exception as emsg:
-            LOGDBG.fatal(
+            LOGDBG.error(
                 '%s: an Exception occurred during communication set-up to TTFis COM-Server.', _mident)
-            LOGDBG.fatal('Error Message: %s', repr(emsg))
+            LOGDBG.error('Error Message: %s', repr(emsg))
             self.__class__._csm = None
             self.__class__._coma = None
             self.__class__._csm_client_id = None

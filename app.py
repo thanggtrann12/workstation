@@ -10,6 +10,8 @@ import os
 import psutil
 from InstructionSetProcess import *
 from tool.ArduinoControl import Arduino, Command
+import keyboard
+from tool.TTFisClient import TTFisClient
 with open('settings.json', 'rb') as settingFile:
     settings = json.loads(settingFile.read())
 
@@ -19,10 +21,12 @@ arduino_port = settings['arduino_port']
 volMax = settings['voltageRange']['max']
 volMin = settings['voltageRange']['min']
 volNormal = settings['voltageRange']['normal']
+device_name = settings['device']
+
 
 ALLOWED_FILE = ["dnl", "trc"]
 
-logging.basicConfig(filename='log.txt', level=logging.DEBUG,
+logging.basicConfig(filename='log.pro', level=logging.DEBUG,
                     format=('%(filename)s: '
                             '%(levelname)s: '
                             '%(funcName)s(): '
@@ -39,10 +43,15 @@ sourceConnection = None
 arduinoConnection = None
 
 
+def upload_scc_trace(trace):
+    print("assign callback", trace)
+    socketio.emit("message", trace, broadcast=True)
+
+
 def broadcast_info():
     global socketio, powersourceStatus, sourceConnection
     while True:
-        socketio.emit("message", "assmessage")
+        # socketio.emit("message", "assmessage")
         if sourceConnection == None:
             powersourceStatus = False
             logging.debug("Power OFF")
@@ -84,9 +93,19 @@ def get_error_FlashGui(filename):
                     break
 
 
+def upload_trace(file_name):
+    ttfisClient.Disconnect(device_name)
+    ttfisClient.Connect(device_name)
+    ttfisClient.Restart()
+    if ttfisClient.LoadTRCFiles([trace_path+file_name]):
+        logging.info("trace upload success")
+    else:
+        logging.info("trace upload fail")
+
+
 def flash(file_name):
     global socketio
-    socketio.emit("status", "FLashing......")
+    socketio.emit("status", "Start FLashGui")
     cmd = 'FlashGUI.exe /iQuad-G3G-RS232-DebugAdapter C - FT5TMNM0,1000000,E,8,1 " /f{}/{} /b4038 /au'.format(
         binary_path, file_name)
     subprocess.Popen(cmd, stdout=subprocess.PIPE)
@@ -127,7 +146,6 @@ def upload_file():
         file_dnl = request.files['file-dnl']
         filename_dnl = file_dnl.filename
         if ALLOWED_FILE[0] in filename_dnl:
-            print("valid")
             file_dnl.save(os.path.join(binary_path, filename_dnl))
             flash(filename_dnl)
             logging.info("Flashing with file: {}".format(filename_dnl))
@@ -141,6 +159,7 @@ def upload_file():
         if ALLOWED_FILE[1] in filename_trc:
             file_trc.save(os.path.join(trace_path, filename_trc))
             logging.info("Upload Trace with file: {}".format(filename_trc))
+            upload_trace(filename_trc)
         else:
             logging.error("File not found: {}".format(filename_trc))
     except:
@@ -148,9 +167,22 @@ def upload_file():
     return ""
 
 
+cmd = ""
+
+
+@socketio.on("app_input")
+def app_input(data):
+    socketio.emit("appContent",  data, broadcast=True)
+
+
 @socketio.on('powervalue')
 def powervalue(payload):
     socketio.emit("powervalue", payload, broadcast=True)
+
+
+@socketio.on('status')
+def send_status(status):
+    socketio.emit("status", status, broadcast=True)
 
 
 @socketio.on('powersourceStatus')
@@ -160,7 +192,6 @@ def sourceStt(status):
 
 @socketio.on('message')
 def message_(message):
-    print(message)
     socketio.emit("message", data=message, statusbroadcast=True)
 
 
@@ -204,7 +235,12 @@ def handleOPT2(isOPT2connected):
 def setPowerSource(isTurnOn):
     if powersourceStatus is not None:
         print("on") if isTurnOn else print("off")
-        # todo: set function to turn of toe
+
+
+@socketio.on("sccCommand")
+def sccCommand(cmd):
+    print(type(cmd))
+    ttfisClient.Cmd(cmd)
 
 
 @ socketio.on('setvoltagValue')
@@ -224,18 +260,18 @@ def setVolValue(volValue):
 
 
 if __name__ == '__main__':
-    # ttfisClient = TTFisClient()
-    # ttfisClient.registerUpdateTraceCallback(update_trace)
-    # ttfisClient.Connect("GEN3FLEX@COM7")
-    # ttfisClient.Connect("GEN3FLEX@DLT")
+
+    ttfisClient = TTFisClient()
+    ttfisClient.registerUpdateTraceCallback(upload_scc_trace)
+    ttfisClient.Connect(device_name)
     Thread(target=broadcast_info, args=()).start()
 
     # sourceConnection = ToellnerDriver("COM15", 1)
 
-    # if arduino_port:
-    #     arduinoConnection = Arduino(arduino_port)
-    #     logging.debug("Connect to {} : {}".format(
-    #         arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
+    if arduino_port:
+        arduinoConnection = Arduino(arduino_port)
+        logging.debug("Connect to {} : {}".format(
+            arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
     logging.info("Server start!!!")
     socketio.run(app)
 

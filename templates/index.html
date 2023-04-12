@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Split Layout</title>
+	<title>AUTOSAR</title>
 	<link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/xterm/dist/xterm.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript"
             src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
 
     <script src="/static/trie.js"></script>
 
@@ -43,35 +43,34 @@
                     <button type="button" id ="set_voltage_btn">Set Voltage</button>
                   </div>
                 </div>
-                
+
                 <div class="row-2">
-                    
+
                   <div class="button-column">
                     <button type="button" id="clear_scc">Clear SCC Trace</button>
                   </div>
+
                   <div class="button-column">
-                    <button type="button" id ="export_scc">Export SCC Trace</button>
+                    <button type="button" id="show_hide_adb" onclick="showHideADB()">Show/Hide ADB</button>
                   </div>
                 </div>
 
                 <div class="row-2">
                   <div class="button-column">
-                    <button type="button" id="show_hide_adb" onclick="showHideADB()">Show/Hide ADB</button>
+                    <button type="button" id ="export_scc">Export SCC Trace</button>
                   </div>
                   <div class="button-column">
                     <button type="button" id="export_adb">Export ADB log</button>
                   </div>
                 </div>
               </div>
-              
-              
             <div class="block-2">
                 <div class="row-2">
                     <div class="button-column">
-                      <input type="file" name="file-trc" id="file-trc-input">
+                      <input type="file" name="file-dnl" id="file-dnl-input">
                     </div>
                     <div class="button-column">
-                      <input type="file" name="file-dnl" id="file-dnl-input">
+                      <input type="file" name="file-trc" id="file-trc-input">
                     </div>
                   </div>
                   <div class="row-2">
@@ -127,7 +126,7 @@
                         <h3 >SERVER:</h3>
                     </div>
                     <div class="button-column">
-                        <h3 id="status">UNKNOWN</h3>
+                        <h3 id="server_status">UNKNOWN</h3>
                     </div>
                     <div class="button-column">
                         <h3>USER:</h3>
@@ -135,18 +134,28 @@
                     <div class="button-column">
                         <h3 >UNKNOWN</h3>
                     </div>
+                    <div class="button-column">
+                      <h3>STATUS:</h3>
+                  </div>
+                  <div class="button-column">
+                      <h3 id="status">UNKNOWN</h3>
+                  </div>
                   </div>
             </div>
           </div>
-          
+
 		<div class="right-column" id ="right-column">
-			<textarea class="top-right" id="scc_log" disabled></textarea>
+			<div class="top-right" id="scc_log" disabled></div>
 			<div class="bottom-right">
 				<input id="command_entry" placeholder="Command....">
 			</div>
 		</div>
-        <div class="abd-column" id ="abd-column">
-			<textarea class="abd-right" id="adb_log"></textarea>
+    <div id="terminal">
+      <div id="output"></div>
+      <div id="input">
+         <input type="text" id="cmd" placeholder="Command...">
+      </div>
+   </div>
 		</div>
 	</main>
     <div id = "adb_box" class="popup">
@@ -160,15 +169,15 @@
         if (isPress)
         {
 		    document.getElementById("right-column").style.width = "40%"
-		    document.getElementById("abd-column").style.width = "40%" 
-            
+		    document.getElementById("terminal").style.width = "40%" 
         }
         else
         {
             document.getElementById("right-column").style.width = "80%"
-            document.getElementById("abd-column").style.width = "1%"
+            document.getElementById("terminal").style.width = "1%"
         }
 	}
     </script>
+
 </body>
 </html>

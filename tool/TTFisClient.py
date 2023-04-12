@@ -82,7 +82,7 @@ from win32com import storagecon as stc
 try:
     import queue as Queue
 except ImportError:
-    import Queue
+    import queue
 
 # import logging
 import os.path
@@ -668,6 +668,7 @@ class TTFisClient(Singleton):
             else:
                 self._CmdQueue.put(
                     (self.__SendCommand, (device, cmd), None), False)
+                print(cmd)
         LOGDBG.debug('Completed %s', _mident)
 
     def LoadTRCFiles(self, files=None):
@@ -871,7 +872,6 @@ class TTFisClient(Singleton):
                 # Per default try to create the interface-wrapper files in the gen_py folder.
                 # If this fails, then try to use the files existing in the folder.
                 temp_csm_object = win32com.client.Dispatch('CSM.CoCSM')
-                print(temp_csm_object)
                 self.__class__._csm = win32com.client.gencache.EnsureDispatch(
                     temp_csm_object)
             except Exception as emsg:  # pylint: disable=W0703
@@ -942,6 +942,7 @@ class TTFisClient(Singleton):
             self._csm.SetActiveDevice(self._csm_client_id, device)
             self.__class__._dev_active = device
         self._csm.SendCommandOption(self._csm_client_id, command)
+        print("===========================", command)
 
     def __Thrd_CallCmdsFromCSM(self):
         """

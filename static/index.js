@@ -20,7 +20,8 @@ $(document).ready(function () {
 	var opt2Btn = $("#opt2_btn")
 	var pwronBtn = $("#pwron_btn")
 	var enventBtn = ["acc_btn", "ign_btn", "wd_btn", "opt2_btn", "pwron_btn"]
-	var serverStatus = $("#status")
+	var serverStatus = $("#server_status")
+	var status = $("#status")
 	var powersourceStatus = $("#power_source")
 	var volValue = $("#voltage_value")
 	var curValue = $("#current_value")
@@ -29,8 +30,11 @@ $(document).ready(function () {
 	var isIGNconnected = true
 	var isWDconnected = false
 	var isOPT2connected = false
-	var isSet = false
+	var isSet = true
 	var setPwrBtn = $("#set_voltage_btn")
+	document.getElementById("acc_btn").style.backgroundColor = "green"
+	document.getElementById("ign_btn").style.backgroundColor = "green"
+
 	socket.on("connect", function () {
 		serverStatus.text("Connected")
 	})
@@ -38,18 +42,22 @@ $(document).ready(function () {
 	socket.on("disconnect", function () {
 		serverStatus.text("Disconnected")
 	})
+	socket.on("appContent", function (content) {
+		$("#output").append("<div>" + content + "</div>")
+	})
 
 	socket.on("message", function (message) {
-		sccTrace.append(message + "\n")
-		console.log(message)
+		console.log("message from ttfis", message)
+		$("#scc_log").append("<div> " + message + "\n \r" + "</div>")
 		document.getElementById("scc_log").scrollTop =
 			document.getElementById("scc_log").scrollHeight
 	})
-
+	socket.on("status", function (status_) {
+		status.text(status_)
+	})
 	for (var i = 0; i < enventBtn.length; i++) {
 		if (i < 2)
-			document.getElementById(enventBtn[i + 2]).style.backgroundColor =
-				"red"
+			document.getElementById(enventBtn[i + 2]).style.backgroundColor = "red"
 		socket.on(enventBtn[i], function (data) {
 			console.log(enventBtn[i] + " event received with data: " + data)
 		})
@@ -62,7 +70,6 @@ $(document).ready(function () {
 
 	socket.on("ret", function (data) {
 		isSet = data
-		console.log(isSet)
 	})
 	$("#power_source").click(function () {
 		if (isPwrSourceConnected == false) socket.emit("turnPwrSource", true)
@@ -72,8 +79,7 @@ $(document).ready(function () {
 		isPwrSourceConnected == true
 			? (document.getElementById("power_source").style.backgroundColor =
 					"green")
-			: (document.getElementById("power_source").style.backgroundColor =
-					"red")
+			: (document.getElementById("power_source").style.backgroundColor = "red")
 		isPwrSourceConnected == true
 			? powersourceStatus.text("ON")
 			: powersourceStatus.text("OFF")
@@ -95,6 +101,8 @@ $(document).ready(function () {
 			socket.emit("setvoltagValue", voltage)
 			$("#voltage_to_set").val("")
 		} else {
+			socket.emit("status", "POWER OFF")
+			console.log("POWER OFF")
 			powersourceStatus.text("OFF")
 		}
 	})
@@ -112,7 +120,6 @@ $(document).ready(function () {
 
 	async function loadParaTable() {
 		let data = await $.get("http://" + location.host + "/GetCommandSet/")
-		console.log("data", data["root"])
 		// Insert base command
 		for (let cmd in data["root"]) {
 			commandTable["root"].insert(cmd)
@@ -128,7 +135,6 @@ $(document).ready(function () {
 
 		// Update parameter table
 		paraTable = data["root"]
-		console.log("paraTable", paraTable)
 	}
 
 	function parseInput() {
@@ -153,8 +159,7 @@ $(document).ready(function () {
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
-						suggestionList =
-							commandTable["enum"][enumName].find(name)
+						suggestionList = commandTable["enum"][enumName].find(name)
 					}
 				}
 				inSelection = true
@@ -171,9 +176,10 @@ $(document).ready(function () {
 		}
 
 		if (13 == event.keyCode) {
-			console.log("ss", sccCommandStr)
-			sccTrace.append(sccLines + "\n")
+			socket.emit("sccCommand", sccCommandStr)
+			sccTrace.append(sccCommandStr + "\n")
 			sccLines = ""
+			sccCommandStr = ""
 			command_entry.val("")
 		}
 	}
@@ -186,25 +192,25 @@ $(document).ready(function () {
 	$("#command_entry").on("keydown", function (event) {
 		doAutoComplete(event)
 	})
-	$("#adb_log").on("keydown", function (event) {
-		var text = adbLog.val().split("\n").pop()
-		if (13 == event.keyCode) {
-			if (text === "clear" || text === "cls") {
-				console.log("clear")
-				$("#adb_log").val("")
+
+	$("#cmd").focus()
+	$("#cmd").keypress(function (e) {
+		if (e.which == 13) {
+			var cmd = $("#cmd").val()
+			if (cmd === "clear" || cmd === "cls") {
+				$("#output").empty()
 			} else {
-				adbLog.text(text.split("\n"))
-				ADBcommand = text.split("\n").pop()
-				console.log("ADBcommand ", ADBcommand)
+				$("#output").append("<div>> " + cmd + "\n \r" + "</div>")
+				socket.emit("app_input", cmd)
 			}
+			$("#cmd").val("")
 		}
 	})
-
 	loadParaTable()
 
 	$("#export_scc").click(function () {
 		console.log("click")
-		const text = $("#scc_log").val()
+		const text = $("#scc_log").text()
 		console.log(text)
 		let blob = new Blob([text], {
 			type: "text/plain",
@@ -215,7 +221,7 @@ $(document).ready(function () {
 
 	$("#export_adb").click(function () {
 		console.log("click")
-		const text = $("#adb_log").val()
+		const text = $("#output").text()
 		console.log(text)
 		let blob = new Blob([text], {
 			type: "text/plain",
@@ -229,67 +235,50 @@ $(document).ready(function () {
 		console.log("clear")
 	})
 	accBtn.click(function () {
-		console.log("accBtn click")
 		isACCconnected = !isACCconnected
-		setPropertyForElement(
-			"ACC",
-			"acc_btn",
-			["green", "red"],
-			isACCconnected,
-		)
+		console.log("accBtn click", isACCconnected, isSet)
+		setPropertyForElement("ACC", "acc_btn", ["green", "red"], isACCconnected)
 	})
 	ignBtn.click(function () {
 		console.log("ignBtn click")
 		isIGNconnected = !isIGNconnected
 
-		setPropertyForElement(
-			"IGN",
-			"ign_btn",
-			["green", "red"],
-			isIGNconnected,
-		)
+		setPropertyForElement("IGN", "ign_btn", ["green", "red"], isIGNconnected)
 	})
 	wdBtn.click(function () {
-		console.log("wdBtn click")
+		console.log("wdBtn click", isWDconnected, isSet)
 		isWDconnected = !isWDconnected
 		setPropertyForElement("WD", "wd_btn", ["green", "red"], isWDconnected)
 	})
 	opt2Btn.click(function () {
 		console.log("opt2Btn click")
 		isOPT2connected = !isOPT2connected
-		setPropertyForElement(
-			"OPT2",
-			"opt2_btn",
-			["green", "red"],
-			isOPT2connected,
-		)
+		setPropertyForElement("OPT2", "opt2_btn", ["green", "red"], isOPT2connected)
 	})
 
 	setPropertyForElement = (onEvent, element, backgroundColor, condition) => {
-		console.log("set property", element, backgroundColor[0])
-		// socket.emit("ret", "hello")
-		if (isPwrSourceConnected != true) {
-			socket.emit(onEvent, (data = condition))
-			if (condition == true) {
-				if (isSet == true) {
-					document.getElementById(element).style.backgroundColor =
-						backgroundColor[0]
-				} else {
-					document.getElementById(element).style.backgroundColor =
-						backgroundColor[1]
-				}
+		console.log(element)
+
+		socket.emit(onEvent, (data = condition))
+		if (condition == true) {
+			if (isSet == true) {
+				document.getElementById(element).style.backgroundColor =
+					backgroundColor[0]
 			} else {
-				if (isSet == true) {
-					document.getElementById(element).style.backgroundColor =
-						backgroundColor[1]
-				} else {
-					document.getElementById(element).style.backgroundColor =
-						backgroundColor[0]
-				}
+				document.getElementById(element).style.backgroundColor =
+					backgroundColor[1]
+			}
+		} else {
+			if (isSet == true) {
+				document.getElementById(element).style.backgroundColor =
+					backgroundColor[1]
+			} else {
+				document.getElementById(element).style.backgroundColor =
+					backgroundColor[0]
 			}
 		}
 	}
-	$("#flash_btn").click(function (file_type) {
+	$("#flash_btn").click(function () {
 		console.log("flash click")
 		var file_data = $("#file-dnl-input").prop("files")[0]
 		var form_data = new FormData()
@@ -304,10 +293,11 @@ $(document).ready(function () {
 		})
 	})
 
-	$("#trace_btn").click(function (file_type) {
+	$("#trace_btn").click(function () {
 		console.log("click")
 		var file_data = $("#file-trc-input").prop("files")[0]
 		var form_data = new FormData()
+		console.log(form_data)
 		form_data.append("file-trc", file_data)
 		$.ajax({
 			url: "/upload",

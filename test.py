@@ -1,10 +1,17 @@
-import requests
+from tool.TTFisClient import TTFisClient
+import time
 
-response = requests.get('http://localhost:5000/GetCommandSet/')
 
-if response.status_code == 200:
-    data = response.json()
-    # Do something with the data
-    print(data)
-else:
-    print(f'Request failed with status code {response.status_code}')
+def upload_scc_trace(trace):
+    print(trace)
+    print("\n")
+
+
+ttfis = TTFisClient()
+ttfis.registerUpdateTraceCallback(upload_scc_trace)
+ttfis.Connect(
+    "GEN3FLEX@COM4")
+time.sleep(1)
+while 1:
+    cmd = input("cmd: ")
+    ttfis.Cmd(cmd)

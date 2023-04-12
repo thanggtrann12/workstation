@@ -3,6 +3,7 @@
 		"binary": "static/uploads/bin/",
 		"trace": "static/uploads/trc/"
 	},
+	"device": "GEN3FLEX@COM4",
 	"voltageRange": {
 		"max": 14,
 		"min": 0,

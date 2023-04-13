@@ -3,11 +3,15 @@
 		"binary": "static/uploads/bin/",
 		"trace": "static/uploads/trc/"
 	},
-	"device": "GEN3FLEX@COM4",
+	"device": "GEN3FLEX@COM5",
 	"voltageRange": {
 		"max": 14,
 		"min": 0,
 		"normal": 12
 	},
-	"arduino_port": "COM23"
+	"arduino_port": "COM23",
+	"power_source": {
+		"port": "COM27",
+		"channel": 2
+	}
 }

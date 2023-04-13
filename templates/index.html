@@ -17,7 +17,11 @@
 </head>
 <body>
 	<header>
-		<h1>LCM-Workstation AutoSar</h1>
+		<h1 style="margin-top: 1px;">LCM AutoSar Workstation
+    <span id="status">
+      READY
+    </span>
+    </h1>
 	</header>
 	<main>
 		<div class="left-column">
@@ -26,14 +30,20 @@
                     <div class="button-column">
                         <h3>Voltage</h3>
                         <h3>Current</h3>
-                        
                     </div>
                     <div class="button-column">
                         <h3 id="voltage_value">V</h3>
                         <h3  id="current_value">A</h3>
                     </div>
                 </div>
-                
+                <div class="row-2">
+                  <div class="button-column">
+                    <h3>POWER SOURCE:</h3>
+                </div>
+                <div class="button-column">
+                    <h3 style="cursor: pointer;" id="power_source" >OFF</h3>
+                </div>
+                </div>
                 <div class="row-1">
                   <div class="input-column">
                     <input type="text" placeholder="Voltage 0-14V" id="voltage_to_set">
@@ -81,6 +91,7 @@
                       <button type="button" id ="trace_btn">Upload Trace</button>
                     </div>
                   </div>
+                
                 <div class="row-3">
                     <div class="button-column">
                       <button type="button" id="acc_btn">ACC</button>
@@ -109,58 +120,27 @@
                   </div>
             </div>
             <div class="block-3">
-                <div class="row-4">
-                    <div class="button-column">
-                        <h3>STATUS</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3>INFOR</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3>POWER SOURCE:</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3 style="cursor: pointer;" id="power_source" >OFF</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3 >SERVER:</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3 id="server_status">UNKNOWN</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3>USER:</h3>
-                    </div>
-                    <div class="button-column">
-                        <h3 >UNKNOWN</h3>
-                    </div>
-                    <div class="button-column">
-                      <h3>STATUS:</h3>
-                  </div>
-                  <div class="button-column">
-                      <h3 id="status">UNKNOWN</h3>
-                  </div>
-                  </div>
+              <div>
+                <div  id="chatbox" class="chat_box" ></div>
+                <input type="text" style="width: 300px; height: 40px;" id="chat_input" placeholder="Chat...">
+              </div>
             </div>
           </div>
 
-		<div class="right-column" id ="right-column">
-			<div class="top-right" id="scc_log" disabled></div>
-			<div class="bottom-right">
-				<input id="command_entry" placeholder="Command....">
-			</div>
-		</div>
-    <div id="terminal">
-      <div id="output"></div>
-      <div id="input">
-         <input type="text" id="cmd" placeholder="Command...">
+        <div class="right-column" id ="right-column">
+          <div class="top-right" id="scc_log" disabled></div>
+          <div class="bottom-right">
+            <input id="command_entry" placeholder="Command....">
+          </div>
+        </div>
+        <div id="terminal">
+          <div id="output"></div>
+          <div id="input">
+            <input type="text" id="cmd" placeholder="Command...">
+          </div>
       </div>
-   </div>
 		</div>
 	</main>
-    <div id = "adb_box" class="popup">
-        <textarea class="adb" id="adb_log"></textarea>
-    </div>
     <script>
         var isPress = false
         showHideADB = () => {

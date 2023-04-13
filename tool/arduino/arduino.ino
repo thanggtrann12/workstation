@@ -5,33 +5,17 @@
 #define OPT2_PIN 9
 #define NOT_BIND_1 10
 #define NOT_BIND_2 11
+#define E_OK 1
+#define E_NOT_OK 2
 
-void processCommand(int command, uint8_t pin)
+void processCommand(uint8_t pin, uint8_t state)
 {
-    if (command % 2 == 0)
-    {
-        digitalWrite(pin, HIGH);
-        if (digitalRead(pin) == HIGH)
-        {
-            Serial.println(String(command) + " executed");
-        }
-        else
-        {
-            Serial.println(String(command) + " unexecuted");
-        }
-    }
-    else
-    {
-        digitalWrite(pin, LOW);
-        if (digitalRead(pin) == LOW)
-        {
-            Serial.println(String(command) + " executed");
-        }
-        else
-        {
-            Serial.println(String(command) + " unexecuted");
-        }
-    }
+  digitalWrite(pin, state);
+  if (state == LOW)
+    Serial.println(E_OK);
+  else
+   Serial.println(E_NOT_OK);
+   Serial.flush();
 }
 
 void setup()
@@ -57,32 +41,31 @@ void loop()
         int receivedValue = receivedData.toInt();
         switch (receivedValue)
         {
-        case 1:
-            processCommand(receivedValue, ACC_PIN);
+        case 10:
+            processCommand(ACC_PIN, LOW);
             break;
-        case 2:
-            processCommand(receivedValue, ACC_PIN);
+        case 11:
+            processCommand(ACC_PIN, HIGH);
             break;
-        case 3:
-            processCommand(receivedValue, IGN_PIN);
+        case 20:
+            processCommand(IGN_PIN, LOW);
             break;
-        case 4:
-            processCommand(receivedValue, IGN_PIN);
+        case 21:  
+            processCommand(IGN_PIN, HIGH);
             break;
-        case 5:
-            processCommand(receivedValue, OPT2_PIN);
+        case 30:
+            processCommand(OPT2_PIN, LOW);
             break;
-        case 6:
-            processCommand(receivedValue, OPT2_PIN);
+        case 31:
+            processCommand(OPT2_PIN, HIGH);
             break;
-        case 7:
-            processCommand(receivedValue, WD_OFF_PIN);
+        case 40:
+            processCommand(WD_OFF_PIN, LOW);
             break;
-        case 8:
-            processCommand(receivedValue, WD_OFF_PIN);
+        case 41:
+            processCommand(WD_OFF_PIN, HIGH);
             break;
         default:
-            Serial.println("Invalid command received");
             break;
         }
     }

@@ -9,21 +9,11 @@ import subprocess
 import os
 import psutil
 from InstructionSetProcess import *
-from tool.ArduinoControl import Arduino, Command
+from tool.ArduinoControl import Arduino, Command, DEVICE_OFF, DEVICE_ON
 import keyboard
 from tool.TTFisClient import TTFisClient
-with open('settings.json', 'rb') as settingFile:
-    settings = json.loads(settingFile.read())
-
-binary_path = settings['filePath']['binary']
-trace_path = settings['filePath']['trace']
-arduino_port = settings['arduino_port']
-volMax = settings['voltageRange']['max']
-volMin = settings['voltageRange']['min']
-volNormal = settings['voltageRange']['normal']
-device_name = settings['device']
-
-
+from tool.ToellnerDriver import ToellnerDriver
+from config import *
 ALLOWED_FILE = ["dnl", "trc"]
 
 logging.basicConfig(filename='log.pro', level=logging.DEBUG,
@@ -41,15 +31,17 @@ socketio = SocketIO(app)
 powersourceStatus = False
 sourceConnection = None
 arduinoConnection = None
+cmd = ""
+status = "Ready"
+mess = ""
 
 
 def upload_scc_trace(trace):
-    print("assign callback", trace)
-    socketio.emit("message", trace, broadcast=True)
+    socketio.emit("message", trace+"\n\r", broadcast=True)
 
 
 def broadcast_info():
-    global socketio, powersourceStatus, sourceConnection
+    global socketio, powersourceStatus, sourceConnection, status
     while True:
         # socketio.emit("message", "assmessage")
         if sourceConnection == None:
@@ -84,7 +76,7 @@ def get_error_FlashGui(filename):
                 last_pos = f.tell()
                 if "Error" in line:  # in case FlashGui.exe hang
                     os.system("taskkill /f /im  FlashGui.exe")
-                    socketio.emit("status", "Flashing failed!! Error occurred")
+                    socketio.emit("status", line)
                     logging.error("Flashing failed!! Error occurred")
                     break
                 elif proc.poll() is not None:
@@ -94,19 +86,20 @@ def get_error_FlashGui(filename):
 
 
 def upload_trace(file_name):
-    ttfisClient.Disconnect(device_name)
-    ttfisClient.Connect(device_name)
-    ttfisClient.Restart()
+    socketio.emit("status", "Uploading trace...")
     if ttfisClient.LoadTRCFiles([trace_path+file_name]):
+        socketio.emit("status", "Restarting ttfisClient...")
+        ttfisClient.Restart()
         logging.info("trace upload success")
     else:
         logging.info("trace upload fail")
+    ttfisClient.Restart()
 
 
 def flash(file_name):
     global socketio
     socketio.emit("status", "Start FLashGui")
-    cmd = 'FlashGUI.exe /iQuad-G3G-RS232-DebugAdapter C - FT5TMNM0,1000000,E,8,1 " /f{}/{} /b4038 /au'.format(
+    cmd = 'FlashGUI.exe /i Quad-G3G-RS232-DebugAdapter C - FT5W10RX,1000000,E,8,1 " /f{}/{} /b4038 /au'.format(
         binary_path, file_name)
     subprocess.Popen(cmd, stdout=subprocess.PIPE)
     socketio.emit("status", "Flashing...")
@@ -136,7 +129,6 @@ def home():
 def GetCommandSet():
     global _setting
     traceFilePath = "txt.trc"
-
     return process_instruction_file(traceFilePath)
 
 
@@ -167,9 +159,6 @@ def upload_file():
     return ""
 
 
-cmd = ""
-
-
 @socketio.on("app_input")
 def app_input(data):
     socketio.emit("appContent",  data, broadcast=True)
@@ -195,46 +184,63 @@ def message_(message):
     socketio.emit("message", data=message, statusbroadcast=True)
 
 
-@socketio.on('ACC')
-def handleACC(isACCconnected):
+def sync_data_from_arduino(device, resp):
+    logging.info("Set {} result {}".format(device, resp))
+    socketio.emit("return_from_arduino", data={
+                  "device": device, "resp": True if resp == "1" else False}, broadcast=True)
+
+
+@socketio.on("chat_message")
+def chat(message):
+    global mess
+    print(message)
+    mess = message
+
+
+def get_mess():
+    global mess
+    return mess
+
+
+@socketio.on('request_to_arduino')
+def handle_request(data):
+    device = data['device']
+    is_set = data['is_connected']
+    time.sleep(.1)
     if arduinoConnection:
-        ret = arduinoConnection.send_command(
-            Command.ACC_ON if isACCconnected == True else Command.ACC_OFF)
-        logging.info("Set ACC result {}".format(ret))
-        socketio.emit("ret", ret, broadcast=True)
+        if device == 'acc_btn':
+            resp = arduinoConnection.send_command(
+                Command.ACC, DEVICE_ON if is_set else DEVICE_OFF)
+        elif device == 'ign_btn':
+            resp = arduinoConnection.send_command(
+                Command.IGN, DEVICE_ON if is_set else DEVICE_OFF)
+        elif device == 'wd_btn':
+            resp = arduinoConnection.send_command(
+                Command.WD, DEVICE_ON if is_set else DEVICE_OFF)
+        elif device == 'opt2_btn':
+            resp = arduinoConnection.send_command(
+                Command.OPT2, DEVICE_ON if is_set else DEVICE_OFF)
+        sync_data_from_arduino(device, resp)
 
 
-@ socketio.on('IGN')
-def handleIGN(isIGNconnected):
-    if arduinoConnection:
-        ret = arduinoConnection.send_command(
-            Command.IGN_ON if isIGNconnected == True else Command.IGN_OFF)
-        logging.info("Set IGN result {}".format(ret))
-        socketio.emit("ret", ret, broadcast=True)
-
-
-@ socketio.on('WD')
-def handleWD(isWDconnected):
-    if arduinoConnection:
-        ret = arduinoConnection.send_command(
-            Command.WD_ON if isWDconnected == True else Command.WD_OFF)
-        logging.info("Set WD_OFF result {}".format(ret))
-        socketio.emit("ret", ret, broadcast=True)
-
-
-@ socketio.on('OPT2')
-def handleOPT2(isOPT2connected):
-    if arduinoConnection:
-        ret = arduinoConnection.send_command(
-            Command.OPT2_ON if isOPT2connected == True else Command.OPT2_OFF)
-        logging.info("Set OPT2 result {}".format(ret))
-        socketio.emit("ret", ret, broadcast=True)
-
-
-@socketio.on("turnPwrSource")
-def setPowerSource(isTurnOn):
-    if powersourceStatus is not None:
-        print("on") if isTurnOn else print("off")
+@socketio.on("resetpowersource")
+def setPowerSource():
+    global powersourceStatus
+    if sourceConnection:
+        print("reset source ")
+        socketio.emit("status", "Reset power source")
+        socketio.emit("powervalue", {
+            "voltage": "0",
+            "current": "0"
+        },
+            broadcast=True)
+        time.sleep(1)
+        socketio.emit("powervalue", {
+            "voltage": volNormal,
+            "current": "0"
+        },
+            broadcast=True)
+    socketio.emit("status", "Ready")
 
 
 @socketio.on("sccCommand")
@@ -265,16 +271,16 @@ if __name__ == '__main__':
     ttfisClient.registerUpdateTraceCallback(upload_scc_trace)
     ttfisClient.Connect(device_name)
     Thread(target=broadcast_info, args=()).start()
-
-    # sourceConnection = ToellnerDriver("COM15", 1)
+    sourceConnection = ToellnerDriver(powersource_port, powersource_channel)
 
     if arduino_port:
         arduinoConnection = Arduino(arduino_port)
         logging.debug("Connect to {} : {}".format(
             arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
     logging.info("Server start!!!")
-    socketio.run(app)
+    socketio.run(app, host='0.0.0.0', port=5000)
 
     sourceConnection.__del__()
-    # arduinoConnection.close()
+    arduinoConnection.close()
+    ttfisClient.Quit()
     logging.info("Server stop!!!")

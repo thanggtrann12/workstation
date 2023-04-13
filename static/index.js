@@ -4,12 +4,15 @@ $(document).ready(function () {
 	let sepRegex = /((^|\W)+[^ ]*)/g
 	let state = 0
 	let suggestionList = []
+	let lastcommandStr = []
+	let counterCommand = 0
 	let inSelection = false
 	let commandTable = {
 		root: new Trie({}),
 		enum: {},
 	}
 	var command_entry = $("#command_entry")
+	var chat_input = $("#chat_input")
 	var sccTrace = $("#scc_log")
 	var adbLog = $("#adb_log")
 	var sccLines = []
@@ -30,7 +33,6 @@ $(document).ready(function () {
 	var isIGNconnected = true
 	var isWDconnected = false
 	var isOPT2connected = false
-	var isSet = true
 	var setPwrBtn = $("#set_voltage_btn")
 	document.getElementById("acc_btn").style.backgroundColor = "green"
 	document.getElementById("ign_btn").style.backgroundColor = "green"
@@ -43,17 +45,21 @@ $(document).ready(function () {
 		serverStatus.text("Disconnected")
 	})
 	socket.on("appContent", function (content) {
-		$("#output").append("<div>" + content + "</div>")
+		var encodedStr = encodeURIComponent(content)
+		$("#output").append("<div>" + encodedStr + "</div>")
 	})
 
 	socket.on("message", function (message) {
 		console.log("message from ttfis", message)
-		$("#scc_log").append("<div> " + message + "\n \r" + "</div>")
+		$("#scc_log").append(
+			"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
+		)
 		document.getElementById("scc_log").scrollTop =
 			document.getElementById("scc_log").scrollHeight
 	})
+	socket.on("chat_message", function (message) {})
 	socket.on("status", function (status_) {
-		status.text(status_)
+		status.text("\n\r" + status_)
 	})
 	for (var i = 0; i < enventBtn.length; i++) {
 		if (i < 2)
@@ -68,11 +74,12 @@ $(document).ready(function () {
 		curValue.text(data["current"] + " A")
 	})
 
-	socket.on("ret", function (data) {
-		isSet = data
+	socket.on("return_from_arduino", function (data) {
+		setPropertyForElement(data)
 	})
+
 	$("#power_source").click(function () {
-		if (isPwrSourceConnected == false) socket.emit("turnPwrSource", true)
+		if (isPwrSourceConnected != true) socket.emit("resetpowersource")
 	})
 	socket.on("powersourceStatus", function (data) {
 		isPwrSourceConnected = data
@@ -142,7 +149,7 @@ $(document).ready(function () {
 		let baseCommand = nameList[0]
 		let latestName = nameList.at(-1).trim()
 		let pos = nameList.length
-		return [baseCommand.toUpperCase(), latestName, pos]
+		return [baseCommand, latestName, pos]
 	}
 
 	async function doAutoComplete(event) {
@@ -174,16 +181,46 @@ $(document).ready(function () {
 			inSelection = false
 			state = 0
 		}
-
 		if (13 == event.keyCode) {
 			socket.emit("sccCommand", sccCommandStr)
+			lastcommandStr.push(sccCommandStr)
 			sccTrace.append(sccCommandStr + "\n")
 			sccLines = ""
 			sccCommandStr = ""
 			command_entry.val("")
+			counterCommand = 0
+		}
+		if (38 == event.keyCode) {
+			if (lastcommandStr.length > counterCommand) counterCommand += 1
+			else counterCommand = 0
+			command_entry.val(lastcommandStr[counterCommand])
+		}
+		if (40 == event.keyCode) {
+			if (lastcommandStr.length > counterCommand) counterCommand -= 1
+			else counterCommand = lastcommandStr.length
+			command_entry.val(lastcommandStr[counterCommand < 0 ? 0 : counterCommand])
 		}
 	}
-
+	$("#chat_input").on("keydown", function (event) {
+		if (13 == event.keyCode) {
+			let message = chat_input.val()
+			console.log(message)
+			if (message === "clear" || message == "cls") {
+				$("#chatbox").empty()
+				chat_input.val("")
+			} else {
+				socket.emit("chat_message", chat_input.val())
+				$("#chatbox").append(
+					"<div>" +
+						$("<div/>")
+							.text("You: " + message)
+							.html() +
+						"</div>",
+				)
+				chat_input.val("")
+			}
+		}
+	})
 	let sccCommandStr = ""
 	$("#command_entry").on("input", function () {
 		sccCommandStr = $(this).val()
@@ -236,48 +273,50 @@ $(document).ready(function () {
 	})
 	accBtn.click(function () {
 		isACCconnected = !isACCconnected
-		console.log("accBtn click", isACCconnected, isSet)
-		setPropertyForElement("ACC", "acc_btn", ["green", "red"], isACCconnected)
+		console.log("accBtn click", isACCconnected)
+		socket.emit(
+			"request_to_arduino",
+			(data = { device: "acc_btn", is_connected: isACCconnected }),
+		)
 	})
 	ignBtn.click(function () {
-		console.log("ignBtn click")
 		isIGNconnected = !isIGNconnected
-
-		setPropertyForElement("IGN", "ign_btn", ["green", "red"], isIGNconnected)
+		console.log("ignBtn click", isIGNconnected)
+		socket.emit(
+			"request_to_arduino",
+			(data = { device: "ign_btn", is_connected: isIGNconnected }),
+		)
 	})
 	wdBtn.click(function () {
-		console.log("wdBtn click", isWDconnected, isSet)
 		isWDconnected = !isWDconnected
-		setPropertyForElement("WD", "wd_btn", ["green", "red"], isWDconnected)
+		console.log("wdBtn click", isWDconnected)
+		socket.emit(
+			"request_to_arduino",
+			(data = { device: "wd_btn", is_connected: isWDconnected }),
+		)
 	})
 	opt2Btn.click(function () {
-		console.log("opt2Btn click")
 		isOPT2connected = !isOPT2connected
-		setPropertyForElement("OPT2", "opt2_btn", ["green", "red"], isOPT2connected)
+		console.log("opt2Btn click", isOPT2connected)
+		socket.emit(
+			"request_to_arduino",
+			(data = { device: "opt2_btn", is_connected: isOPT2connected }),
+		)
 	})
 
-	setPropertyForElement = (onEvent, element, backgroundColor, condition) => {
-		console.log(element)
-
-		socket.emit(onEvent, (data = condition))
-		if (condition == true) {
-			if (isSet == true) {
-				document.getElementById(element).style.backgroundColor =
-					backgroundColor[0]
-			} else {
-				document.getElementById(element).style.backgroundColor =
-					backgroundColor[1]
-			}
+	setPropertyForElement = (data) => {
+		var device = data.device
+		var isSet = data.resp
+		console.log("data", data, device)
+		if (isSet) {
+			console.log("green")
+			document.getElementById(device).style.backgroundColor = "green"
 		} else {
-			if (isSet == true) {
-				document.getElementById(element).style.backgroundColor =
-					backgroundColor[1]
-			} else {
-				document.getElementById(element).style.backgroundColor =
-					backgroundColor[0]
-			}
+			console.log("red")
+			document.getElementById(device).style.backgroundColor = "red"
 		}
 	}
+
 	$("#flash_btn").click(function () {
 		console.log("flash click")
 		var file_data = $("#file-dnl-input").prop("files")[0]

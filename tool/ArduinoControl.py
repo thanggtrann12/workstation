@@ -1,16 +1,17 @@
 from enum import Enum
 import serial
+import time
 
 
 class Command(Enum):
-    ACC_ON = 1
-    ACC_OFF = 2
-    IGN_ON = 3
-    IGN_OFF = 4
-    OPT2_ON = 5
-    OPT2_OFF = 6
-    WD_ON = 7
-    WD_OFF = 8
+    ACC = 1
+    IGN = 2
+    OPT2 = 3
+    WD = 4
+
+
+DEVICE_OFF = 1
+DEVICE_ON = 0
 
 
 class Arduino:
@@ -18,48 +19,44 @@ class Arduino:
         self.port = port
         self.baud_rate = baud_rate
         self.ser = serial.Serial(self.port, self.baud_rate)
+        time.sleep(1)  # make sure init state finish at arduino
 
-    def send_command(self, command):
-        print("call sendcommand")
+    def send_command(self, command, state):
         try:
             if not self.ser:
                 print("Serial not connected.")
-                return False
-            print(f"command: {command.value}")
-            self.ser.write((str(command.value) + "\n").encode())
-            print(f"{command.name} command sent")
-            response = self.ser.readline().strip()
-            if str(command.value) + " executed" in response.decode():
-                print(f"Response: {response.decode()}")
-                return True
-            if str(command.value) + " unexecuted" in response.decode():
-                print(f"Response: {response.decode()}")
-                return False
+                return None
+            self.ser.flush()
+            response = ""
+            self.ser.write((str(command.value) + str(state) + "\n").encode())
+            # print(f"{command.name} command sent " +
+            #       (str(command.value) + str(state)))
+            response = self.ser.readline().strip().decode()
+            if response is not None:
+                # print(f"{command.value}  :   {response}") uncomment if debuging
+                return response
 
         except:
-            return False
+            return None
 
     def close(self):
         if self.ser:
             self.ser.close()
 
 
-# arduino = Arduino(port="COM4")
-# arduino.send_command(Command.ACC_ON)
 # if __name__ == "__main__":
-#     arduino = Arduino(port="COM4")
-
+#     arduino = Arduino(port="COM23")
+#     time.sleep(1)
 #     if arduino is not None:
 #         print("Arduino connected.")
 #         while True:
 #             try:
-#                 command = int(input("Enter a command (1-8): "))
-#                 if command in range(1, 9):
-#                     arduino.send_command(Command.ACC_ON)
-#                     print(Command.ACC_ON)
-#                 else:
-#                     print("Invalid input.")
-#             except ValueError:
-#                 print("Invalid input. Please enter a number.")
+#                 cmd = int(input("1-8: "))
+#                 device, resp = arduino.send_command(Command.ACC, DEVICE_OFF)
+#                 print(Command.ACC, "devie ->  ",
+#                       device, "resp ->  ", resp)
+
+#             except Exception as e:
+#                 print(e)
 #     else:
 #         print("Failed to connect to Arduino.")

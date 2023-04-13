@@ -1,26 +1,30 @@
 html,
 body {
+	zoom: 70%;
 	margin: 0;
 	padding: 0;
 	height: 100vh;
+	overflow: hidden;
 }
 
 header {
-	height: 5%;
+	height: 7%;
 	background-color: #0074d9;
 	color: white;
 	text-align: center;
 	padding: 20px;
 }
-
+#status {
+	display: block;
+}
 main {
-	height: calc(95% - 50px);
-
+	height: calc(90%);
 	display: flex;
 }
 
 .left-column {
 	width: 15%;
+	height: 100%;
 	background-color: #aaaaaa;
 	color: white;
 	text-align: center;
@@ -39,27 +43,24 @@ main {
 
 .block-2 {
 	flex-grow: 0.1;
+	height: fit-content;
 	padding: 20px 20px;
 	background-color: lightblue;
 }
 
 .block-3 {
-	flex-grow: 0.7;
-	padding: 40px 20px;
+	flex-grow: 0.5;
+	height: fit-content;
+	padding: 20px 20px;
 	background-color: lightblue;
 }
-.row-1 {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 10px;
-}
+
 .block-1 .row-1 {
-	height: 25%;
+	height: 17%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: calc(40% - 25%);
+	margin-top: 10px;
 }
 
 .input-column {
@@ -93,11 +94,6 @@ button {
 button:hover {
 	background-color: #3e8e41;
 }
-.row-2 {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 10px;
-}
 
 .button-column {
 	width: 48%;
@@ -117,14 +113,40 @@ button {
 button:hover {
 	background-color: #3e8e41;
 }
-
+.row-1 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.row-2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.row-3 {
+	display: grid;
+	margin-top: calc(5%);
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+	margin-bottom: 10px;
+}
+.row-4 {
+	display: grid;
+	margin-top: calc(20%);
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+	margin-bottom: 10px;
+}
 .right-column {
 	width: 80%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 .top-right {
-	height: 90%;
+	height: 100%;
 	background-color: #dddddd;
 	padding: 20px;
 	border: black 5px solid;
@@ -134,43 +156,11 @@ button:hover {
 	font-size: large;
 	overflow: auto;
 }
-
-/* Thiết lập layout cho phần tử top-right khi có class split-columns */
-.top-right.split-columns {
-	display: flex;
-}
-
-/* Thiết lập layout cho 2 cột con khi phần tử top-right có class split-columns */
-.top-right.split-columns > * {
-	flex-basis: 50%;
-}
-.split-columns {
-	display: flex;
-	flex-direction: row;
-}
-
-.split-columns > * {
-	flex-basis: 50%;
-}
 .bottom-right {
 	height: 5%;
 	background-color: #aaaaaa;
 	padding: 20px;
 	width: 100%;
-}
-.row-3 {
-	display: grid;
-	margin-top: calc(40% - 20%);
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-	margin-bottom: 10px;
-}
-.row-4 {
-	display: grid;
-	margin-top: calc(40% - 20%);
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-	margin-bottom: 10px;
 }
 
 .button-column {
@@ -189,7 +179,7 @@ button {
 }
 
 h3 {
-	width: 80%;
+	width: 70%;
 	padding: 8px;
 	font-size: 16px;
 	color: black;
@@ -206,23 +196,6 @@ button:hover {
 	height: 85%;
 	margin-right: 50px;
 	width: 99%;
-}
-
-.popup {
-	visibility: hidden;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 200px;
-	background-color: white;
-	border: 1px solid black;
-	z-index: 9999;
-}
-.popup-content {
-	padding: 20px;
-	text-align: center;
 }
 
 #terminal {
@@ -250,4 +223,17 @@ button:hover {
 	border: none;
 	color: white;
 	outline: none;
+}
+.chat_box {
+	font-size: 16px;
+	text-align: left;
+	overflow: auto;
+	width: 300px;
+	height: 350px;
+	background-color: white;
+	border: black 2px solid;
+	font-family: Arial, sans-serif;
+	color: black;
+	margin-bottom: 10px;
+	margin-top: 1px;
 }

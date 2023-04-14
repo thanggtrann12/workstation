@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 from threading import Thread
 import json
@@ -16,6 +16,8 @@ from tool.ToellnerDriver import ToellnerDriver
 from config import *
 ALLOWED_FILE = ["dnl", "trc"]
 
+user_name = ""
+logined = False
 logging.basicConfig(filename='log.pro', level=logging.DEBUG,
                     format=('%(filename)s: '
                             '%(levelname)s: '
@@ -26,6 +28,7 @@ logging.basicConfig(filename='log.pro', level=logging.DEBUG,
 eventlet.monkey_patch()
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = binary_path
+app.secret_key = 'your_secret_key'
 socketio = SocketIO(app)
 
 powersourceStatus = False
@@ -34,6 +37,10 @@ arduinoConnection = None
 cmd = ""
 status = "Ready"
 mess = ""
+e_name = ""
+e_id = ""
+isSetPwr = False
+trace_file_name = ""
 
 
 def upload_scc_trace(trace):
@@ -46,6 +53,7 @@ def broadcast_info():
         # socketio.emit("message", "assmessage")
         if sourceConnection == None:
             powersourceStatus = False
+            status = "Power OFF"
             logging.debug("Power OFF")
         else:
             voltage = str(float(sourceConnection.GetVoltage().decode()))
@@ -55,7 +63,9 @@ def broadcast_info():
                 "current": current
             },
                 broadcast=True)
-            powersourceStatus = True
+            if isSetPwr == False:
+                powersourceStatus = True
+            status = "Power ON"
             logging.debug(
                 "Power ON, voltage: {}, current: {}".format(voltage, current))
         socketio.emit("powersourceStatus",
@@ -74,7 +84,7 @@ def get_error_FlashGui(filename):
                 f.seek(last_pos)
             else:
                 last_pos = f.tell()
-                if "Error" in line:  # in case FlashGui.exe hang
+                if "Error: No valid Com Port selected -> Error !!" in line:  # in case FlashGui.exe hang
                     os.system("taskkill /f /im  FlashGui.exe")
                     socketio.emit("status", line)
                     logging.error("Flashing failed!! Error occurred")
@@ -98,6 +108,7 @@ def upload_trace(file_name):
 
 def flash(file_name):
     global socketio
+    print("going to flash")
     socketio.emit("status", "Start FLashGui")
     cmd = 'FlashGUI.exe /i Quad-G3G-RS232-DebugAdapter C - FT5W10RX,1000000,E,8,1 " /f{}/{} /b4038 /au'.format(
         binary_path, file_name)
@@ -105,11 +116,6 @@ def flash(file_name):
     socketio.emit("status", "Flashing...")
     logging.info("Start flashing...")
     get_error_FlashGui("logfile.txt")
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 
 def process_instruction_file(file_path):
@@ -120,20 +126,70 @@ def process_instruction_file(file_path):
     return lkup_table
 
 
+# @app.route('/', methods=['GET', 'POST'])
+# def login():
+#     global e_name, logined, e_id
+#     if request.method == 'POST':
+#         _e_id = request.form['e_id']
+#         _e_name = request.form['e_name']
+#         if logined and _e_id != e_id:
+#             return render_template('login.html', error=f"Server is current log-in by {e_name}")
+#         # Kiểm tra thông tin đăng nhập của người dùng và thiết lập session nếu đăng nhập thành công
+#         if _e_id == e_id:
+#             return redirect(url_for('index'))
+#         elif _e_id == 'admin' and e_id == "":
+#             session['e_id'] = _e_id
+#             e_id = _e_id
+#             e_name = _e_name
+#             logined = True
+#             return redirect(url_for('index'))
+#         else:
+#             return render_template('login.html', error='Invalid e_name')
+#     else:
+#         return render_template('login.html')
+
+
+# @socketio.on("usr_name")
+# def usrname(user):
+#     print("user name :", user)
+
+
+# @app.route('/index')
+# def index():
+#     global e_name, e_id
+#     if session['e_id'] == e_id:
+#         return render_template('index.html', username=e_name)
+#     else:
+
+#         return redirect(url_for('login'))
+
 @app.route('/')
-def home():
-    return render_template("index.html")
+def index():
+    return render_template('index.html')
+
+
+@app.route('/logout')
+def logout():
+    global logined, e_name, e_id
+    logined = False
+    e_name = ""
+    e_id = ""
+    session['e_name'] = None
+    session['e_id'] = None
+    return redirect(url_for('login'))
 
 
 @app.route("/GetCommandSet/", methods=["GET"])
 def GetCommandSet():
-    global _setting
-    traceFilePath = "txt.trc"
+    global trace_path, trace_file_name
+    traceFilePath = trace_path + trace_file_name
+    print(traceFilePath)
     return process_instruction_file(traceFilePath)
 
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    global trace_file_name
     try:
         file_dnl = request.files['file-dnl']
         filename_dnl = file_dnl.filename
@@ -151,12 +207,20 @@ def upload_file():
         if ALLOWED_FILE[1] in filename_trc:
             file_trc.save(os.path.join(trace_path, filename_trc))
             logging.info("Upload Trace with file: {}".format(filename_trc))
+            trace_file_name = filename_trc
+
             upload_trace(filename_trc)
         else:
             logging.error("File not found: {}".format(filename_trc))
     except:
         pass
     return ""
+
+
+@socketio.on("user")
+def user_require(user):
+    user_name = user
+    print(user_name)
 
 
 @socketio.on("app_input")
@@ -184,10 +248,11 @@ def message_(message):
     socketio.emit("message", data=message, statusbroadcast=True)
 
 
-def sync_data_from_arduino(device, resp):
-    logging.info("Set {} result {}".format(device, resp))
+def sync_data_from_arduino(pin, state, label):
+    logging.info("Set {} result {}".format(label, state))
+    print("Set {} result {}".format(label, state))
     socketio.emit("return_from_arduino", data={
-                  "device": device, "resp": True if resp == "1" else False}, broadcast=True)
+                  "pin": pin, "state": True if state else False, "label": label}, broadcast=True)
 
 
 @socketio.on("chat_message")
@@ -197,56 +262,66 @@ def chat(message):
     mess = message
 
 
-def get_mess():
-    global mess
-    return mess
-
-
 @socketio.on('request_to_arduino')
 def handle_request(data):
-    device = data['device']
-    is_set = data['is_connected']
+    pin = data['pin']
+    state = data['state']
+    label = data['label']
     time.sleep(.1)
     if arduinoConnection:
-        if device == 'acc_btn':
-            resp = arduinoConnection.send_command(
-                Command.ACC, DEVICE_ON if is_set else DEVICE_OFF)
-        elif device == 'ign_btn':
-            resp = arduinoConnection.send_command(
-                Command.IGN, DEVICE_ON if is_set else DEVICE_OFF)
-        elif device == 'wd_btn':
-            resp = arduinoConnection.send_command(
-                Command.WD, DEVICE_ON if is_set else DEVICE_OFF)
-        elif device == 'opt2_btn':
-            resp = arduinoConnection.send_command(
-                Command.OPT2, DEVICE_ON if is_set else DEVICE_OFF)
-        sync_data_from_arduino(device, resp)
+        if pin == 'acc_button':
+            _ = arduinoConnection.send_command(
+                Command.ACC, DEVICE_ON if state else DEVICE_OFF)
+        elif pin == 'ign_button':
+            _ = arduinoConnection.send_command(
+                Command.IGN, DEVICE_ON if state else DEVICE_OFF)
+        elif pin == 'wd_off_button':
+            _ = arduinoConnection.send_command(
+                Command.WD, DEVICE_ON if state else DEVICE_OFF)
+        elif pin == 'opt2_button':
+            _ = arduinoConnection.send_command(
+                Command.OPT2, DEVICE_ON if state else DEVICE_OFF)
+        sync_data_from_arduino(pin, state, label)
 
 
-@socketio.on("resetpowersource")
-def setPowerSource():
-    global powersourceStatus
-    if sourceConnection:
-        print("reset source ")
-        socketio.emit("status", "Reset power source")
-        socketio.emit("powervalue", {
-            "voltage": "0",
-            "current": "0"
-        },
-            broadcast=True)
-        time.sleep(1)
-        socketio.emit("powervalue", {
-            "voltage": volNormal,
-            "current": "0"
-        },
-            broadcast=True)
-    socketio.emit("status", "Ready")
+@socketio.on("set_pin")
+def set_hardware_pin(data):
+    print(data)
+
+
+@socketio.on("power_state")
+def onpowerstate(state):
+
+    print("power_state", state)
+    global sourceConnection, isSetPwr
+    isSetPwr = False
+    if sourceConnection != None:
+        if state:
+            socketio.emit("powervalue", {
+                "voltage": "12",
+                "current": "0"
+            },
+                broadcast=True)
+            socketio.emit("powersourceStatus", state)
+        else:
+            print('set pwer off')
+            isSetPwr = True
+            socketio.emit("powervalue", {
+                "voltage": "0",
+                "current": "0"
+            },
+                broadcast=True)
+            socketio.emit("powersourceStatus", state)
 
 
 @socketio.on("sccCommand")
 def sccCommand(cmd):
-    print(type(cmd))
     ttfisClient.Cmd(cmd)
+
+
+@socketio.on("powervalue")
+def powervalue(value):
+    socketio.emit("powervalue", value)
 
 
 @ socketio.on('setvoltagValue')

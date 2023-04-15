@@ -34,7 +34,7 @@ class Arduino:
             response = self.ser.readline().strip().decode()
             if response is not None:
                 # print(f"{command.value}  :   {response}") uncomment if debuging
-                return response
+                return True
 
         except:
             return None

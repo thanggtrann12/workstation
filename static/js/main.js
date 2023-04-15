@@ -1,14 +1,4 @@
-;(function ($) {
-	"use strict"
-	// begin of file
-	var spinner = function () {
-		setTimeout(function () {
-			if ($("#spinner").length > 0) {
-				$("#spinner").removeClass("show")
-			}
-		}, 1)
-	}
-	spinner()
+$(document).ready(function () {
 	loadParaTable()
 	// config socket io
 	var socket = io.connect("http://" + document.domain + ":" + location.port)
@@ -19,48 +9,52 @@
 	let suggestionList = []
 	let sccLines = ""
 	let lastcommandStr = []
-	let sccCommandStr = ""
-	let dataDoautoComplete = []
 	let counterCommand = 0
 	let inSelection = false
+	let isLock = false
 	let commandTable = {
 		root: new Trie({}),
 		enum: {},
 	}
+	let loggedInUsers = []
 	/* end config for autocomplete */
 
 	/* auto complete beign*/
-	async function loadParaTable() {
-		dataDoautoComplete = await $.get(
-			"http://" + location.host + "/GetCommandSet/",
-		)
-		// Insert base command
-		for (let cmd in dataDoautoComplete["root"]) {
-			commandTable["root"].insert(cmd)
-		}
-		console.log(dataDoautoComplete)
-		// Insert enum name value
-		for (let name in dataDoautoComplete["enum"]) {
-			commandTable["enum"][name] = new Trie({})
-			for (let value of dataDoautoComplete["enum"][name]) {
-				commandTable["enum"][name].insert(value)
-			}
-		}
-	}
 	function updateLastCommand(command) {
 		let commandList = sccCommandStr.match(sepRegex)
-		console.log("commandList", commandList)
 		commandList.pop()
 		commandList.push(command)
 		commandList = commandList.map((ele) => ele.trim())
+		console.log("commandList", commandList)
 		sccCommandStr = commandList.join(" ")
-		sccLines += sccCommandStr + "\n"
-		$("#command_entry").val(sccCommandStr)
+		$("#command_entry").val(sccCommandStr.split("\n"))
+		sccLines += sccCommandStr
 		console.log("sccLines", sccLines)
 	}
 
-	paraTable = dataDoautoComplete["root"]
+	async function loadParaTable() {
+		let data = await $.get("http://" + location.host + "/GetCommandSet/")
+		// Insert base command
+		for (let cmd in data["root"]) {
+			commandTable["root"].insert(cmd)
+		}
 
+		// Insert enum name value
+		for (let name in data["enum"]) {
+			commandTable["enum"][name] = new Trie({})
+			for (let value of data["enum"][name]) {
+				commandTable["enum"][name].insert(value)
+			}
+		}
+		paraTable = data["root"]
+	}
+	function parseInput() {
+		let nameList = sccCommandStr.match(sepRegex)
+		let baseCommand = nameList[0]
+		let latestName = nameList.at(-1).trim()
+		let pos = nameList.length
+		return [baseCommand, latestName, pos]
+	}
 	async function doAutoComplete(event) {
 		console.log(event.keyCode)
 		if (9 == event.keyCode) {
@@ -68,12 +62,9 @@
 			// get suggestion
 			if (!inSelection) {
 				suggestionList = []
-				console.log("get suggestion")
 				let [baseCommand, name, pos] = parseInput()
-				console.log("parseInput", [baseCommand, name, pos])
 				if (pos === 1) {
 					suggestionList = commandTable["root"].find(name)
-					console.log("suggestionList ", suggestionList)
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
@@ -90,14 +81,13 @@
 				state = (state + 1) % suggestionList.length
 			}
 		} else {
-			suggestionList = []
 			inSelection = false
 			state = 0
 		}
 		if (13 == event.keyCode) {
 			socket.emit("sccCommand", sccCommandStr)
 			lastcommandStr.push(sccCommandStr)
-			put_trace_to_log_window(sccCommandStr + "\n")
+			put_trace_to_log_window(sccCommandStr)
 			sccLines = ""
 			sccCommandStr = ""
 			$("#command_entry").val("")
@@ -116,16 +106,14 @@
 			)
 		}
 	}
+	let sccCommandStr = ""
+	$("#command_entry").on("input", function () {
+		sccCommandStr = $(this).val()
+	})
 	$("#command_entry").on("keydown", function (event) {
 		doAutoComplete(event)
 	})
-	function parseInput() {
-		let nameList = sccCommandStr.match(sepRegex)
-		let baseCommand = nameList[0]
-		let latestName = nameList.at(-1).trim()
-		let pos = nameList.length
-		return [baseCommand, latestName, pos]
-	}
+
 	// Update parameter table
 
 	/* auto complete end*/
@@ -187,6 +175,7 @@
 	var isWD_on = false
 	$("#wd_off_button").click(function () {
 		isWD_on = !isWD_on
+		console.log("wd_off_button")
 		socket.emit("request_to_arduino", {
 			pin: "wd_off_button",
 			state: isWD_on,
@@ -224,6 +213,7 @@
 	/* hardware stub end */
 	/* flash and trace upload  begin*/
 	$("#flash_button").click(function () {
+		console.log("flash...")
 		var file_data = $("#file-dnl-input").prop("files")[0]
 		var form_data = new FormData()
 		form_data.append("file-dnl", file_data)
@@ -238,6 +228,7 @@
 	})
 
 	$("#trace_button").click(function () {
+		console.log("trace ...")
 		var file_trc_data = $("#file-trc-input").prop("files")[0]
 		var form_data = new FormData()
 		form_data.append("file-trc", file_trc_data)
@@ -255,11 +246,22 @@
 
 	/* log stub begin */
 	function put_trace_to_log_window(message) {
-		$("#scc_trace").append(
-			"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
-		)
-		document.getElementById("scc_trace").scrollTop =
-			document.getElementById("scc_trace").scrollHeight
+		if (isPausing) {
+			// do not thing
+		} else {
+			$("#scc_trace").append(
+				"<div>" + $("<div/>").text(message).html() + "</div>",
+			)
+			document.getElementById("scc_trace").scrollTop =
+				document.getElementById("scc_trace").scrollHeight
+			if (isRecording) {
+				recordedText += message
+				console.log("record", recordedText)
+			} else {
+				recordedText = ""
+				console.log("not record", recordedText)
+			}
+		}
 	}
 
 	$("#clear_scc").click(function () {
@@ -268,12 +270,40 @@
 
 	$("#export_scc").click(function () {
 		{
-			const text = $("#scc_log").text()
+			const text = $("#scc_trace").text()
 			let blob = new Blob([text], {
 				type: "text/plain",
 			})
 			let filename = `${new Date().toISOString()}_SCC_Log.pro`
 			saveAs(blob, filename)
+		}
+	})
+	$("#log_out_button").click(function () {
+		console.log("loggedInUsers[0]", loggedInUsers[0])
+		removeLoggedInUser(loggedInUsers[0])
+		window.location.href = "/logout"
+	})
+	var isRecording = false
+	var recordedText = ""
+
+	$("#record_scc").change(function () {
+		if (this.checked) {
+			isRecording = true
+		} else {
+			isRecording = false
+			var fileName = "recorded_text.txt"
+			var blob = new Blob([recordedText], {
+				type: "text/plain;charset=utf-8",
+			})
+			saveAs(blob, fileName)
+		}
+	})
+	var isPausing = false
+	$("#pause_scc").change(function () {
+		if (this.checked) {
+			isPausing = true
+		} else {
+			isPausing = false
 		}
 	})
 	/* log stub end */
@@ -285,7 +315,7 @@
 	socket.on("disconnect", function () {
 		console.log("disconnect")
 	})
-	socket.on("powersourceStatus", function (status) {
+	socket.on("is_power_turn_on", function (status) {
 		power_state = status
 		if (power_state == true) {
 			$("#power_button").css("color", "green")
@@ -316,11 +346,22 @@
 		$("status").text(status)
 	})
 
-	socket.on("powervalue", function (data) {
-		$("#current_voltage").text(data["voltage"])
-		$("#current_ampe").text(data["current"])
+	socket.on("power_source_data", function (data) {
+		$("#current_voltage").text(data["voltage_returned"])
+		$("#current_ampe").text(data["current_returned"])
 	})
-	/* socket event handling end */
 
-	// end of file
-})(jQuery)
+	socket.on("status", function (status) {
+		$("#status").text(status)
+	})
+	socket.on("user_loggined", function (user_loggined) {
+		loggedInUsers = user_loggined
+	})
+
+	/* handling user login end*/
+	$("#lock_button").click(function () {
+		isLock = !isLock
+		socket.emit("lock_status", isLock)
+		console.log("current ->>", current_)
+	})
+})

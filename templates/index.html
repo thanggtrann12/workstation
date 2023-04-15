@@ -38,9 +38,10 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                  <h3 class="text-primary"><i class="fa fa-user-edit me-2" id = "status"></i>AutoSar</h3>
-                </a>
+                <a class="navbar-brand mx-4 mb-3" href="#">
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>AutoSar</h3>
+                    <i class="fa fa-circle text-success">&nbsp;&nbsp;<span class="text-success" id="status">Ready</span></i>
+                  </a>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -51,13 +52,16 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                           <i class="fa fa-user me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">RHN9HC</span>
+                            <span class="d-none d-lg-inline-flex" id="user_name">RHN9HC</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a class="dropdown-item text-center" id="lock_button">Lock</a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Log out</a>
+                            <a id="log_out_button" class="dropdown-item text-center">Log out</a>
                         </div>
+                        
                     </div>
+                    <!-- <button id="add_item_button">Add Item</button> -->
                 </div>
             </nav>
             <!-- Navbar End -->
@@ -76,7 +80,7 @@
                 </div>
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fa fa-dog fa-3x " id="wd_off_button" style="color: red; cursor: pointer;"></i>
+                    <i class="fa fa-walking fa-3x " id="wd_off_button" style="color: red; cursor: pointer;"><span><i class="fa fa-dog "style="color: red; cursor: pointer;"></i> </span></i>
                     <div class="ms-3">
                       <h2 class="mb-0" id="wd_off_label" style="color: red;">WD_OFF</h2>
                     </div>
@@ -190,12 +194,21 @@
                   <div class="col-sm-12 col-xl-6 d-flex flex-column" style="min-height: 65vh;width: 100%;">
                       <div class="bg-secondary rounded p-4" style="min-height: 65vh;border: solid 5px rgb(185, 177, 177);" >
                           <div class="d-flex align-items-center justify-content-between mb-4" >
-                              <h4>TTFis trace</h4>
-                                <h5 id="export_scc" style="cursor: pointer;">Export</h5>
-                                <h5 id="clear_scc" style="cursor: pointer;">Clear</h5>
+                              <h3>TTFis trace</h3>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input fa-3x" type="checkbox" id="record_scc" value="option1">
+                                <h4 id="export_scc" style="cursor: pointer; margin-top: 20px ;">Record</h4>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input fa-3x" type="checkbox" id="pause_scc" value="option1">
+                                <h4 id="export_scc" style="cursor: pointer; margin-top: 20px ;">Pause</h4>
+                              </div>
+                                <h4 id="export_scc" style="cursor: pointer;">Export</h4>
+                                <h4 id="clear_scc" style="cursor: pointer;">Clear</h4>
+
                           </div>
                           <div class="col-sm-11 col-xl-6 d-flex flex-column" style="min-height: 65vh;width: 100%;" >
-                            <div class="rounded p-4" style="min-height: 65vh; max-height: 65vh;border: solid 5px black; overflow: auto; background-color: antiquewhite;" id="scc_trace">
+                            <div class="rounded p-4" style="min-height: 65vh; max-height: 65vh;border: solid 5px black; overflow: auto; background-color: rgb(95, 98, 117); color: white; font-weight: 16px;" id="scc_trace" >
                             </div>
                         </div>
                       </div>
@@ -210,7 +223,7 @@
                 <div class="bg-secondary rounded-top p-3">
                   <div class="row">
                     <div class="col-12">
-                      <textarea class="form-control" style="min-height: 4vh; max-height: 6vh;color: white; font-size: xx-large; " placeholder="Command..." id="command_entry"></textarea>
+                      <textarea class="form-control"rows="1"  style="min-height: 4vh; max-height: 6vh;color: white; font-size: xx-large; overflow: hidden; background-color: rgb(64, 65, 78);" placeholder="Command..." id="command_entry"></textarea>
                     </div>
                   </div>
                 </div>

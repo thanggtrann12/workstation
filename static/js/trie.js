@@ -131,11 +131,4 @@ var trie = new Trie()
 // insert few values
 trie.insert("hello")
 trie.insert("helium")
-
-// check contains method
-console.log(trie.contains("helium")) // true
-console.log(trie.contains("kickass")) // false
-
-// check find method
-console.log(trie.find("hel")) // [ 'helium', 'hello' ]
-console.log(trie.find("hell")) // [ 'hello' ]
+// thanks this fantastic lib

@@ -1,16 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_socketio import SocketIO, emit
 from threading import Thread
-import json
 import time
 import eventlet
 import logging
 import subprocess
 import os
-import psutil
 from InstructionSetProcess import *
 from tool.ArduinoControl import Arduino, Command, DEVICE_OFF, DEVICE_ON
-import keyboard
 from tool.TTFisClient import TTFisClient
 from tool.ToellnerDriver import ToellnerDriver
 from config import *
@@ -182,7 +179,8 @@ def logout():
 @app.route("/GetCommandSet/", methods=["GET"])
 def GetCommandSet():
     global trace_path, trace_file_name
-    traceFilePath = trace_path + trace_file_name
+    trace_file_name = os.listdir(trace_path)
+    traceFilePath = trace_path + trace_file_name[0]
     print(traceFilePath)
     return process_instruction_file(traceFilePath)
 
@@ -342,20 +340,20 @@ def setVolValue(volValue):
 
 if __name__ == '__main__':
 
-    ttfisClient = TTFisClient()
-    ttfisClient.registerUpdateTraceCallback(upload_scc_trace)
-    ttfisClient.Connect(device_name)
+    # ttfisClient = TTFisClient()
+    # ttfisClient.registerUpdateTraceCallback(upload_scc_trace)
+    # ttfisClient.Connect(device_name)
     Thread(target=broadcast_info, args=()).start()
-    sourceConnection = ToellnerDriver(powersource_port, powersource_channel)
+    # sourceConnection = ToellnerDriver(powersource_port, powersource_channel)
 
-    if arduino_port:
-        arduinoConnection = Arduino(arduino_port)
-        logging.debug("Connect to {} : {}".format(
-            arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
+    # if arduino_port:
+    #     arduinoConnection = Arduino(arduino_port)
+    #     logging.debug("Connect to {} : {}".format(
+    #         arduino_port, "SUCCESS" if arduinoConnection is not None else "FAILED"))
     logging.info("Server start!!!")
     socketio.run(app, host='0.0.0.0', port=5000)
 
-    sourceConnection.__del__()
-    arduinoConnection.close()
-    ttfisClient.Quit()
+    # sourceConnection.__del__()
+    # arduinoConnection.close()
+    # ttfisClient.Quit()
     logging.info("Server stop!!!")

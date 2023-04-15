@@ -54,8 +54,8 @@
 		commandList.push(command)
 		commandList = commandList.map((ele) => ele.trim())
 		sccCommandStr = commandList.join(" ")
-		$("#command_entry").val(sccCommandStr)
 		sccLines += sccCommandStr + "\n"
+		$("#command_entry").val(sccCommandStr)
 		console.log("sccLines", sccLines)
 	}
 
@@ -77,7 +77,8 @@
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
-						suggestionList = commandTable["enum"][enumName].find(name)
+						suggestionList =
+							commandTable["enum"][enumName].find(name)
 					}
 				}
 				inSelection = true
@@ -89,6 +90,7 @@
 				state = (state + 1) % suggestionList.length
 			}
 		} else {
+			suggestionList = []
 			inSelection = false
 			state = 0
 		}

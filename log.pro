@@ -22354,3 +22354,5876 @@ socket.py: INFO: send(): 93:	647601c7030743169e5d77b6c0f4f75d: Sending packet ME
 app.py: DEBUG: broadcast_info(): 69:	Power ON, voltage: 12.0, current: 0.56
 server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
 socket.py: INFO: send(): 93:	647601c7030743169e5d77b6c0f4f75d: Sending packet MESSAGE data 2["powersourceStatus",true]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 352:	Server start!!!
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 184, in GetCommandSet
+    return process_instruction_file(traceFilePath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 119, in process_instruction_file
+    cmd, extra_cmd = read_cmd_list(file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\InstructionSetProcess.py", line 8, in read_cmd_list
+    with open(file_path, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'static/uploads/trc/'
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet OPEN data {'sid': '7bb2378966d847998c01a7898ec789e7', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	7bb2378966d847998c01a7898ec789e7: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	7bb2378966d847998c01a7898ec789e7: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	7bb2378966d847998c01a7898ec789e7: Received packet PING data None
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	7bb2378966d847998c01a7898ec789e7: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 352:	Server start!!!
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 184, in GetCommandSet
+    return process_instruction_file(traceFilePath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 119, in process_instruction_file
+    cmd, extra_cmd = read_cmd_list(file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\InstructionSetProcess.py", line 8, in read_cmd_list
+    with open(file_path, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'static/uploads/trc/'
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet OPEN data {'sid': '84c18ae9d1994739ba0c4b5b2d259196', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	84c18ae9d1994739ba0c4b5b2d259196: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	84c18ae9d1994739ba0c4b5b2d259196: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	84c18ae9d1994739ba0c4b5b2d259196: Received packet PING data None
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	84c18ae9d1994739ba0c4b5b2d259196: Received packet PING data None
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	84c18ae9d1994739ba0c4b5b2d259196: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+socket.py: INFO: send(): 93:	98d9489cd55c4532abeb2da01a564238: Sending packet OPEN data {'sid': '98d9489cd55c4532abeb2da01a564238', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	98d9489cd55c4532abeb2da01a564238: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	98d9489cd55c4532abeb2da01a564238: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	98d9489cd55c4532abeb2da01a564238: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	98d9489cd55c4532abeb2da01a564238: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	98d9489cd55c4532abeb2da01a564238: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet OPEN data {'sid': '173d8a5c9db4476a85b704f104190a78', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	173d8a5c9db4476a85b704f104190a78: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	173d8a5c9db4476a85b704f104190a78: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	173d8a5c9db4476a85b704f104190a78: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet OPEN data {'sid': 'ee18146d3811477d894b5270d89b0cd5', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	ee18146d3811477d894b5270d89b0cd5: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	ee18146d3811477d894b5270d89b0cd5: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	ee18146d3811477d894b5270d89b0cd5: Received packet PING data None
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	ee18146d3811477d894b5270d89b0cd5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet OPEN data {'sid': '6581204fb3814ac6a5bb0b8f7ccf9faf', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	6581204fb3814ac6a5bb0b8f7ccf9faf: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	6581204fb3814ac6a5bb0b8f7ccf9faf: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	6581204fb3814ac6a5bb0b8f7ccf9faf: Received packet PING data None
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	6581204fb3814ac6a5bb0b8f7ccf9faf: Received packet PING data None
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	6581204fb3814ac6a5bb0b8f7ccf9faf: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 359:	Server stop!!!
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet OPEN data {'sid': 'c073aece8681492baad7cb71b0007332', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	c073aece8681492baad7cb71b0007332: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	c073aece8681492baad7cb71b0007332: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c073aece8681492baad7cb71b0007332: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c062237bbe3346e19ef57ffeeb396262: Sending packet OPEN data {'sid': 'c062237bbe3346e19ef57ffeeb396262', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	c062237bbe3346e19ef57ffeeb396262: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	c062237bbe3346e19ef57ffeeb396262: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	c062237bbe3346e19ef57ffeeb396262: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+socket.py: INFO: send(): 93:	c0845ae84e0446a4b6d1f18f9861075b: Sending packet OPEN data {'sid': 'c0845ae84e0446a4b6d1f18f9861075b', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	c0845ae84e0446a4b6d1f18f9861075b: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	c0845ae84e0446a4b6d1f18f9861075b: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	c0845ae84e0446a4b6d1f18f9861075b: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c0845ae84e0446a4b6d1f18f9861075b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c0845ae84e0446a4b6d1f18f9861075b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c0845ae84e0446a4b6d1f18f9861075b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet OPEN data {'sid': '607535231c2b4797b9642a03c5c16ef1', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	607535231c2b4797b9642a03c5c16ef1: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	607535231c2b4797b9642a03c5c16ef1: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	607535231c2b4797b9642a03c5c16ef1: Received packet PING data None
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	607535231c2b4797b9642a03c5c16ef1: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+socket.py: INFO: send(): 93:	d0f0506c083a490988bd008566990d70: Sending packet OPEN data {'sid': 'd0f0506c083a490988bd008566990d70', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	d0f0506c083a490988bd008566990d70: Sending packet MESSAGE data 0
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d0f0506c083a490988bd008566990d70: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: handle_get_request(): 105:	d0f0506c083a490988bd008566990d70: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	d0f0506c083a490988bd008566990d70: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d0f0506c083a490988bd008566990d70: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	cb2a07ec4da54bdb83f6bb00cebfe9f1: Sending packet OPEN data {'sid': 'cb2a07ec4da54bdb83f6bb00cebfe9f1', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	cb2a07ec4da54bdb83f6bb00cebfe9f1: Sending packet MESSAGE data 0
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+socket.py: INFO: handle_get_request(): 105:	cb2a07ec4da54bdb83f6bb00cebfe9f1: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	cb2a07ec4da54bdb83f6bb00cebfe9f1: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	cb2a07ec4da54bdb83f6bb00cebfe9f1: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet OPEN data {'sid': '67812eda765440199a66ac722a1f4bbb', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 0
+app.py: ERROR: log_exception(): 1457:	Exception on /GetCommandSet/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thang\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\thang\Desktop\workstation\app.py", line 183, in GetCommandSet
+    traceFilePath = trace_path + trace_file_name
+                    ~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+socket.py: INFO: handle_get_request(): 105:	67812eda765440199a66ac722a1f4bbb: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	67812eda765440199a66ac722a1f4bbb: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	67812eda765440199a66ac722a1f4bbb: Received packet PING data None
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	67812eda765440199a66ac722a1f4bbb: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+socket.py: INFO: send(): 93:	57c94c80fb7544e5bf3a94de4c454a57: Sending packet OPEN data {'sid': '57c94c80fb7544e5bf3a94de4c454a57', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	57c94c80fb7544e5bf3a94de4c454a57: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	57c94c80fb7544e5bf3a94de4c454a57: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	57c94c80fb7544e5bf3a94de4c454a57: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	57c94c80fb7544e5bf3a94de4c454a57: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	57c94c80fb7544e5bf3a94de4c454a57: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet OPEN data {'sid': '4e91923043c640b6a8955f162e576a1b', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	4e91923043c640b6a8955f162e576a1b: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	4e91923043c640b6a8955f162e576a1b: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	4e91923043c640b6a8955f162e576a1b: Received packet PING data None
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	4e91923043c640b6a8955f162e576a1b: Received packet PING data None
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	4e91923043c640b6a8955f162e576a1b: Received packet PING data None
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	4e91923043c640b6a8955f162e576a1b: Received packet PING data None
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	4e91923043c640b6a8955f162e576a1b: Received packet PING data None
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	4e91923043c640b6a8955f162e576a1b: Received packet PING data None
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	4e91923043c640b6a8955f162e576a1b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet OPEN data {'sid': '35c549a91be64a448b97daa3d52c31c6', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	35c549a91be64a448b97daa3d52c31c6: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	35c549a91be64a448b97daa3d52c31c6: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	35c549a91be64a448b97daa3d52c31c6: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet OPEN data {'sid': 'd5558c870eac492e95f72fb84c2e5548', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	d5558c870eac492e95f72fb84c2e5548: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	d5558c870eac492e95f72fb84c2e5548: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	d5558c870eac492e95f72fb84c2e5548: Received packet PING data None
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d5558c870eac492e95f72fb84c2e5548: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet OPEN data {'sid': '346fdccdccad49878f1f1e7544b20c0a', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	346fdccdccad49878f1f1e7544b20c0a: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	346fdccdccad49878f1f1e7544b20c0a: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	346fdccdccad49878f1f1e7544b20c0a: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet OPEN data {'sid': '51595799955b4b20bdb24b89bed0d27b', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	51595799955b4b20bdb24b89bed0d27b: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	51595799955b4b20bdb24b89bed0d27b: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	51595799955b4b20bdb24b89bed0d27b: Received packet PING data None
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	51595799955b4b20bdb24b89bed0d27b: Received packet PING data None
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	51595799955b4b20bdb24b89bed0d27b: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet OPEN data {'sid': 'c25ac4914ea04a25a5ce461e0bfa7666', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	c25ac4914ea04a25a5ce461e0bfa7666: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	c25ac4914ea04a25a5ce461e0bfa7666: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	c25ac4914ea04a25a5ce461e0bfa7666: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet OPEN data {'sid': '38a0ad4a2d944335b535b715da3771bd', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	38a0ad4a2d944335b535b715da3771bd: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	38a0ad4a2d944335b535b715da3771bd: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	38a0ad4a2d944335b535b715da3771bd: Received packet PING data None
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	38a0ad4a2d944335b535b715da3771bd: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet OPEN data {'sid': 'd4c945276c8f4d688e1bb5803fa8e65f', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	d4c945276c8f4d688e1bb5803fa8e65f: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	d4c945276c8f4d688e1bb5803fa8e65f: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	d4c945276c8f4d688e1bb5803fa8e65f: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet OPEN data {'sid': '92449554613d4abcb7e3fccfc3155d4e', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	92449554613d4abcb7e3fccfc3155d4e: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	92449554613d4abcb7e3fccfc3155d4e: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	92449554613d4abcb7e3fccfc3155d4e: Received packet PING data None
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	92449554613d4abcb7e3fccfc3155d4e: Received packet PING data None
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	92449554613d4abcb7e3fccfc3155d4e: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet OPEN data {'sid': '3be54899243542f3906f1557efa3ef8d', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	3be54899243542f3906f1557efa3ef8d: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	3be54899243542f3906f1557efa3ef8d: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	3be54899243542f3906f1557efa3ef8d: Received packet PING data None
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	3be54899243542f3906f1557efa3ef8d: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet OPEN data {'sid': 'be76acf41b524eee97f15eedb38e99d3', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 0
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: handle_get_request(): 105:	be76acf41b524eee97f15eedb38e99d3: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	be76acf41b524eee97f15eedb38e99d3: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	be76acf41b524eee97f15eedb38e99d3: Received packet PING data None
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	be76acf41b524eee97f15eedb38e99d3: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet OPEN data {'sid': 'de78909c97a94665a4791ef6b8143511', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	de78909c97a94665a4791ef6b8143511: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	de78909c97a94665a4791ef6b8143511: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	de78909c97a94665a4791ef6b8143511: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet OPEN data {'sid': 'f3d0779ed391464a98612a9ad39458ec', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	f3d0779ed391464a98612a9ad39458ec: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	f3d0779ed391464a98612a9ad39458ec: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	f3d0779ed391464a98612a9ad39458ec: Received packet PING data None
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	f3d0779ed391464a98612a9ad39458ec: Received packet PING data None
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	f3d0779ed391464a98612a9ad39458ec: Received packet PING data None
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	f3d0779ed391464a98612a9ad39458ec: Received packet PING data None
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	f3d0779ed391464a98612a9ad39458ec: Sending packet MESSAGE data 2["powersourceStatus",false]
+server.py: INFO: __init__(): 150:	Server initialized for eventlet.
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+app.py: INFO: <module>(): 353:	Server start!!!
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet OPEN data {'sid': '9ed30d428b064bf3bd71dab0083fe2c5', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	9ed30d428b064bf3bd71dab0083fe2c5: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	9ed30d428b064bf3bd71dab0083fe2c5: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	9ed30d428b064bf3bd71dab0083fe2c5: Received packet PING data None
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	9ed30d428b064bf3bd71dab0083fe2c5: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet OPEN data {'sid': '774d0ca2c8c84b679daabdd8a68cecce', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	774d0ca2c8c84b679daabdd8a68cecce: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	774d0ca2c8c84b679daabdd8a68cecce: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	774d0ca2c8c84b679daabdd8a68cecce: Received packet PING data None
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	774d0ca2c8c84b679daabdd8a68cecce: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet OPEN data {'sid': '44485928e03643d4a4a15e56acc01bff', 'upgrades': ['websocket'], 'pingTimeout': 60000, 'pingInterval': 25000}
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 0
+socket.py: INFO: handle_get_request(): 105:	44485928e03643d4a4a15e56acc01bff: Received request to upgrade to websocket
+socket.py: INFO: _websocket_handler(): 212:	44485928e03643d4a4a15e56acc01bff: Upgrade to websocket successful
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	44485928e03643d4a4a15e56acc01bff: Received packet PING data None
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	44485928e03643d4a4a15e56acc01bff: Received packet PING data None
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+socket.py: INFO: receive(): 52:	44485928e03643d4a4a15e56acc01bff: Received packet PING data None
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet PONG data None
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]
+app.py: DEBUG: broadcast_info(): 54:	Power OFF
+server.py: INFO: emit(): 292:	emitting event "powersourceStatus" to all [/]
+socket.py: INFO: send(): 93:	44485928e03643d4a4a15e56acc01bff: Sending packet MESSAGE data 2["powersourceStatus",false]

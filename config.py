@@ -2,6 +2,7 @@ import json
 import logging
 
 with open('settings.json', 'rb') as settingFile:
+
     settings = json.loads(settingFile.read())
 
 
@@ -25,11 +26,4 @@ error = ""
 DEFAULT_TRACE_FILE_NAME = "ccs20_cfg04_board_UNKNOWN.trc"
 SECRET_KEY = "LCMAutosar"
 ALLOWED_FILE = ["dnl", "trc"]
-ALLOWED_USER = ["rhn9hc", 'asm1hc', "snu1hc"]
-logging.basicConfig(filename=log_file_path, level=logging.DEBUG,
-                    format=('%(filename)s: '
-                            '%(levelname)s: '
-                            '%(funcName)s(): '
-                            '%(lineno)d:\t'
-                            '%(message)s')
-                    )
+ALLOWED_USER = ["rhn9hc", 'asm1hc', "snu1hc", "nry5hc"]

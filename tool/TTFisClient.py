@@ -200,6 +200,7 @@ class Singleton(object):  # pylint: disable=R0903
 
 
 class TTFisClient(Singleton):
+    print("init ttfis")
     """
     Windows COM-Interface wrapper class to access TTFis COM Server (i.e. CSM.EXE).
     For details, refer to document API_TTFis_CSM.doc in the TTFis installation directory.

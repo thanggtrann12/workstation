@@ -5,7 +5,7 @@
 		"log": "tool/log/log.pro"
 	},
 	"ttfis_client": {
-		"port": "GEN3FLEX@COM5"
+		"port": "GEN3FLEX@COM7"
 	},
 	"voltage_range": {
 		"max_threshold": 14,
@@ -13,7 +13,7 @@
 		"shutdown": { "voltage_returned": 0, "current_returned": 0 },
 		"operating": { "voltage_returned": 12, "current_returned": 0 }
 	},
-	"arduino_port": "COM4",
+	"arduino_port": "COM23",
 	"power_source": {
 		"port": "COM27",
 		"channel": 2

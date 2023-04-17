@@ -9,6 +9,7 @@ GET_CURRENT_COMMAND_TEMPLATE = "INST OUT%d;:MEAS:CURR?\n"
 
 
 class ToellnerDriver:
+    print("init ToellnerDriver ")
     _connection = None
     _setVoltageCommand = ""
     _getVoltageCommand = b""

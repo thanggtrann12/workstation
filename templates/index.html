@@ -33,6 +33,7 @@
 </head>
 
 <body>
+
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Content Start -->
         <div class="content">
@@ -59,7 +60,6 @@
                             <hr class="dropdown-divider">
                             <a id="log_out_button" class="dropdown-item text-center">Log out</a>
                         </div>
-                        
                     </div>
                     <!-- <button id="add_item_button">Add Item</button> -->
                 </div>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fa fa-walking fa-3x " id="wd_off_button" style="color: red; cursor: pointer;"><span><i class="fa fa-dog "style="color: red; cursor: pointer;"></i> </span></i>
+                    <i class="fa fa-walking fa-3x " id="wd_off_button" style="color: red; cursor: pointer;"><span><i class="fa fa-dog "style="color: red; cursor: pointer;" id="wd_off_label"></i> </span></i>
                     <div class="ms-3">
                       <h2 class="mb-0" id="wd_off_label" style="color: red;">WD_OFF</h2>
                     </div>
@@ -88,16 +88,16 @@
                 </div>
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fa fa-plug fa-3x " id="ign_button" style="color: green; cursor: pointer;"></i>
+                    <i class="fa fa-plug fa-3x " id="ign_button" style="color: #A6E22E; cursor: pointer;"></i>
                     <div class="ms-3">
-                      <h2 class="mb-0" id="ign_label" style="color: green;">IGN</h2>
+                      <h2 class="mb-0" id="ign_label" style="color: #A6E22E;">IGN</h2>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
                     <i class="fas fa-bolt fa-3x text-primary" id="flash_button" style="cursor:pointer;"></i>
-                    <div class="ms-3">
+                    <div class="ms-3 align-items-center">
                       <h2 class="mb-0" >Flash</h2>
                     </div>
                   </div>
@@ -113,10 +113,10 @@
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
                     <div class="col">
-                      <i class="fas fa-bolt fa-3x text-primary"></i>
+                      <i class="fas fa-bolt fa-3x "style="color: yellow;"></i>
                     </div>
                     <div class="col">
-                      <h1 id="current_voltage">12</h1>
+                      <h1 id="current_voltage">0</h1>
                     </div>
                     <div class="col">
                       <h1>V</h1>
@@ -136,13 +136,12 @@
               <div class="row g-3">
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fa fa-lightbulb fa-3x" style="color: lightgrey; cursor: pointer;" id="sleep_button"></i>
+                    <i class="fa fa-comment fa-3x" style="color: white; cursor: pointer;" id="chat_button"></i>
                     <div class="ms-3">
-                      <h2 class="mb-0"style="color: lightgrey;" id="sleep_label">SLEEP</h2>
+                      <h2 class="mb-0"style="color: white;" id="chat_label" >Chat</h2>
                     </div>
                   </div>
                 </div>
-
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
                     <i class="fa fa-plug fa-3x " id="opt2_button" style="color: red;cursor: pointer;" ></i>
@@ -153,9 +152,9 @@
                 </div>
                 <div class="col-sm-4 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fa fa-plug fa-3x " id="acc_button" style="color: green; cursor: pointer;"></i>
+                    <i class="fa fa-plug fa-3x " id="acc_button" style="color: #A6E22E; cursor: pointer;"></i>
                     <div class="ms-3">
-                      <h2 class="mb-0" id="acc_label" style="color: green; ">ACC</h2>
+                      <h2 class="mb-0" id="acc_label" style="color: #A6E22E; ">ACC</h2>
                     </div>
                   </div>
                 </div>
@@ -177,7 +176,7 @@
                 </div>
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fas fa-check fa-3x  " id="set_voltage_button" style="cursor:pointer; color: green;"></i>
+                    <i class="fas fa-check fa-3x  " id="set_voltage_button" style="cursor:pointer; color: #A6E22E;"></i>
                     <div class="ms-3">
                       <input  style="font-size: x-large;" type="text" class="form-control" placeholder="Enter voltage (0-14V)" aria-label="Enter voltage (0-14V)" id="input_voltage">
                     </div>
@@ -185,7 +184,6 @@
                 </div>
               </div>
             </div>
-
             <!-- Hardware stub end -->
 
             <!-- Trace Start -->
@@ -208,14 +206,13 @@
 
                           </div>
                           <div class="col-sm-11 col-xl-6 d-flex flex-column" style="min-height: 65vh;width: 100%;" >
-                            <div class="rounded p-4" style="min-height: 65vh; max-height: 65vh;border: solid 5px black; overflow: auto; background-color: rgb(95, 98, 117); color: white; font-weight: 16px;" id="scc_trace" >
+                            <div class="rounded p-4" style="min-height: 65vh; max-height: 65vh;border: solid 5px black; overflow: auto; overflow-x: hidden; background-color: rgb(46, 46, 46); color:  rgb(180, 210, 115); font-weight: 16px;" id="scc_trace" >
                             </div>
                         </div>
                       </div>
                   </div>
               </div>
           </div>
-
             <!-- Trace End -->
 
             <!-- Command Start -->
@@ -229,6 +226,22 @@
                 </div>
             </div>
             <!-- Command End -->
+            <div class="chat_popup" style="display: none;" id="chat_popup">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 mx-auto rounded-top p-1" style="position: fixed; display: block; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; width: 800px; height: 800px; ">
+                        <div class="form-control" rows="5" 
+                        style="height: 690px; 
+                        width: 100%; 
+                        margin-bottom: 10px; 
+                        background-color:#c9cfa8;
+                        font: 1em sans-serif;
+                        font-size: xx-large;
+                        color: #272822;"
+                        id="chat_box"></div>
+                        <input type="text" class="form-control" style="height: 100px; font-size: xx-large;" id="chat_entry"placeholder="Type here...">
+                </div>
+              </div>
+            </div>
         </div>
         <!-- Content End -->
     </div>
@@ -241,7 +254,13 @@
 
     <!-- Template Javascript -->
     <script src="/static/js/trie.js"></script>
+    <script>
+      var session_id = "{{ session['emp_id'] }}";
+      console.log(session_id.toUpperCase())
+      $("#user_name").text(session_id.toUpperCase());
+    </script>
     <script src="/static/js/main.js"></script>
+
 </body>
 
 </html>

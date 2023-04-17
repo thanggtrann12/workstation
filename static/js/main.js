@@ -27,7 +27,7 @@ $(document).ready(function () {
 		commandList = commandList.map((ele) => ele.trim())
 		console.log("commandList", commandList)
 		sccCommandStr = commandList.join(" ")
-		$("#command_entry").val(sccCommandStr.split("\n"))
+		$("#command_entry").value = sccCommandStr.replace(/\n/g, "")
 		sccLines += sccCommandStr
 		console.log("sccLines", sccLines)
 	}
@@ -68,8 +68,7 @@ $(document).ready(function () {
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
-						suggestionList =
-							commandTable["enum"][enumName].find(name)
+						suggestionList = commandTable["enum"][enumName].find(name)
 					}
 				}
 				inSelection = true
@@ -85,8 +84,9 @@ $(document).ready(function () {
 			state = 0
 		}
 		if (13 == event.keyCode) {
+			event.preventDefault()
 			socket.emit("sccCommand", sccCommandStr)
-			lastcommandStr.push(sccCommandStr)
+			lastcommandStr.push(sccCommandStr.replace(/\n/g, ""))
 			put_trace_to_log_window(sccCommandStr)
 			sccLines = ""
 			sccCommandStr = ""
@@ -97,6 +97,7 @@ $(document).ready(function () {
 			if (lastcommandStr.length > counterCommand) counterCommand += 1
 			else counterCommand = 0
 			$("#command_entry").val(lastcommandStr[counterCommand])
+			sccCommandStr = lastcommandStr[counterCommand]
 		}
 		if (40 == event.keyCode) {
 			if (lastcommandStr.length > counterCommand) counterCommand -= 1
@@ -104,6 +105,7 @@ $(document).ready(function () {
 			$("#command_entry").val(
 				lastcommandStr[counterCommand < 0 ? 0 : counterCommand],
 			)
+			sccCommandStr = lastcommandStr[counterCommand]
 		}
 	}
 	let sccCommandStr = ""
@@ -134,11 +136,13 @@ $(document).ready(function () {
 				console.log(voltage)
 				if (voltage >= 0 && voltage <= 14) {
 					voltage = voltage
-					$("#set_voltage_button").css("color", "green")
+					$("#set_voltage_button").css("color", "#A6E22E")
+					socket.emit("status", "Set voltage success!!")
 				}
 			} else {
 				voltage = 0
 				$("#set_voltage_button").css("color", "red")
+				socket.emit("status", "Power is down, cannot set!!")
 			}
 			socket.emit("setvoltagValue", voltage)
 			$("#input_voltage").val("")
@@ -147,21 +151,43 @@ $(document).ready(function () {
 			console.log("POWER OFF")
 			$("#input_voltage").val("")
 		}
+		socket.emit("status", "Ready")
+	})
+	var isChatopen = false
+	$("#chat_button").click(function () {
+		console.log("chat")
+		isChatopen = !isChatopen
+		isChatopen == false
+			? ($("#chat_popup").css("display", "none"),
+			  $("#chat_label").css("color", "white"),
+			  $("#chat_button").css("color", "white"))
+			: ($("#chat_popup").css("display", "block"),
+			  $("#chat_label").css("color", "#A6E22E"),
+			  $("#chat_button").css("color", "#A6E22E"))
+	})
+	var chat_message = ""
+	$("#chat_entry").on("input", function () {
+		chat_message = $(this).val()
 	})
 
-	var sleep_state = false
-	$("#sleep_button").click(function () {
-		sleep_state = !sleep_state
-		if (sleep_state == true) {
-			$("#sleep_button").css("color", "green")
-			$("#sleep_label").text("NORMAL")
-			$("#sleep_label").css("color", "green")
-		} else {
-			$("#sleep_button").css("color", "lightgrey")
-			$("#sleep_label").text("SLEEP")
-			$("#sleep_label").css("color", "lightgrey")
+	$("#chat_entry").on("keydown", function (event) {
+		if (event.keyCode == 13) {
+			event.preventDefault()
+			if (chat_message === "clear") {
+				$("#chat_box").empty()
+				$("#chat_entry").val("")
+			} else {
+				$("#chat_box").append(
+					"<div><pre>" +
+						$("<div/>")
+							.text("You:  " + chat_message + "\r")
+							.html() +
+						"</pre></div>",
+				)
+				$("#chat_entry").val("")
+			}
+			chat_message = ""
 		}
-		socket.emit("power_state", sleep_state)
 	})
 	var isACC_on = true
 	$("#acc_button").click(function () {
@@ -203,8 +229,8 @@ $(document).ready(function () {
 
 	function setStateHardware(button_id, button_label, state) {
 		if (state == true) {
-			$("#" + button_id).css("color", "green")
-			$("#" + button_label).css("color", "green")
+			$("#" + button_id).css("color", "#A6E22E")
+			$("#" + button_label).css("color", "#A6E22E")
 		} else {
 			$("#" + button_id).css("color", "red")
 			$("#" + button_label).css("color", "red")
@@ -250,7 +276,7 @@ $(document).ready(function () {
 			// do not thing
 		} else {
 			$("#scc_trace").append(
-				"<div>" + $("<div/>").text(message).html() + "</div>",
+				"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
 			)
 			document.getElementById("scc_trace").scrollTop =
 				document.getElementById("scc_trace").scrollHeight
@@ -318,19 +344,14 @@ $(document).ready(function () {
 	socket.on("is_power_turn_on", function (status) {
 		power_state = status
 		if (power_state == true) {
-			$("#power_button").css("color", "green")
+			$("#power_button").css("color", "#A6E22E")
 			$("#power_label").text("ON")
-			$("#power_label").css("color", "green")
+			$("#power_label").css("color", "#A6E22E")
 		} else {
 			$("#power_button").css("color", "red")
 			$("#power_label").text("OFF")
 			$("#power_label").css("color", "red")
 		}
-	})
-
-	socket.on("appContent", function (content) {
-		var encodedStr = encodeURIComponent(content)
-		$("#output").append("<div>" + encodedStr + "</div>")
 	})
 
 	socket.on("message", function (message) {
@@ -354,14 +375,26 @@ $(document).ready(function () {
 	socket.on("status", function (status) {
 		$("#status").text(status)
 	})
-	socket.on("user_loggined", function (user_loggined) {
+	socket.on("list_user", function (user_loggined) {
 		loggedInUsers = user_loggined
+		console.log("loggedInUsers", loggedInUsers)
 	})
-
 	/* handling user login end*/
+
+	function locked() {
+		console.log("call lock")
+		if (loggedInUsers[0] == session_id) {
+			$("#wd_off_button").disabled = true
+		} else {
+			$("#wd_off_button").disabled = false
+		}
+	}
 	$("#lock_button").click(function () {
 		isLock = !isLock
-		socket.emit("lock_status", isLock)
-		console.log("current ->>", current_)
+		console.log("lock", session_id, loggedInUsers[0])
+		if (loggedInUsers[0] == session_id) {
+			console.log("admin lock")
+			locked()
+		}
 	})
 })

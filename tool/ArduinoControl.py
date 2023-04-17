@@ -16,6 +16,7 @@ DEVICE_ON = 0
 
 class Arduino:
     def __init__(self, port, baud_rate=9600):
+        print("Init arduino")
         self.port = port
         self.baud_rate = baud_rate
         self.ser = serial.Serial(self.port, self.baud_rate)

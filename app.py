@@ -308,6 +308,9 @@ def set_power_state(state):
         socketio.emit("status", status)
         time.sleep(1)
 
+@socketio.on("lock")
+def lock(isLock):
+  socketio.emit("lock", isLock)
 
 @ socketio.on("sccCommand")
 def sccCommand(cmd):

@@ -380,21 +380,25 @@ $(document).ready(function () {
 		console.log("loggedInUsers", loggedInUsers)
 	})
 	/* handling user login end*/
-
-	function locked() {
-		console.log("call lock")
+	socket.on("lock", function (lock_status) {
+		console.log("admin call lock")
 		if (loggedInUsers[0] == session_id) {
-			$("#wd_off_button").disabled = true
+			$("#chat_button").text("red")
 		} else {
-			$("#wd_off_button").disabled = false
+			if (lock_status) {
+				$("#chat_button").disabled = false
+			} else {
+				$("#chat_button").disabled = true
+			}
 		}
-	}
+	})
+
 	$("#lock_button").click(function () {
 		isLock = !isLock
 		console.log("lock", session_id, loggedInUsers[0])
 		if (loggedInUsers[0] == session_id) {
 			console.log("admin lock")
-			locked()
+			socket.emit("lock", isLock)
 		}
 	})
 })

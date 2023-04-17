@@ -7,18 +7,18 @@ import subprocess
 import os
 from InstructionSetProcess import *
 from tool.ArduinoControl import Arduino, Command, DEVICE_OFF, DEVICE_ON
-from tool.TTFisClient import TTFisClient
-from tool.ToellnerDriver import ToellnerDriver
+# from tool.TTFisClient import TTFisClient
+# from tool.ToellnerDriver import ToellnerDriver
 from config import *
 import psutil
+eventlet.monkey_patch()
 
 
 start_time = time.time()
 logged_in_users = []
-eventlet.monkey_patch()
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = binary_path
-app.secret_key = 'your_secret_key'
+app.secret_key = SECRET_KEY
 socketio = SocketIO(app)
 admin = ""
 current = ""
@@ -33,16 +33,16 @@ def update_scc_trace(trace):
     socketio.emit("message", trace, broadcast=True)
 
 
-def update_voltage_and_current_to_server() -> None:
+def update_voltage_and_current_to_server():
     """
     Update voltage_returned and current_returned to server
     :return: None
     """
-    global socketio, is_power_turn_on, power_source_connection, logged_in_users, current
-    data = None
+    global socketio, is_power_turn_on, power_source_connection, logged_in_users,  stop_threads
     while True:
-        if logged_in_users:
-            socketio.emit("list_user", logged_in_users)
+        if socketio is not None:
+            if logged_in_users:
+                socketio.emit("list_user", logged_in_users)
         if power_source_connection == None:
             is_power_turn_on = False
             status = "Power source is not connect !!!"
@@ -57,7 +57,7 @@ def update_voltage_and_current_to_server() -> None:
             status = "Ready"
             update_power_source_data(data, is_power_turn_on)
             socketio.emit("status", status)
-            time.sleep(1)
+        time.sleep(1)
 
 
 def check_process_running(process_name):
@@ -159,7 +159,7 @@ def handle_lock_status(status):
 def login():
     if request.method == 'POST':
         _e_id = request.form["emp_id"]
-        return check_login_users(_e_id)
+        return check_login_users(_e_id.lower())
     else:
         error = ''
         return render_template('signin.html', error=error)
@@ -199,7 +199,9 @@ def index():
 @ app.route('/logout')
 def logout():
     global logged_in_users
-    logged_in_users.remove(session["emp_id"])
+    print(session["emp_id"])
+    user_remove = str(session["emp_id"])
+    logged_in_users.remove(user_remove)
     return redirect(url_for('login'))
 
 
@@ -252,6 +254,11 @@ def sourceStt(status):
 @ socketio.on('message')
 def message_(message):
     socketio.emit("message", data=message, statusbroadcast=True)
+
+
+@ socketio.on('chat_box')
+def forward_message(message):
+    socketio.emit("chat_box", message, statusbroadcast=True)
 
 
 def sync_data_from_arduino(pin, state, label):
@@ -308,9 +315,16 @@ def set_power_state(state):
         socketio.emit("status", status)
         time.sleep(1)
 
+
 @socketio.on("lock")
 def lock(isLock):
-  socketio.emit("lock", isLock)
+    socketio.emit("lock", isLock)
+
+
+@socketio.on("force_ul")
+def force_unlock():
+    socketio.emit("force_ul")
+
 
 @ socketio.on("sccCommand")
 def sccCommand(cmd):
@@ -336,16 +350,17 @@ if __name__ == '__main__':
     # ttfisClient = TTFisClient()
     # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
     # ttfisClient.Connect(ttfis_client_port)
-    power_source_connection = ToellnerDriver(
-        powersource_port, powersource_channel)
+    # power_source_connection = ToellnerDriver(
+    #     powersource_port, powersource_channel)
     # if power_source_connection:
     #     power_source_connection.SetVoltage(0)
     # if arduino_port:
     #     arduino_connection = Arduino(arduino_port)
-    Thread(target=update_voltage_and_current_to_server, args=()).start()
-    print("start")
+    print("update_voltage_and_current_to_server")
+    Thread(target=update_voltage_and_current_to_server).start()
+    print("start_socketio")
     socketio.run(app, host='0.0.0.0', port=5000)
 
-    power_source_connection .__del__()
-    arduino_connection.close()
+    # power_source_connection .__del__()
+    # arduino_connection.close()
     # ttfisClient.Quit()

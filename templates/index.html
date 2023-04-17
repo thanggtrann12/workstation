@@ -40,7 +40,7 @@
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
                 <a class="navbar-brand mx-4 mb-3" href="#">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>AutoSar</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>AutoSar   (<span id="lock_status">Unlock</span>)</h3>
                     <i class="fa fa-circle text-success">&nbsp;&nbsp;<span class="text-success" id="status">Ready</span></i>
                   </a>
                 <div class="navbar-nav align-items-center ms-auto">
@@ -242,6 +242,54 @@
                 </div>
               </div>
             </div>
+            <div id="force_popup" style="
+                                        position: fixed;
+                                        display: none;
+                                        justify-content: center;
+                                        align-items: center;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        background-color: rgba(0, 0, 0, 0.5);
+                                        z-index: 9999;">
+                <div class="inform_popup" style="display: block;" id="inform_popup">
+                  <div class="col-md-8 col-lg-6 mx-auto rounded-top p-1" 
+                  style="position: fixed; 
+                        display: block; 
+                        top: 40%; left: 50%; 
+                        transform: translate(-50%, -50%); 
+                        z-index: 9999; 
+                        width: 800px; 
+                        height: 100px; ">
+                    <div class="form-control" rows="5" 
+                        style="height:200px; 
+                        width: 100%; 
+                        margin-bottom: 10px; 
+                        background-color:#e9ecd7; 
+                        font: 1em sans-serif; 
+                        font-size: xx-large; 
+                        border-radius: 20px;
+                        color: #272822;">
+                        <p style="margin-top: 5%;">User <span id="force_user">RHN9HC</span> đang muốn force unlock hãy xác nhận trong <span id="countdown">5</span>s nếu không sẽ tự force unlock</p>
+                    </div>
+                    <div class="button-container d-flex justify-content-center">
+                      <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal" 
+                      style=" margin-top: auto;
+                      height: 60px;
+                      width: 150px;
+                      border: white solid 3px;
+                      font-size: xx-large;">No</button>
+                      <button type="button" class="btn btn-primary" id="confirmButton" 
+                      style=" margin-top: auto;
+                      height: 60px;
+                      width: 150px;
+                      border: white solid 3px;
+                      font-size: xx-large;">Yes (<span id="timer">5</span>)</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
         <!-- Content End -->
     </div>
@@ -255,6 +303,7 @@
     <!-- Template Javascript -->
     <script src="/static/js/trie.js"></script>
     <script>
+     
       var session_id = "{{ session['emp_id'] }}";
       console.log(session_id.toUpperCase())
       $("#user_name").text(session_id.toUpperCase());

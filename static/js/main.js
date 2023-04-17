@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	loadParaTable()
+
 	// config socket io
 	var socket = io.connect("http://" + document.domain + ":" + location.port)
 	/* config for autocomplete */
@@ -68,7 +69,8 @@ $(document).ready(function () {
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
-						suggestionList = commandTable["enum"][enumName].find(name)
+						suggestionList =
+							commandTable["enum"][enumName].find(name)
 					}
 				}
 				inSelection = true
@@ -122,7 +124,7 @@ $(document).ready(function () {
 
 	/* hardware stub begin */
 	var power_state = false
-
+	var myVariable = localStorage.getItem("myVariable")
 	$("#power_button").click(function () {
 		power_state = !power_state
 		socket.emit("power_state", power_state)
@@ -177,12 +179,9 @@ $(document).ready(function () {
 				$("#chat_box").empty()
 				$("#chat_entry").val("")
 			} else {
-				$("#chat_box").append(
-					"<div><pre>" +
-						$("<div/>")
-							.text("You:  " + chat_message + "\r")
-							.html() +
-						"</pre></div>",
+				socket.emit(
+					"chat_box",
+					(message = session_id + ": " + chat_message + "\r"),
 				)
 				$("#chat_entry").val("")
 			}
@@ -211,6 +210,7 @@ $(document).ready(function () {
 	var isIGN_on = true
 	$("#ign_button").click(function () {
 		isIGN_on = !isIGN_on
+		console.log("ign_button")
 		socket.emit("request_to_arduino", {
 			pin: "ign_button",
 			state: isIGN_on,
@@ -276,7 +276,9 @@ $(document).ready(function () {
 			// do not thing
 		} else {
 			$("#scc_trace").append(
-				"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
+				"<div><pre>" +
+					$("<div/>").text(message).html() +
+					"</pre></div>",
 			)
 			document.getElementById("scc_trace").scrollTop =
 				document.getElementById("scc_trace").scrollHeight
@@ -306,7 +308,11 @@ $(document).ready(function () {
 	})
 	$("#log_out_button").click(function () {
 		console.log("loggedInUsers[0]", loggedInUsers[0])
-		removeLoggedInUser(loggedInUsers[0])
+		let index = loggedInUsers.indexOf(session_id)
+		if (index > -1) {
+			loggedInUsers.splice(index, 1)
+		}
+		socket.emit("lock", false)
 		window.location.href = "/logout"
 	})
 	var isRecording = false
@@ -337,6 +343,25 @@ $(document).ready(function () {
 
 	socket.on("connect", function () {
 		console.log("connect")
+		const lockstatus = JSON.parse(localStorage.getItem("lockstatus"))
+		console.log("myBoolean", lockstatus.lock, lockstatus.session)
+		console.log("session_id", session_id, lockstatus.session)
+		isLock = lockstatus.lock
+		if (lockstatus.session == session_id) {
+			loggedInUsers[0] = lockstatus.session
+			$("#lock_button").css("display", "block")
+			console.log("admin lock")
+			socket.emit("lock", isLock)
+			isLock
+				? $("#lock_button").text("Unlock")
+				: $("#lock_button").text("Lock")
+		} else if (loggedInUsers[0] == "") {
+			loggedInUsers[0] = lockstatus.session
+		}
+		socket.emit("lock", isLock)
+		isLock == true
+			? $("#lock_status").text("Locked")
+			: $("#lock_status").text("Unlock")
 	})
 	socket.on("disconnect", function () {
 		console.log("disconnect")
@@ -353,7 +378,16 @@ $(document).ready(function () {
 			$("#power_label").css("color", "red")
 		}
 	})
-
+	socket.on("chat_box", function (message) {
+		if (message.includes("You") == false)
+			$("#chat_box").append(
+				"<div><pre>" +
+					$("<div/>")
+						.text(message + "\n")
+						.html() +
+					"</pre></div>",
+			)
+	})
 	socket.on("message", function (message) {
 		put_trace_to_log_window(message)
 	})
@@ -372,8 +406,13 @@ $(document).ready(function () {
 		$("#current_ampe").text(data["current_returned"])
 	})
 
-	socket.on("status", function (status) {
-		$("#status").text(status)
+	socket.on("force_ul", function () {
+		console.log("force call")
+		// $("#lock_button").css("display", "none")
+		// $("[id]").removeClass("disable-click")
+		if (loggedInUsers[0] == session_id) {
+			showInformPopup()
+		}
 	})
 	socket.on("list_user", function (user_loggined) {
 		loggedInUsers = user_loggined
@@ -381,24 +420,133 @@ $(document).ready(function () {
 	})
 	/* handling user login end*/
 	socket.on("lock", function (lock_status) {
-		console.log("admin call lock")
+		isLock = lock_status
+		console.log("session_id", session_id, "lock_status", lock_status)
+		localStorage.setItem(
+			"lockstatus",
+			JSON.stringify({
+				lock: lock_status,
+				session: loggedInUsers[0],
+			}),
+		)
 		if (loggedInUsers[0] == session_id) {
-			$("#chat_button").text("red")
-		} else {
-			if (lock_status) {
-				$("#chat_button").disabled = false
+			console.log("admin call lock")
+			$("[id]").css("pointer-events", "pointer")
+		}
+		if (loggedInUsers[0] != session_id) {
+			if (isLock) {
+				console.log("lock")
+
+				$("[id]").addClass("disable-click")
+				$("#lock_button").removeClass("disable-click")
+				$("#lock_button").text("Force Unlock")
+				$("#chat_button").removeClass("disable-click")
+				$("#chat_label").removeClass("disable-click")
+				$("#chat_entry").removeClass("disable-click")
 			} else {
-				$("#chat_button").disabled = true
+				console.log("unlock")
+				$("[id]").removeClass("disable-click")
 			}
 		}
+		if (loggedInUsers[0] == undefined) {
+			loggedInUsers[0] = "admin"
+		}
+		isLock == true
+			? $("#lock_status").text(
+					"Locked by: " + loggedInUsers[0].toString().toUpperCase(),
+			  )
+			: $("#lock_status").text("Unlock")
 	})
 
 	$("#lock_button").click(function () {
-		isLock = !isLock
 		console.log("lock", session_id, loggedInUsers[0])
 		if (loggedInUsers[0] == session_id) {
+			isLock = !isLock
+			$("#lock_button").css("display", "block")
 			console.log("admin lock")
 			socket.emit("lock", isLock)
+			isLock == true
+				? $("#lock_button").text("Unlock")
+				: $("#lock_button").text("Lock")
+		} else {
+			if ($("#lock_button").text() === "Force Unlock" && isLock == true) {
+				socket.emit("force_ul")
+				console.log("Force Unlock")
+				$("#force_user").text(loggedInUsers[0])
+			}
 		}
+		localStorage.setItem(
+			"lockstatus",
+			JSON.stringify({
+				lock: isLock,
+				session: loggedInUsers[0],
+			}),
+		)
+		isLock == true
+			? $("#lock_status").text(
+					"Locked by  " +
+						loggedInUsers[0].toString().toUpperCase().toUpperCase(),
+			  )
+			: $("#lock_status").text("Unlock")
 	})
+
+	let timeoutId
+	let defaultTime = 5
+	var countdownTime = 0
+
+	$("#confirmButton").click(function () {
+		if (loggedInUsers[0] == session_id) $("#lock_button").text("Lock")
+		else $("#lock_button").css("display", "none")
+		$("[id]").removeClass("disable-click")
+		hideInformPopup()
+		isLock = false
+		localStorage.setItem(
+			"lockstatus",
+			JSON.stringify({
+				lock: isLock,
+				session: loggedInUsers[0],
+			}),
+		)
+		socket.emit("lock", isLock)
+	})
+
+	function startCountdown() {
+		countdownTime--
+		$("#countdown").text(countdownTime.toString())
+		$("#timer").text(countdownTime.toString())
+		if (countdownTime == 0) {
+			$("#lock_button").css("display", "none")
+			$("[id]").removeClass("disable-click")
+			isLock = false
+			localStorage.setItem(
+				"lockstatus",
+				JSON.stringify({
+					lock: isLock,
+					session: loggedInUsers[0],
+				}),
+			)
+
+			socket.emit("lock", isLock)
+			hideInformPopup()
+		} else {
+			timeoutId = setTimeout(startCountdown, 1000)
+		}
+	}
+
+	function stopCountdown() {
+		clearTimeout(timeoutId)
+	}
+
+	function showInformPopup() {
+		countdownTime = defaultTime
+		$("#countdown").text(countdownTime.toString())
+		$("#timer").text(countdownTime.toString())
+		$("#force_popup").css("display", "block")
+		startCountdown()
+	}
+
+	function hideInformPopup() {
+		$("#force_popup").css("display", "none")
+		stopCountdown()
+	}
 })

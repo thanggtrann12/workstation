@@ -236,7 +236,8 @@
                         background-color:#c9cfa8;
                         font: 1em sans-serif;
                         font-size: xx-large;
-                        color: #272822;"
+                        color: #272822;
+                        overflow: scroll;"
                         id="chat_box"></div>
                         <input type="text" class="form-control" style="height: 100px; font-size: xx-large;" id="chat_entry"placeholder="Type here...">
                 </div>
@@ -271,10 +272,11 @@
                         font-size: xx-large; 
                         border-radius: 20px;
                         color: #272822;">
-                        <p style="margin-top: 5%;">User <span id="force_user">RHN9HC</span> đang muốn force unlock hãy xác nhận trong <span id="countdown">5</span>s nếu không sẽ tự force unlock</p>
+                        <p style="margin-top: 5%;">User <span id="force_user"></span> request force unlock please confirm in <span id="countdown">5</span>s if not it will automatically unlock</p>
                     </div>
                     <div class="button-container d-flex justify-content-center">
                       <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal" 
+                      id="rejectButton"
                       style=" margin-top: auto;
                       height: 60px;
                       width: 150px;

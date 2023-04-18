@@ -69,8 +69,7 @@ $(document).ready(function () {
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
-						suggestionList =
-							commandTable["enum"][enumName].find(name)
+						suggestionList = commandTable["enum"][enumName].find(name)
 					}
 				}
 				inSelection = true
@@ -179,10 +178,9 @@ $(document).ready(function () {
 				$("#chat_box").empty()
 				$("#chat_entry").val("")
 			} else {
-				socket.emit(
-					"chat_box",
-					(message = session_id + ": " + chat_message + "\r"),
-				)
+				chat_message = session_id + ": " + chat_message
+				socket.emit("chat_box", (message = chat_message + "\r"))
+
 				$("#chat_entry").val("")
 			}
 			chat_message = ""
@@ -276,9 +274,7 @@ $(document).ready(function () {
 			// do not thing
 		} else {
 			$("#scc_trace").append(
-				"<div><pre>" +
-					$("<div/>").text(message).html() +
-					"</pre></div>",
+				"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
 			)
 			document.getElementById("scc_trace").scrollTop =
 				document.getElementById("scc_trace").scrollHeight
@@ -346,17 +342,19 @@ $(document).ready(function () {
 		const lockstatus = JSON.parse(localStorage.getItem("lockstatus"))
 		console.log("myBoolean", lockstatus.lock, lockstatus.session)
 		console.log("session_id", session_id, lockstatus.session)
-		isLock = lockstatus.lock
-		if (lockstatus.session == session_id) {
-			loggedInUsers[0] = lockstatus.session
-			$("#lock_button").css("display", "block")
-			console.log("admin lock")
-			socket.emit("lock", isLock)
-			isLock
-				? $("#lock_button").text("Unlock")
-				: $("#lock_button").text("Lock")
-		} else if (loggedInUsers[0] == "") {
-			loggedInUsers[0] = lockstatus.session
+		if (lockstatus.lock != undefined && lockstatus.session != undefined) {
+			isLock = lockstatus.lock
+			if (lockstatus.session == session_id) {
+				loggedInUsers[0] = lockstatus.session
+				$("#lock_button").css("display", "block")
+				console.log("admin lock")
+				socket.emit("lock", isLock)
+				isLock
+					? $("#lock_button").text("Unlock")
+					: $("#lock_button").text("Lock")
+			} else if (loggedInUsers[0] == "") {
+				loggedInUsers[0] = lockstatus.session
+			}
 		}
 		socket.emit("lock", isLock)
 		isLock == true
@@ -379,14 +377,15 @@ $(document).ready(function () {
 		}
 	})
 	socket.on("chat_box", function (message) {
-		if (message.includes("You") == false)
-			$("#chat_box").append(
-				"<div><pre>" +
-					$("<div/>")
-						.text(message + "\n")
-						.html() +
-					"</pre></div>",
-			)
+		document.getElementById("chat_box").scrollTop =
+			document.getElementById("chat_box").scrollHeight
+		$("#chat_box").append(
+			"<div><pre>" +
+				$("<div/>")
+					.text(message + "\n")
+					.html() +
+				"</pre></div>",
+		)
 	})
 	socket.on("message", function (message) {
 		put_trace_to_log_window(message)
@@ -472,7 +471,6 @@ $(document).ready(function () {
 			if ($("#lock_button").text() === "Force Unlock" && isLock == true) {
 				socket.emit("force_ul")
 				console.log("Force Unlock")
-				$("#force_user").text(loggedInUsers[0])
 			}
 		}
 		localStorage.setItem(
@@ -495,10 +493,14 @@ $(document).ready(function () {
 	var countdownTime = 0
 
 	$("#confirmButton").click(function () {
-		if (loggedInUsers[0] == session_id) $("#lock_button").text("Lock")
-		else $("#lock_button").css("display", "none")
-		$("[id]").removeClass("disable-click")
-		hideInformPopup()
+		if (loggedInUsers[0] == session_id) {
+			$("#lock_button").text("Lock")
+			hideInformPopup()
+		} else {
+			$("#lock_button").css("display", "none")
+			$("[id]").removeClass("disable-click")
+		}
+
 		isLock = false
 		localStorage.setItem(
 			"lockstatus",
@@ -509,7 +511,17 @@ $(document).ready(function () {
 		)
 		socket.emit("lock", isLock)
 	})
-
+	$("#rejectButton").click(function () {
+		localStorage.setItem(
+			"lockstatus",
+			JSON.stringify({
+				lock: isLock,
+				session: loggedInUsers[0],
+			}),
+		)
+		socket.emit("lock", true)
+		hideInformPopup()
+	})
 	function startCountdown() {
 		countdownTime--
 		$("#countdown").text(countdownTime.toString())

@@ -25,7 +25,7 @@ def index():
                     result = "adb is not connected"
                 else:
                     result = e.output.decode()
-    return render_template("index.html", result= result+"\n\r")
+    return render_template("signup.html", result= result+"\n\r")
 
 
 if __name__ == "__main__":

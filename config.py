@@ -27,3 +27,5 @@ DEFAULT_TRACE_FILE_NAME = "ccs20_cfg04_board_UNKNOWN.trc"
 SECRET_KEY = "LCMAutosar"
 ALLOWED_FILE = ["dnl", "trc"]
 ALLOWED_USER = ["rhn9hc", 'asm1hc', "snu1hc", "nry5hc"]
+
+print(normal_voltage)

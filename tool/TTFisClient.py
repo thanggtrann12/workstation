@@ -696,6 +696,8 @@ class TTFisClient(Singleton):
             if not self._csm:
                 LOGDBG.error(
                     '%s: Reference to TTFis COM Server object was freed. Quit() method already called?', _mident)
+                print(
+                    "Reference to TTFis COM Server object was freed. Quit() method already called?")
                 return False
             device = self._dev_active
             if len(files) > 0:
@@ -712,6 +714,7 @@ class TTFisClient(Singleton):
                     LOGDBG.debug('Completed %s', _mident)
                     return True
         LOGDBG.debug('Completed %s with errors', _mident)
+        print('Completed %s with errors', _mident)
         return False
 
     def Wait4Trace(self, searchobj, dotall=False, timeout=0, fctobj=None, *fctargs):

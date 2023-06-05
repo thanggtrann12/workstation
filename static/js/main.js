@@ -13,6 +13,7 @@ $(document).ready(function () {
 	let counterCommand = 0
 	let inSelection = false
 	let isLock = false
+	let power_state = false
 	let commandTable = {
 		root: new Trie({}),
 		enum: {},
@@ -28,7 +29,8 @@ $(document).ready(function () {
 		commandList = commandList.map((ele) => ele.trim())
 		console.log("commandList", commandList)
 		sccCommandStr = commandList.join(" ")
-		$("#command_entry").value = sccCommandStr.replace(/\n/g, "")
+		$("#command_entry").val(commandList)
+		console.log("command:  ", $("#command_entry").value)
 		sccLines += sccCommandStr
 		console.log("sccLines", sccLines)
 	}
@@ -114,7 +116,7 @@ $(document).ready(function () {
 		sccCommandStr = $(this).val()
 	})
 	$("#command_entry").on("keydown", function (event) {
-		doAutoComplete(event)
+		if (power_state) doAutoComplete(event)
 	})
 
 	// Update parameter table
@@ -122,10 +124,11 @@ $(document).ready(function () {
 	/* auto complete end*/
 
 	/* hardware stub begin */
-	var power_state = false
+
 	var myVariable = localStorage.getItem("myVariable")
 	$("#power_button").click(function () {
 		power_state = !power_state
+		console.log(power_state)
 		socket.emit("power_state", power_state)
 	})
 

@@ -7,8 +7,8 @@ import subprocess
 import os
 from InstructionSetProcess import *
 from tool.ArduinoControl import Arduino, Command, DEVICE_OFF, DEVICE_ON
-# from tool.TTFisClient import TTFisClient
-# from tool.ToellnerDriver import ToellnerDriver
+from tool.TTFisClient import TTFisClient
+from tool.ToellnerDriver import ToellnerDriver
 from config import *
 import psutil
 eventlet.monkey_patch()
@@ -30,7 +30,10 @@ def update_scc_trace(trace):
     Args:
         trace (string): trace from ttfis
     """
-    socketio.emit("message", trace, broadcast=True)
+    global is_power_turn_on
+    if is_power_turn_on:
+        print(trace)
+        socketio.emit("message", trace, broadcast=True)
 
 
 def update_voltage_and_current_to_server():
@@ -47,16 +50,22 @@ def update_voltage_and_current_to_server():
             is_power_turn_on = False
             status = "Power source is not connect !!!"
         else:
-            voltage_returned = str(
-                float(power_source_connection .GetVoltage().decode()))
-            current_returned = str(
-                float(power_source_connection .GetCurrent().decode()))
+            if is_power_turn_on:
+                try:
+                    voltage_returned = str(
+                        float(power_source_connection .GetVoltage().decode()))
+                    current_returned = str(
+                        float(power_source_connection .GetCurrent().decode()))
 
-            data = {"voltage_returned": voltage_returned,
-                    "current_returned": current_returned}
-            status = "Ready"
-            update_power_source_data(data, is_power_turn_on)
-            socketio.emit("status", status)
+                    data = {"voltage_returned": voltage_returned,
+                            "current_returned": current_returned}
+                    status = "Ready"
+
+                    update_power_source_data(data, is_power_turn_on)
+                    socketio.emit("status", status)
+                except:
+                    pass
+
         time.sleep(1)
 
 
@@ -96,13 +105,14 @@ def upload_trace_to_ttfis(file_name):
     """This function uses to upload trace to the ttfis client
 
     Args:
-        file_name (string): trace file name
+        file_name (string): trace file name 
     """
     socketio.emit("status", "Uploading trace...")
     if ttfisClient.LoadTRCFiles([trace_path+file_name]):
         socketio.emit("status", "Restarting ttfisClient...")
         ttfisClient.Restart()
     else:
+        print("failed")
         socketio.emit("status", "Upload trace failed")
         time.sleep(1)
     socketio.emit("status", "Ready")
@@ -237,8 +247,8 @@ def handling_file_upload_from_server():
             file_trc.save(os.path.join(trace_path, filename_trc))
 
             trace_file_name = filename_trc
-
-            upload_trace_to_ttfis(filename_trc)
+            print(trace_file_name)
+            upload_trace_to_ttfis(trace_file_name)
         else:
             print("File not found: {}".format(filename_trc))
     except:
@@ -292,6 +302,7 @@ def handle_request(data):
 
 
 def update_power_source_data(data, state):
+    print(data)
     socketio.emit("power_source_data", data)
     socketio.emit("is_power_turn_on", state)
 
@@ -303,6 +314,7 @@ def set_power_state(state):
     if power_source_connection != None:
         if state:
             is_power_turn_on = True
+            print('set pwer on')
             power_source_connection.SetVoltage(12)
             update_power_source_data(normal_voltage, is_power_turn_on)
         else:
@@ -347,13 +359,13 @@ def handling_voltage(voltage_value):
 
 
 if __name__ == '__main__':
-    # ttfisClient = TTFisClient()
-    # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
-    # ttfisClient.Connect(ttfis_client_port)
-    # power_source_connection = ToellnerDriver(
-    #     powersource_port, powersource_channel)
-    # if power_source_connection:
-    #     power_source_connection.SetVoltage(0)
+    ttfisClient = TTFisClient()
+    ttfisClient.registerUpdateTraceCallback(update_scc_trace)
+    ttfisClient.Connect(ttfis_client_port)
+    power_source_connection = ToellnerDriver(
+        powersource_port, powersource_channel)
+    if power_source_connection:
+        power_source_connection.SetVoltage(12)
     # if arduino_port:
     #     arduino_connection = Arduino(arduino_port)
     print("update_voltage_and_current_to_server")
@@ -361,6 +373,6 @@ if __name__ == '__main__':
     print("start_socketio")
     socketio.run(app, host='0.0.0.0', port=5000)
 
-    # power_source_connection .__del__()
+    power_source_connection .__del__()
     # arduino_connection.close()
-    # ttfisClient.Quit()
+    ttfisClient.Quit()

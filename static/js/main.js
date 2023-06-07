@@ -14,6 +14,7 @@ $(document).ready(function () {
 	let inSelection = false
 	let isLock = false
 	let power_state = false
+	let target_status = "normal"
 	let commandTable = {
 		root: new Trie({}),
 		enum: {},
@@ -29,9 +30,9 @@ $(document).ready(function () {
 		commandList = commandList.map((ele) => ele.trim())
 		console.log("commandList", commandList)
 		sccCommandStr = commandList.join(" ")
-		$("#command_entry").val(commandList)
+		$("#command_entry").val(commandList.toString().replace(/[,.]/g, " "))
 		console.log("command:  ", $("#command_entry").value)
-		sccLines += sccCommandStr
+		sccLines += sccCommandStr.toString().replace(/[,.]/g, " ")
 		console.log("sccLines", sccLines)
 	}
 
@@ -89,8 +90,8 @@ $(document).ready(function () {
 		if (13 == event.keyCode) {
 			event.preventDefault()
 			socket.emit("sccCommand", sccCommandStr)
-			lastcommandStr.push(sccCommandStr.replace(/\n/g, ""))
-			put_trace_to_log_window(sccCommandStr)
+			lastcommandStr.push(sccCommandStr.replace(/[,.]/g, " "))
+			put_trace_to_log_window(sccCommandStr.replace(/[,.]/g, " "))
 			sccLines = ""
 			sccCommandStr = ""
 			$("#command_entry").val("")
@@ -113,12 +114,11 @@ $(document).ready(function () {
 	}
 	let sccCommandStr = ""
 	$("#command_entry").on("input", function () {
-		sccCommandStr = $(this).val()
+		sccCommandStr = $(this).val().toUpperCase()
 	})
 	$("#command_entry").on("keydown", function (event) {
 		if (power_state) doAutoComplete(event)
 	})
-
 	// Update parameter table
 
 	/* auto complete end*/
@@ -158,16 +158,16 @@ $(document).ready(function () {
 		socket.emit("status", "Ready")
 	})
 	var isChatopen = false
-	$("#chat_button").click(function () {
+	$("#note_button").click(function () {
 		console.log("chat")
 		isChatopen = !isChatopen
 		isChatopen == false
 			? ($("#chat_popup").css("display", "none"),
-			  $("#chat_label").css("color", "white"),
-			  $("#chat_button").css("color", "white"))
+			  $("#note_label").css("color", "white"),
+			  $("#note_button").css("color", "white"))
 			: ($("#chat_popup").css("display", "block"),
-			  $("#chat_label").css("color", "#A6E22E"),
-			  $("#chat_button").css("color", "#A6E22E"))
+			  $("#note_label").css("color", "#A6E22E"),
+			  $("#note_button").css("color", "#A6E22E"))
 	})
 	var chat_message = ""
 	$("#chat_entry").on("input", function () {
@@ -178,12 +178,18 @@ $(document).ready(function () {
 		if (event.keyCode == 13) {
 			event.preventDefault()
 			if (chat_message === "clear") {
-				$("#chat_box").empty()
+				$("#note_box").empty()
 				$("#chat_entry").val("")
 			} else {
-				chat_message = session_id + ": " + chat_message
-				socket.emit("chat_box", (message = chat_message + "\r"))
-
+				document.getElementById("note_box").scrollTop =
+					document.getElementById("note_box").scrollHeight
+				$("#note_box").append(
+					"<div><pre>" +
+						$("<div/>")
+							.text(chat_message + "\n")
+							.html() +
+						"</pre></div>",
+				)
 				$("#chat_entry").val("")
 			}
 			chat_message = ""
@@ -201,7 +207,6 @@ $(document).ready(function () {
 	var isWD_on = false
 	$("#wd_off_button").click(function () {
 		isWD_on = !isWD_on
-		console.log("wd_off_button")
 		socket.emit("request_to_arduino", {
 			pin: "wd_off_button",
 			state: isWD_on,
@@ -229,6 +234,7 @@ $(document).ready(function () {
 	})
 
 	function setStateHardware(button_id, button_label, state) {
+		console.log(button_id, button_label, state)
 		if (state == true) {
 			$("#" + button_id).css("color", "#A6E22E")
 			$("#" + button_label).css("color", "#A6E22E")
@@ -240,8 +246,11 @@ $(document).ready(function () {
 	/* hardware stub end */
 	/* flash and trace upload  begin*/
 	$("#flash_button").click(function () {
-		console.log("flash...")
 		var file_data = $("#file-dnl-input").prop("files")[0]
+		console.log("flash..")
+		if (file_data == undefined || file_data == null) {
+			$("#status").text("Files is empty")
+		}
 		var form_data = new FormData()
 		form_data.append("file-dnl", file_data)
 		$.ajax({
@@ -277,16 +286,18 @@ $(document).ready(function () {
 			// do not thing
 		} else {
 			$("#scc_trace").append(
-				"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
+				"<div><pre>" +
+					$("<div/>")
+						.text("\r\n" + message)
+						.html() +
+					"</pre></div>",
 			)
 			document.getElementById("scc_trace").scrollTop =
 				document.getElementById("scc_trace").scrollHeight
 			if (isRecording) {
 				recordedText += message
-				console.log("record", recordedText)
 			} else {
 				recordedText = ""
-				console.log("not record", recordedText)
 			}
 		}
 	}
@@ -296,6 +307,7 @@ $(document).ready(function () {
 	})
 
 	$("#export_scc").click(function () {
+		console.log("export")
 		{
 			const text = $("#scc_trace").text()
 			let blob = new Blob([text], {
@@ -343,20 +355,20 @@ $(document).ready(function () {
 	socket.on("connect", function () {
 		console.log("connect")
 		const lockstatus = JSON.parse(localStorage.getItem("lockstatus"))
-		console.log("myBoolean", lockstatus.lock, lockstatus.session)
-		console.log("session_id", session_id, lockstatus.session)
-		if (lockstatus.lock != undefined && lockstatus.session != undefined) {
-			isLock = lockstatus.lock
-			if (lockstatus.session == session_id) {
-				loggedInUsers[0] = lockstatus.session
-				$("#lock_button").css("display", "block")
-				console.log("admin lock")
-				socket.emit("lock", isLock)
-				isLock
-					? $("#lock_button").text("Unlock")
-					: $("#lock_button").text("Lock")
-			} else if (loggedInUsers[0] == "") {
-				loggedInUsers[0] = lockstatus.session
+		if (lockstatus != null) {
+			if (lockstatus.lock != undefined && lockstatus.session != undefined) {
+				isLock = lockstatus.lock
+				if (lockstatus.session == session_id) {
+					loggedInUsers[0] = lockstatus.session
+					$("#lock_button").css("display", "block")
+					console.log("admin lock")
+					socket.emit("lock", isLock)
+					isLock
+						? $("#lock_button").text("Unlock")
+						: $("#lock_button").text("Lock")
+				} else if (loggedInUsers[0] == "") {
+					loggedInUsers[0] = lockstatus.session
+				}
 			}
 		}
 		socket.emit("lock", isLock)
@@ -369,28 +381,20 @@ $(document).ready(function () {
 	})
 	socket.on("is_power_turn_on", function (status) {
 		power_state = status
+		console.log("is_power_turn_on", power_state)
 		if (power_state == true) {
 			$("#power_button").css("color", "#A6E22E")
-			$("#power_label").text("ON")
+			$("#power_button").text("ON")
 			$("#power_label").css("color", "#A6E22E")
 		} else {
 			$("#power_button").css("color", "red")
-			$("#power_label").text("OFF")
+			$("#power_button").text("OFF")
 			$("#power_label").css("color", "red")
 		}
 	})
-	socket.on("chat_box", function (message) {
-		document.getElementById("chat_box").scrollTop =
-			document.getElementById("chat_box").scrollHeight
-		$("#chat_box").append(
-			"<div><pre>" +
-				$("<div/>")
-					.text(message + "\n")
-					.html() +
-				"</pre></div>",
-		)
-	})
+
 	socket.on("message", function (message) {
+		console.log("trace", message)
 		put_trace_to_log_window(message)
 	})
 
@@ -400,12 +404,22 @@ $(document).ready(function () {
 	})
 
 	socket.on("status", function (status) {
-		$("status").text(status)
+		$("#status").text(status)
+		console.log($("#status").val())
 	})
 
 	socket.on("power_source_data", function (data) {
 		$("#current_voltage").text(data["voltage_returned"])
 		$("#current_ampe").text(data["current_returned"])
+		if (data["current_returned"] == 0) {
+			$("#ign_button").css("color", "red")
+			$("#ign_label").css("color", "red")
+			$("#acc_button").css("color", "red")
+			$("#acc_label").css("color", "red")
+			updata_target_status("standby")
+		} else {
+			updata_target_status("normal")
+		}
 	})
 
 	socket.on("force_ul", function () {
@@ -442,8 +456,8 @@ $(document).ready(function () {
 				$("[id]").addClass("disable-click")
 				$("#lock_button").removeClass("disable-click")
 				$("#lock_button").text("Force Unlock")
-				$("#chat_button").removeClass("disable-click")
-				$("#chat_label").removeClass("disable-click")
+				$("#note_button").removeClass("disable-click")
+				$("#note_label").removeClass("disable-click")
 				$("#chat_entry").removeClass("disable-click")
 			} else {
 				console.log("unlock")
@@ -563,5 +577,65 @@ $(document).ready(function () {
 	function hideInformPopup() {
 		$("#force_popup").css("display", "none")
 		stopCountdown()
+	}
+	shortToBat = (periDevice) => {
+		socket.emit("shortToBat", periDevice)
+	}
+	shortToGround = (periDevice) => {
+		socket.emit("shortToGround", periDevice)
+	}
+
+	$("#save_note").click(function () {
+		{
+			const text = $("#note_box").text()
+			let blob = new Blob([text], {
+				type: "text/plain",
+			})
+			let filename = `${new Date().toISOString()}_note${session_id}.pro`
+			saveAs(blob, filename)
+		}
+	})
+	// $("#send_note").click(function () {
+	// 	{
+	// 		const text = $("#note_box").text()
+	// 		let blob = new Blob([text], {
+	// 			type: "text/plain",
+	// 		})
+	// 		let filename = `${new Date().toISOString()}_note${session_id}.pro`
+	// 		saveAs(blob, filename)
+	// 	}
+	// })
+
+	$("#standby_buton").click(function () {
+		socket.emit("status", "Set target into standby mode")
+		socket.emit("request_to_arduino", {
+			pin: "acc_button",
+			state: false,
+			label: "acc_label",
+		})
+		socket.emit("request_to_arduino", {
+			pin: "ign_button",
+			state: false,
+			label: "ign_label",
+		})
+		target_status = "wait"
+	})
+
+	updata_target_status = (status) => {
+		if (status === "standby") {
+			$("#target_status").css("color", "red")
+			$("#ign_button").css("color", "red")
+			$("#ign_label").css("color", "red")
+			$("#acc_button").css("color", "red")
+			$("#acc_label").css("color", "red")
+			isIGN_on = false
+			isACC_on = false
+			target_status = "standby"
+		}
+		if (status === "normal") {
+			$("#target_status").css("color", "green")
+			target_status = "normal"
+		}
+		$("#target_status").text(status.toUpperCase())
 	}
 })

@@ -13,6 +13,7 @@ from config import *
 import psutil
 eventlet.monkey_patch()
 
+# run this in cmd: NETSH advfirewall firewall add rule name="LCM development" dir=in action=allow enable=yes protocol=TCP localport=5000 remoteip="10.0.0.0/8" localip="10.0.0.0/8" description="LCM workstation" Profile=domain
 
 start_time = time.time()
 logged_in_users = []
@@ -32,8 +33,7 @@ def update_scc_trace(trace):
     """
     global is_power_turn_on
     if is_power_turn_on:
-        print(trace)
-        socketio.emit("message", trace, broadcast=True)
+        socketio.emit("message", trace+"\n", broadcast=True)
 
 
 def update_voltage_and_current_to_server():
@@ -51,15 +51,14 @@ def update_voltage_and_current_to_server():
             status = "Power source is not connect !!!"
         else:
             if is_power_turn_on:
+                socketio.emit("is_power_turn_on", is_power_turn_on)
                 try:
                     voltage_returned = str(
                         float(power_source_connection .GetVoltage().decode()))
                     current_returned = str(
                         float(power_source_connection .GetCurrent().decode()))
-
                     data = {"voltage_returned": voltage_returned,
                             "current_returned": current_returned}
-                    status = "Ready"
 
                     update_power_source_data(data, is_power_turn_on)
                     socketio.emit("status", status)
@@ -80,18 +79,22 @@ def check_process_running(process_name):
 
 
 def handle_error_from_flash_gui():
+    elapsed_time = 0
     while True:
         if check_process_running("FlashGUI.exe"):
-            elapsed_time = time.time() - start_time
+            elapsed_time += 1
             print("waiting")
             if elapsed_time >= 120:
                 socketio.emit("status", "Fashing timeout!!!")
                 os.system("taskkill /f /im  FlashGUI.exe")
                 break
             else:
+                elapsed_time += 1
                 socketio.emit("status", "Wating for flashing...")
                 time.sleep(1)  # wait for 1 second
         else:
+            print("done")
+            elapsed_time = 0
             socketio.emit("status", "Ready")
             break
 
@@ -108,19 +111,18 @@ def upload_trace_to_ttfis(file_name):
         file_name (string): trace file name 
     """
     socketio.emit("status", "Uploading trace...")
+    time.sleep(1)
     if ttfisClient.LoadTRCFiles([trace_path+file_name]):
         socketio.emit("status", "Restarting ttfisClient...")
+        print("Success")
+        ttfisClient.Disconnect(ttfis_client_port)
+        ttfisClient.Connect(ttfis_client_port)
         ttfisClient.Restart()
     else:
         print("failed")
         socketio.emit("status", "Upload trace failed")
         time.sleep(1)
     socketio.emit("status", "Ready")
-
-
-def handling_flash_ccs(time):
-    while time > 0:
-        print("haha")
 
 
 def flash_ccs20_target(file_name):
@@ -132,7 +134,7 @@ def flash_ccs20_target(file_name):
     global socketio
     print("going to flash_ccs20_target")
     socketio.emit("status", "Start FLashGui")
-    cmd = 'FlashGUI.exe /iQuad-Gen5-DebugAdapter C - FT7HJJJV,1000000,E,8,1 " /f{}/{} /au'.format(
+    cmd = 'FlashGUI.exe /iQuad-Gen5-DebugAdapter C - FT7HJJJV,1000000,E,8,1 " /f{}/{} /av'.format(
         binary_path, file_name)
     subprocess.Popen(cmd, stdout=subprocess.PIPE)
     socketio.emit("status", "Flashing...")
@@ -249,6 +251,7 @@ def handling_file_upload_from_server():
             trace_file_name = filename_trc
             print(trace_file_name)
             upload_trace_to_ttfis(trace_file_name)
+            socketio.emit("status", "Ready")
         else:
             print("File not found: {}".format(filename_trc))
     except:
@@ -283,7 +286,6 @@ def handle_request(data):
     pin_name = data['pin']
     state = data['state']
     label = data['label']
-    print(data)
     time.sleep(.1)
     if arduino_connection:
         if pin_name == 'acc_button':
@@ -302,14 +304,13 @@ def handle_request(data):
 
 
 def update_power_source_data(data, state):
-    print(data)
+
     socketio.emit("power_source_data", data)
     socketio.emit("is_power_turn_on", state)
 
 
 @ socketio.on("power_state")
 def set_power_state(state):
-    print("power_state", state)
     global power_source_connection, is_power_turn_on
     if power_source_connection != None:
         if state:
@@ -358,6 +359,16 @@ def handling_voltage(voltage_value):
     socketio.emit("status", status)
 
 
+@socketio.on("shortToGround")
+def shortToGround(periDevices):
+    print("shortToGround ", periDevices)
+
+
+@socketio.on("shortToBat")
+def shortToBat(periDevices):
+    print("shortToBat ", periDevices)
+
+
 if __name__ == '__main__':
     ttfisClient = TTFisClient()
     ttfisClient.registerUpdateTraceCallback(update_scc_trace)
@@ -365,14 +376,14 @@ if __name__ == '__main__':
     power_source_connection = ToellnerDriver(
         powersource_port, powersource_channel)
     if power_source_connection:
-        power_source_connection.SetVoltage(12)
-    # if arduino_port:
-    #     arduino_connection = Arduino(arduino_port)
+        power_source_connection.SetVoltage(0)
+    if arduino_port:
+        arduino_connection = Arduino(arduino_port)
     print("update_voltage_and_current_to_server")
     Thread(target=update_voltage_and_current_to_server).start()
     print("start_socketio")
     socketio.run(app, host='0.0.0.0', port=5000)
 
     power_source_connection .__del__()
-    # arduino_connection.close()
+    arduino_connection.close()
     ttfisClient.Quit()

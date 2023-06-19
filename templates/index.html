@@ -47,7 +47,7 @@
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
                 <a class="navbar-brand mx-4 mb-3" href="#">
                     <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>AutoSar   (<span id="lock_status">Unlock</span>)</h3>
-                    <i class="fa fa-circle text-success">&nbsp;&nbsp;<span class="text-success" id="status">Ready</span></i>
+                    <i class="fa fa-circle text-success">&nbsp;&nbsp;<span class="text-success" id="status"style="font-size: xx-large;">Ready</span></i>
                   </a>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
@@ -86,9 +86,9 @@
                 </div>
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
-                    <i class="fa fa-dog fa-3x"style="color: red;" id="wd_off_label"></i>
+                    <i class="fa fa-dog fa-3x"style="color: red;" id="wd_label"></i>
                     <div class="ms-3">
-                      <h2 class="mb-0" id="wd_off_button" style="color: red; cursor: pointer;">WD_OFF</h2>
+                      <h2 class="mb-0" id="wd_button" style="color: red; cursor: pointer;">WD_OFF</h2>
                     </div>
                   </div>
                 </div>
@@ -103,7 +103,7 @@
                 <div class="col-sm-6 col-xl-2">
                   <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
                     <div class="col">
-                      <i class="fas fa-bolt fa-3x "style="color: yellow;"></i>
+                      <i class="fas fa-bolt fa-3x " id ="voltage_label"style="color: yellow;"></i>
                     </div>
                     <div class="col">
                       <h1 id="current_voltage">0</h1>
@@ -141,10 +141,12 @@
                     <div class="ms-3">
                     </div>
                   </div>
-                  <ul class="list-group mt-3 position-absolute col-xl-12" id="mainList" style="display: none;">
-                    <li class="list-group-item bg-secondary" data-target="shortToBatList">Short to Bat</li>
-                    <li class="list-group-item bg-secondary" data-target="shortToGroundList">Short to Ground</li>
-                    <li class="list-group-item bg-secondary" data-target="list3" id="standby_buton">StandBy</li>
+                  <ul class="list-group mt-3 position-absolute col-xl-12" id="mainList" style="display: none; font-size: x-large;">
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer; "data-target="shortToBatList">Short to Bat</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"data-target="shortToGroundList">Short to Ground</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="standby_buton">StandBy</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="shutdown_buton">ShutDown</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="wakeup_buton">WakeUp</li>
                   </ul>
                   <ul id="shortToBatList" class="target-list position-absolute col-xl-5" style="display: none; margin-left: 25%; margin-top: 5%; ">
                     <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('CAM')">CAM</li>

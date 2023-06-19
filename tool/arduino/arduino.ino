@@ -1,72 +1,63 @@
 #define ACC_PIN 2
 #define IGN_PIN 3
-#define PWR_ON 4
 #define WD_OFF_PIN 8
 #define OPT2_PIN 9
-#define NOT_BIND_1 10
-#define NOT_BIND_2 11
-#define E_OK 1
-#define E_NOT_OK 2
 
-void processCommand(uint8_t pin, uint8_t state)
+#define E_OK 0
+#define E_NOT_OK 1
+
+void printPinState()
 {
-  digitalWrite(pin, state);
-  if (state == LOW)
-    Serial.println(E_OK);
-  else
-   Serial.println(E_NOT_OK);
-   Serial.flush();
+  int accState = digitalRead(ACC_PIN);
+  int ignState = digitalRead(IGN_PIN);
+  int wdOffState = digitalRead(WD_OFF_PIN);
+  int opt2State = digitalRead(OPT2_PIN);
+  Serial.print("[" + String(accState) + "]");
+  Serial.print("[" + String(ignState) + "]");
+  Serial.print("[" + String(wdOffState) + "]");
+  Serial.println("[" + String(opt2State) + "]");
 }
-
+void processCmd(uint8_t pin, uint8_t state)
+{
+  if (pin == 0 && state == 0)
+  {
+    printPinState();
+  }
+  else
+  {
+    digitalWrite(pin, state);
+    if (digitalRead(pin) == state)
+    {
+      Serial.println(E_OK);
+    }
+    else
+    {
+      Serial.println(E_NOT_OK);
+    }
+    Serial.flush();
+  }
+}
 void setup()
 {
-    Serial.begin(9600);
-    pinMode(ACC_PIN, OUTPUT);
-    pinMode(IGN_PIN, OUTPUT);
-    pinMode(WD_OFF_PIN, OUTPUT);
-    pinMode(OPT2_PIN, OUTPUT);
-    digitalWrite(ACC_PIN, LOW);
-    digitalWrite(IGN_PIN, LOW);
-    for (size_t i = 4; i < 12; i++)
-    {
-        digitalWrite(i, HIGH);
-    }
+  Serial.begin(9600);
+  pinMode(ACC_PIN, OUTPUT);
+  pinMode(IGN_PIN, OUTPUT);
+  pinMode(WD_OFF_PIN, OUTPUT);
+  pinMode(OPT2_PIN, OUTPUT);
 }
 
 void loop()
 {
-    if (Serial.available() > 0)
+  if (Serial.available() > 0)
+  {
+    String receivedData = Serial.readStringUntil('\n');
+
+    if (receivedData.length() > 0)
     {
-        String receivedData = Serial.readStringUntil('\n');
-        int receivedValue = receivedData.toInt();
-        switch (receivedValue)
-        {
-        case 10:
-            processCommand(ACC_PIN, LOW);
-            break;
-        case 11:
-            processCommand(ACC_PIN, HIGH);
-            break;
-        case 20:
-            processCommand(IGN_PIN, LOW);
-            break;
-        case 21:  
-            processCommand(IGN_PIN, HIGH);
-            break;
-        case 30:
-            processCommand(OPT2_PIN, LOW);
-            break;
-        case 31:
-            processCommand(OPT2_PIN, HIGH);
-            break;
-        case 40:
-            processCommand(WD_OFF_PIN, LOW);
-            break;
-        case 41:
-            processCommand(WD_OFF_PIN, HIGH);
-            break;
-        default:
-            break;
-        }
+      int receivedValue = receivedData.toInt();
+      int _pin = receivedValue / 10;
+      int _state = receivedValue % 10;
+      processCmd(_pin, _state);
     }
+  }
 }

@@ -1,19 +1,25 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_socketio import SocketIO
 from threading import Thread
+import threading
 import time
 import eventlet
 import subprocess
 import os
 from InstructionSetProcess import *
-from tool.ArduinoControl import Arduino, Command, DEVICE_OFF, DEVICE_ON
+from tool.ArduinoControl import Arduino, Command, E_OK, E_NOK
 from tool.TTFisClient import TTFisClient
 from tool.ToellnerDriver import ToellnerDriver
 from config import *
 import psutil
+import random
 eventlet.monkey_patch()
-
+stop_event = threading.Event()
 # run this in cmd: NETSH advfirewall firewall add rule name="LCM development" dir=in action=allow enable=yes protocol=TCP localport=5000 remoteip="10.0.0.0/8" localip="10.0.0.0/8" description="LCM workstation" Profile=domain
+
+# ssh workstation@10.185.81.196
+# pass: lcm
+
 
 start_time = time.time()
 logged_in_users = []
@@ -31,7 +37,14 @@ def update_scc_trace(trace):
     Args:
         trace (string): trace from ttfis
     """
-    global is_power_turn_on
+    global is_power_turn_on, is_start_up_msg_recv
+    if "SPM_SPMS_R_STARTUP_FINISHED transmission completed" in trace:
+        is_start_up_msg_recv = True
+        socketio.emit("status", "Start Up success")
+        print("Start Up success")
+    if "SPM_SPMS_R_SHUTDOWN_IN_PROGRESS transmission completed" in trace:
+        socketio.emit("status", "Receive SPM_SPMS_R_SHUTDOWN_IN_PROGRES")
+        print("Receive Up success")
     if is_power_turn_on:
         socketio.emit("message", trace+"\n", broadcast=True)
 
@@ -41,29 +54,29 @@ def update_voltage_and_current_to_server():
     Update voltage_returned and current_returned to server
     :return: None
     """
-    global socketio, is_power_turn_on, power_source_connection, logged_in_users,  stop_threads
+    global socketio, is_power_turn_on, power_source_connection, logged_in_users
+
     while True:
         if socketio is not None:
             if logged_in_users:
                 socketio.emit("list_user", logged_in_users)
         if power_source_connection == None:
-            is_power_turn_on = False
+            if socketio is not None:
+                socketio.emit("update_power_data", data={"voltage_returned": 0,
+                                                         "current_returned": 0})
             status = "Power source is not connect !!!"
         else:
-            if is_power_turn_on:
-                socketio.emit("is_power_turn_on", is_power_turn_on)
-                try:
-                    voltage_returned = str(
-                        float(power_source_connection .GetVoltage().decode()))
-                    current_returned = str(
-                        float(power_source_connection .GetCurrent().decode()))
-                    data = {"voltage_returned": voltage_returned,
-                            "current_returned": current_returned}
-
-                    update_power_source_data(data, is_power_turn_on)
-                    socketio.emit("status", status)
-                except:
-                    pass
+            try:
+                voltage_returned = str(
+                    float(power_source_connection .GetVoltage().decode()))
+                current_returned = str(
+                    float(power_source_connection .GetCurrent().decode()))
+                data = {"voltage_returned": voltage_returned,
+                        "current_returned": current_returned}
+                socketio.emit("update_power_data", data)
+                socketio.emit("status", status)
+            except:
+                pass
 
         time.sleep(1)
 
@@ -99,7 +112,7 @@ def handle_error_from_flash_gui():
             break
 
 
-@app.route('/session_id')
+@ app.route('/session_id')
 def get_session_id():
     return jsonify(session_id=session["emp_id"])
 
@@ -108,7 +121,7 @@ def upload_trace_to_ttfis(file_name):
     """This function uses to upload trace to the ttfis client
 
     Args:
-        file_name (string): trace file name 
+        file_name (string): trace file name
     """
     socketio.emit("status", "Uploading trace...")
     time.sleep(1)
@@ -132,13 +145,13 @@ def flash_ccs20_target(file_name):
         file_name (string): the dnl file name
     """
     global socketio
-    print("going to flash_ccs20_target")
-    socketio.emit("status", "Start FLashGui")
-    cmd = 'FlashGUI.exe /iQuad-Gen5-DebugAdapter C - FT7HJJJV,1000000,E,8,1 " /f{}/{} /av'.format(
-        binary_path, file_name)
-    subprocess.Popen(cmd, stdout=subprocess.PIPE)
-    socketio.emit("status", "Flashing...")
-    handle_error_from_flash_gui()
+    # print("going to flash_ccs20_target")
+    # socketio.emit("status", "Start FLashGui")
+    # cmd = 'FlashGUI.exe /iQuad-Gen5-DebugAdapter C - FT7HJJJV,1000000,E,8,1 " /f{}/{} /au'.format(
+    #     binary_path, file_name)
+    # subprocess.Popen(cmd, stdout=subprocess.PIPE)
+    # socketio.emit("status", "Flashing...")
+    # handle_error_from_flash_gui()
 
 
 def process_instruction_file(file_path):
@@ -156,18 +169,16 @@ def process_instruction_file(file_path):
     return lkup_table
 
 
-@socketio.on("lock_status")
+@ socketio.on("lock_status")
 def handle_lock_status(status):
     print("lock status", status)
     if status:
-        # If the first user clicks the lock button, notify all other users
         socketio.emit("lock_status", True, broadcast=True)
     else:
-        # If the first user unlocks the screen, notify all other users
         socketio.emit("lock_status", False, broadcast=True)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@ app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         _e_id = request.form["emp_id"]
@@ -203,9 +214,19 @@ def check_login_users(user):
             return render_template('signin.html', error=error)
 
 
-@app.route('/index')
+@ app.route('/index')
 def index():
-    return render_template('index.html')
+    if request.method == 'GET':
+        if 'Referer' in request.headers and request.headers['Referer'] + "index" == request.url:
+            refresh_detected = True
+            print(f"Refresh detected: {refresh_detected}")
+            return render_template('index.html')
+        else:
+            refresh_detected = False
+            print(f"No refresh: {refresh_detected}")
+            return render_template('index.html')
+    else:
+        return render_template('index.html')
 
 
 @ app.route('/logout')
@@ -259,11 +280,6 @@ def handling_file_upload_from_server():
     return ""
 
 
-@ socketio.on('is_power_turn_on')
-def sourceStt(status):
-    socketio.emit("is_power_turn_on", status, broadcast=True)
-
-
 @ socketio.on('message')
 def message_(message):
     socketio.emit("message", data=message, statusbroadcast=True)
@@ -274,39 +290,33 @@ def forward_message(message):
     socketio.emit("chat_box", message, statusbroadcast=True)
 
 
-def sync_data_from_arduino(pin, state, label):
-
-    print("Set {} result {}".format(label, state))
-    socketio.emit("return_from_arduino", data={
-                  "pin": pin, "state": True if state else False, "label": label}, broadcast=True)
+@ socketio.on("get_all_data")
+def get_all_data():
+    ret = arduino_connection.get_all_pin_state()
+    socketio.emit("sync_data_from_arduino", ret)
 
 
 @ socketio.on('request_to_arduino')
-def handle_request(data):
-    pin_name = data['pin']
-    state = data['state']
-    label = data['label']
+def request_to_arduino(data):
     time.sleep(.1)
     if arduino_connection:
-        if pin_name == 'acc_button':
-            arduino_connection.send_command(
-                Command.ACC, DEVICE_ON if state else DEVICE_OFF)
-        elif pin_name == 'ign_button':
-            arduino_connection.send_command(
-                Command.IGN, DEVICE_ON if state else DEVICE_OFF)
-        elif pin_name == 'wd_off_button':
-            arduino_connection.send_command(
-                Command.WD, DEVICE_ON if state else DEVICE_OFF)
-        elif pin_name == 'opt2_button':
-            arduino_connection.send_command(
-                Command.OPT2, DEVICE_ON if state else DEVICE_OFF)
-        sync_data_from_arduino(pin_name, state, label)
-
-
-def update_power_source_data(data, state):
-
-    socketio.emit("power_source_data", data)
-    socketio.emit("is_power_turn_on", state)
+        ret = ""
+        if data['pin'] == 'acc':
+            ret = arduino_connection.send_command(
+                Command.ACC, int(data['state']))
+        elif data['pin'] == 'ign':
+            ret = arduino_connection.send_command(
+                Command.IGN, int(data['state']))
+        elif data['pin'] == 'wd':
+            ret = arduino_connection.send_command(
+                Command.WD, int(data['state']))
+        elif data['pin'] == 'opt2':
+            ret = arduino_connection.send_command(
+                Command.OPT2, int(data['state']))
+        print("pin  ", data['pin'], "ret  ",
+              ret, "state  ", int(data['state']))
+        socketio.emit("return_from_arduino", data={
+            "pin": data['pin'], "ret": ret}, broadcast=True)
 
 
 @ socketio.on("power_state")
@@ -314,27 +324,26 @@ def set_power_state(state):
     global power_source_connection, is_power_turn_on
     if power_source_connection != None:
         if state:
-            is_power_turn_on = True
-            print('set pwer on')
-            power_source_connection.SetVoltage(12)
-            update_power_source_data(normal_voltage, is_power_turn_on)
+            status = "Set ToellnerDriver ON"
+            socketio.emit("update_power_data", json.dumps(normal_voltage))
         else:
             print('set pwer off')
-            is_power_turn_on = False
-            power_source_connection.SetVoltage(0)
-            update_power_source_data(shutdown_voltage, is_power_turn_on)
+            status = "Set ToellnerDriver OFF"
+            socketio.emit("update_power_data", json.dumps(shutdown_voltage))
+        is_power_turn_on = state
     else:
-        status = "Power souce is not connect... It cannot turn on or off"
+        status = "ToellnerDriver is not connect... Cannot turn on or off"
+        print(status)
         socketio.emit("status", status)
         time.sleep(1)
 
 
-@socketio.on("lock")
+@ socketio.on("lock")
 def lock(isLock):
     socketio.emit("lock", isLock)
 
 
-@socketio.on("force_ul")
+@ socketio.on("force_ul")
 def force_unlock():
     socketio.emit("force_ul")
 
@@ -344,46 +353,72 @@ def sccCommand(cmd):
     ttfisClient.Cmd(cmd)
 
 
-@ socketio.on('setvoltagValue')
+@ socketio.on('setVoltage')
 def handling_voltage(voltage_value):
+    print(voltage_value)
     global power_source_connection, is_power_turn_on
     if power_source_connection != None:
         if (int(voltage_value) > voltage_max) or (int(voltage_value) <= voltage_min):
-            status = "The voltage_returned value must be in range {}-{}V".format(
+            status = "The voltage must in range {}V - {}V".format(
                 voltage_min, voltage_max)
         else:
             power_source_connection.SetVoltage(voltage_value)
-            status = "Set voltage_returned successfully"
+            status = "Set voltage successfully"
     else:
         status = "Power source not connected"
     socketio.emit("status", status)
 
 
-@socketio.on("shortToGround")
+@ socketio.on("shortToGround")
 def shortToGround(periDevices):
     print("shortToGround ", periDevices)
 
 
-@socketio.on("shortToBat")
+@ socketio.on("shortToBat")
 def shortToBat(periDevices):
     print("shortToBat ", periDevices)
 
 
+@ socketio.on("shut_down")
+def shut_down_target():
+    unplug_acc_ign()
+
+
+@ socketio.on("stand_by")
+def stand_by_target():
+    unplug_acc_ign()
+
+
+@socketio.on("wake_up")
+def wake_up_target():
+    plug_acc_ign()
+
+
+def unplug_acc_ign():
+    request_to_arduino({"pin": "acc", "state": E_NOK})
+    request_to_arduino({"pin": "ign", "state": E_NOK})
+
+
+def plug_acc_ign():
+    request_to_arduino({"pin": "acc", "state": E_OK})
+    request_to_arduino({"pin": "ign", "state": E_OK})
+
+
 if __name__ == '__main__':
-    ttfisClient = TTFisClient()
-    ttfisClient.registerUpdateTraceCallback(update_scc_trace)
-    ttfisClient.Connect(ttfis_client_port)
-    power_source_connection = ToellnerDriver(
-        powersource_port, powersource_channel)
-    if power_source_connection:
-        power_source_connection.SetVoltage(0)
+    # ttfisClient = TTFisClient()
+    # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
+    # ttfisClient.Connect(ttfis_client_port)
+    # power_source_connection = ToellnerDriver(
+    #     powersource_port, powersource_channel)
+    # if power_source_connection:
+    #     power_source_connection.SetVoltage(12)
     if arduino_port:
         arduino_connection = Arduino(arduino_port)
-    print("update_voltage_and_current_to_server")
+    # print("update_voltage_and_current_to_server")
     Thread(target=update_voltage_and_current_to_server).start()
     print("start_socketio")
     socketio.run(app, host='0.0.0.0', port=5000)
 
-    power_source_connection .__del__()
+    # power_source_connection .__del__()
     arduino_connection.close()
-    ttfisClient.Quit()
+    # ttfisClient.Quit()

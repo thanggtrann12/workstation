@@ -18,8 +18,7 @@ $(document).ready(function () {
 	let E_NOK = 1
 	let isStandby = false
 	let isShutdown = false
-	const STAND_BY_ID = 1
-	const SHUTDOWN_ID = 2
+	const TIMER_5_MINS = 300000
 	let commandTable = {
 		root: new Trie({}),
 		enum: {},
@@ -77,7 +76,8 @@ $(document).ready(function () {
 				} else if (paraTable[baseCommand]) {
 					let enumName = paraTable[baseCommand][pos - 2]
 					if (enumName) {
-						suggestionList = commandTable["enum"][enumName].find(name)
+						suggestionList =
+							commandTable["enum"][enumName].find(name)
 					}
 				}
 				inSelection = true
@@ -219,7 +219,10 @@ $(document).ready(function () {
 			socket.on("return_from_arduino", function (response) {
 				if (response.ret === E_OK) {
 					if (state) {
-						$("#" + response.pin + "_button").css("color", "#A6E22E")
+						$("#" + response.pin + "_button").css(
+							"color",
+							"#A6E22E",
+						)
 						$("#" + response.pin + "_label").css("color", "#A6E22E")
 					} else {
 						$("#" + response.pin + "_button").css("color", "red")
@@ -377,7 +380,10 @@ $(document).ready(function () {
 		socket.emit("get_all_data")
 		const lockstatus = JSON.parse(localStorage.getItem("lockstatus"))
 		if (lockstatus != null) {
-			if (lockstatus.lock != undefined && lockstatus.session != undefined) {
+			if (
+				lockstatus.lock != undefined &&
+				lockstatus.session != undefined
+			) {
 				isLock = lockstatus.lock
 				if (lockstatus.session == session_id) {
 					loggedInUsers[0] = lockstatus.session
@@ -414,12 +420,10 @@ $(document).ready(function () {
 	socket.on("update_power_data", function (data) {
 		$("#current_voltage").text(data["voltage_returned"])
 		$("#current_ampe").text(data["current_returned"])
-		if (data["current_returned"] == 0 && data["voltage_returned"] == 0) {
-			updata_target_status("ShutDown")
-			isShutdown = true
-		} else if (data["current_returned"] == 0 && data["voltage_returned"] != 0) {
+		if (data["voltage_returned"] != 0 && data["current_returned"] == 0) {
 			updata_target_status("StandBy")
 			isStandby = true
+			isShutdown = true
 		} else {
 			isShutdown = false
 			isStandby = false
@@ -564,32 +568,6 @@ $(document).ready(function () {
 			force_timer = setTimeout(startCountdown, 1000)
 		}
 	}
-	let mintosecs = 60
-	let timers = {}
-
-	function startCounter(time, id, callback) {
-		time--
-		console.log("Timer", id, " started. Time:", time)
-		if (time === 0) {
-			console.log("Timer expired")
-			if (typeof callback === "function") {
-				callback()
-			}
-		} else {
-			if ((id = STAND_BY_ID)) {
-				if (isStandby) stopCounter(STAND_BY_ID)
-			}
-			if ((id = SHUTDOWN_ID)) {
-				if (isShutdown) stopCounter(SHUTDOWN_ID)
-			}
-			timers[id] = setTimeout(startCounter(time, id, callback), 1000)
-		}
-	}
-
-	function stopCounter(id) {
-		clearTimeout(timers[id])
-		console.log("Timer", id, "stopped")
-	}
 
 	function showInformPopup() {
 		countdownTime = defaultTime
@@ -598,7 +576,9 @@ $(document).ready(function () {
 		$("#force_popup").css("display", "block")
 		startCountdown()
 	}
-
+	function stopCountdown() {
+		clearTimeout(timeoutId)
+	}
 	function hideInformPopup() {
 		$("#force_popup").css("display", "none")
 		stopCountdown(force_timer)
@@ -620,17 +600,10 @@ $(document).ready(function () {
 			saveAs(blob, filename)
 		}
 	})
-	function expired() {
-		console.log("expired")
-	}
 	$("#standby_buton").click(function () {
+		$("#scc_trace").empty()
 		handleTestCase("Set target into standby mode", "stand_by", "red")
-		if (power_state != true) {
-			var checkbox = document.getElementById("record_scc")
-			checkbox.checked = true
-			isRecording = true
-			startCounter(0.5 * mintosecs, STAND_BY_ID, expired)
-		}
+		standby_timer.start()
 	})
 
 	$("#wakeup_buton").click(function () {
@@ -639,33 +612,122 @@ $(document).ready(function () {
 	})
 
 	$("#shutdown_buton").click(function () {
-		handleTestCase("Shutdown target", "shut_down", "red")
-		if (power_state != true) {
-			var checkbox = document.getElementById("record_scc")
-			checkbox.checked = true
-			isRecording = true
-			startCounter(0.5 * mintosecs, SHUTDOWN_ID, expired)
-		}
+		$("#scc_trace").empty()
+		handleTestCase("Shutdown target", "stand_by", "red")
+		shutdown_timer.start()
 	})
 
 	function handleTestCase(statusText, socketEvent, color) {
 		if (power_state) {
 			$("#status").text(statusText)
 			socket.emit(socketEvent)
-			$("#acc_label, #ign_label, #acc_button, #ign_button").css("color", color)
+			$("#acc_label, #ign_label, #acc_button, #ign_button").css(
+				"color",
+				color,
+			)
+			var checkbox = document.getElementById("record_scc")
+			checkbox.checked = true
+			isRecording = true
 		} else {
 			$("#status").text("Power off. Turn the power on first")
 		}
 	}
 
 	updata_target_status = (status) => {
-		if (status === "Normal") {
-			$("#power_button").css("color", "#A6E22E")
-			$("#target_status").css("color", "#A6E22E")
+		if (power_state) {
+			if (status === "Normal") {
+				$("#power_button, #power_label").css("color", "#A6E22E")
+				$("#target_status").css("color", "#A6E22E")
+			} else {
+				$("#power_button, #power_label").css("color", "red")
+				$("#target_status").css("color", "red")
+			}
+			$("#target_status").text(status.toUpperCase())
 		} else {
-			$("#power_button").css("color", "red")
+			$("#target_status").text("SHUTDOWN")
 			$("#target_status").css("color", "red")
 		}
-		$("#target_status").text(status.toUpperCase())
 	}
+
+	class Timer {
+		constructor(duration, callback, condition, action) {
+			this.duration = duration
+			this.callback = callback
+			this.action = action
+			this.condition = condition
+			this.timerId = null
+			this.intervalId = null
+		}
+
+		start() {
+			this.timerId = setTimeout(() => {
+				clearInterval(this.intervalId) // Clear the interval when the main timer expires
+				if (!this.condition()) {
+					this.callback()
+				}
+			}, this.duration)
+			this.intervalId = setInterval(() => {
+				if (this.condition()) {
+					console.log("condition met")
+					this.action()
+					var checkbox = document.getElementById("record_scc")
+					checkbox.checked = false
+					isRecording = false
+					var fileName = `recorded_text_${new Date().toISOString()}.pro`
+					var blob = new Blob([recordedText], {
+						type: "text/plain;charset=utf-8",
+					})
+					var formData = new FormData()
+					formData.append("file", blob, fileName)
+
+					fetch("/result", {
+						method: "POST",
+						body: formData,
+					})
+
+					clearTimeout(this.timerId) // Clear the main timer if the condition is met
+					clearInterval(this.intervalId)
+				}
+			}, 100) // Adjust the interval duration as needed
+		}
+
+		stop() {
+			clearTimeout(this.timerId)
+			clearInterval(this.intervalId)
+		}
+	}
+
+	const shutdown_timer = new Timer(
+		TIMER_5_MINS,
+		() => {
+			if (!isShutdown) {
+				put_trace_to_log_window(
+					"5 minutes over!!! Cannot shutdown !!! -> [FAILED]",
+				)
+			}
+		},
+		() => {
+			return isShutdown
+		},
+		() => {
+			put_trace_to_log_window("Shutdown!!! -> [PASSED]")
+		},
+	)
+
+	const standby_timer = new Timer(
+		TIMER_5_MINS,
+		() => {
+			if (!isStandby) {
+				put_trace_to_log_window(
+					"5 minutes over!!! Cannot stand by !!! -> [FAILED]",
+				)
+			}
+		},
+		() => {
+			return isStandby
+		},
+		() => {
+			put_trace_to_log_window("StandBy!!! -> [PASSED]")
+		},
+	)
 })

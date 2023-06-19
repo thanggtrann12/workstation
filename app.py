@@ -13,6 +13,7 @@ from tool.ToellnerDriver import ToellnerDriver
 from config import *
 import psutil
 import random
+from werkzeug.utils import secure_filename
 eventlet.monkey_patch()
 stop_event = threading.Event()
 # run this in cmd: NETSH advfirewall firewall add rule name="LCM development" dir=in action=allow enable=yes protocol=TCP localport=5000 remoteip="10.0.0.0/8" localip="10.0.0.0/8" description="LCM workstation" Profile=domain
@@ -250,6 +251,19 @@ def get_command_set():
     return process_instruction_file(traceFilePath)
 
 
+@app.route('/result', methods=['POST'])
+def upload_file():
+    file = request.files['file']
+    if file:
+        filename = secure_filename(file.filename)
+        save_path = os.path.join(
+            app.root_path, 'static', 'uploads/test/', filename)
+        file.save(save_path)
+        return 'File uploaded successfully'
+    else:
+        return 'No file uploaded'
+
+
 @ app.route('/upload', methods=['POST'])
 def handling_file_upload_from_server():
     global trace_file_name
@@ -290,10 +304,10 @@ def forward_message(message):
     socketio.emit("chat_box", message, statusbroadcast=True)
 
 
-@ socketio.on("get_all_data")
-def get_all_data():
-    ret = arduino_connection.get_all_pin_state()
-    socketio.emit("sync_data_from_arduino", ret)
+# @ socketio.on("get_all_data")
+# def get_all_data():
+#     ret = arduino_connection.get_all_pin_state()
+#     socketio.emit("sync_data_from_arduino", ret)
 
 
 @ socketio.on('request_to_arduino')
@@ -412,8 +426,8 @@ if __name__ == '__main__':
     #     powersource_port, powersource_channel)
     # if power_source_connection:
     #     power_source_connection.SetVoltage(12)
-    if arduino_port:
-        arduino_connection = Arduino(arduino_port)
+    # if arduino_port:
+    # arduino_connection = Arduino(arduino_port)
     # print("update_voltage_and_current_to_server")
     Thread(target=update_voltage_and_current_to_server).start()
     print("start_socketio")

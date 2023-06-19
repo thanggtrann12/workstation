@@ -215,6 +215,11 @@ def check_login_users(user):
             return render_template('signin.html', error=error)
 
 
+@socketio.on("chat")
+def chat_msg(msg):
+    socketio.emit("chat", msg)
+
+
 @ app.route('/index')
 def index():
     if request.method == 'GET':
@@ -419,6 +424,7 @@ def plug_acc_ign():
 
 
 if __name__ == '__main__':
+    subprocess.Popen(["python", "admin.py"])
     # ttfisClient = TTFisClient()
     # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
     # ttfisClient.Connect(ttfis_client_port)

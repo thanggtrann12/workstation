@@ -149,16 +149,14 @@ $(document).ready(function () {
 		socket.emit("status", "Ready")
 	})
 	var isChatopen = false
-	$("#note_button").click(function () {
+	$("#chat_button").click(function () {
 		console.log("chat")
 		isChatopen = !isChatopen
 		isChatopen == false
 			? ($("#chat_popup").css("display", "none"),
-			  $("#note_label").css("color", "white"),
-			  $("#note_button").css("color", "white"))
+			  $("#chat_button").css("color", "white"))
 			: ($("#chat_popup").css("display", "block"),
-			  $("#note_label").css("color", "#A6E22E"),
-			  $("#note_button").css("color", "#A6E22E"))
+			  $("#chat_button").css("color", "#A6E22E"))
 	})
 	var chat_message = ""
 	$("#chat_entry").on("input", function () {
@@ -169,18 +167,13 @@ $(document).ready(function () {
 		if (event.keyCode == 13) {
 			event.preventDefault()
 			if (chat_message === "clear") {
-				$("#note_box").empty()
+				$("#chat_box").empty()
 				$("#chat_entry").val("")
 			} else {
-				document.getElementById("note_box").scrollTop =
-					document.getElementById("note_box").scrollHeight
-				$("#note_box").append(
-					"<div><pre>" +
-						$("<div/>")
-							.text(chat_message + "\n")
-							.html() +
-						"</pre></div>",
-				)
+				document.getElementById("chat_box").scrollTop =
+					document.getElementById("chat_box").scrollHeight
+
+				socket.emit("chat", session_id + ":   " + chat_message + "\r\n")
 				$("#chat_entry").val("")
 			}
 			chat_message = ""
@@ -411,7 +404,11 @@ $(document).ready(function () {
 		console.log("trace", message)
 		put_trace_to_log_window(message)
 	})
-
+	socket.on("chat", function (message) {
+		$("#chat_box").append(
+			"<div><pre>" + $("<div/>").text(message).html() + "</pre></div>",
+		)
+	})
 	socket.on("status", function (status) {
 		$("#status").text(status)
 		console.log($("#status").val())
@@ -462,7 +459,7 @@ $(document).ready(function () {
 				$("[id]").addClass("disable-click")
 				$("#lock_button").removeClass("disable-click")
 				$("#lock_button").text("Force Unlock")
-				$("#note_button").removeClass("disable-click")
+				$("#chat_button").removeClass("disable-click")
 				$("#note_label").removeClass("disable-click")
 				$("#chat_entry").removeClass("disable-click")
 			} else {
@@ -590,16 +587,6 @@ $(document).ready(function () {
 		socket.emit("shortToGround", periDevice)
 	}
 
-	$("#save_note").click(function () {
-		{
-			const text = $("#note_box").text()
-			let blob = new Blob([text], {
-				type: "text/plain",
-			})
-			let filename = `${new Date().toISOString()}_note${session_id}.pro`
-			saveAs(blob, filename)
-		}
-	})
 	$("#standby_buton").click(function () {
 		$("#scc_trace").empty()
 		handleTestCase("Set target into standby mode", "stand_by", "red")

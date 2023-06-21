@@ -1,6 +1,3 @@
-const E_OK = true
-const E_NOK = false
-
 const states = [
 	{ state: E_OK, color: "#A6E22E" },
 	{ state: E_NOK, color: "red" },
@@ -21,7 +18,9 @@ function monitorArduinoRelayButtonClick(button) {
 	const buttonElement = $("#" + button.button)
 	buttonElement.on("click", function () {
 		button.state = !button.state
-		const matchingState = states.find((state) => state.state === button.state)
+		const matchingState = states.find(
+			(state) => state.state === button.state,
+		)
 		if (matchingState) {
 			$("#" + button.label + ", #" + button.button).css(
 				"color",

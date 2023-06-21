@@ -9,11 +9,13 @@ GET_CURRENT_COMMAND_TEMPLATE = "INST OUT%d;:MEAS:CURR?\n"
 
 
 class ToellnerDriver:
-    print("init ToellnerDriver ")
     _connection = None
     _setVoltageCommand = ""
     _getVoltageCommand = b""
     _getCurrentCommand = b""
+    _voltage = 0
+    _current = 0
+    _callback = None
     _lock = Lock()
 
     def __init__(self, port_, channel_):
@@ -29,19 +31,27 @@ class ToellnerDriver:
         if (None != self._connection):
             self._connection.close()
 
-    def SetVoltage(self, value_):
+    def set_voltage(self, value_):
         with self._lock:
             self._connection.write(
                 (self._setVoltageCommand + str(value_) + "\n").encode())
 
-    def GetVoltage(self):
+    def get_voltage(self):
         with self._lock:
             self._connection.write(self._getVoltageCommand)
-            voltage = self._connection.readline()
-        return voltage
+            _voltage = self._connection.readline()
+        return _voltage.decode() if _voltage.decode() != "" else 0
 
-    def GetCurrent(self):
+    def get_current(self):
         with self._lock:
             self._connection.write(self._getCurrentCommand)
-            current = self._connection.readline()
-        return current
+            _current = self._connection.readline()
+        return _current.decode() if _current.decode() != "" else 0
+
+
+# def callback_power_state(message):
+#     print(message)
+
+
+# po = ToellnerDriver("COM1", 2, callback_power_state)
+# po.get_current_power_state()

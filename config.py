@@ -8,16 +8,18 @@ with open('settings.json', 'rb') as settingFile:
 binary_path = settings['filePath']['binary']
 trace_path = settings['filePath']['trace']
 arduino_port = settings['arduino_port']
-voltage_max = settings['voltage_range']['max_threshold']
-voltage_min = settings['voltage_range']['min_threshold']
-normal_voltage = settings['voltage_range']['operating']
-shutdown_voltage = settings['voltage_range']['shutdown']
+
+voltage_max = settings['voltage_range']['max']
+voltage_min = settings['voltage_range']['min']
+
+normal_voltage = settings['voltage_range']['thresholds']['operating']
+shutdown_voltage = settings['voltage_range']['thresholds']['critical_low']
 ttfis_client_port = settings['ttfis_client']['port']
 log_file_path = settings['filePath']['log']
-powersource_port = settings['power_source']['port']
-powersource_channel = settings['power_source']['channel']
+ToellnerDriver_connection_port = settings['power_source']['port']
+ToellnerDriver_connection_channel = settings['power_source']['channel']
 
-power_source_connection = None
+ToellnerDriver_connection = None
 arduino_connection = None
 is_power_turn_on = False
 cmd = ""

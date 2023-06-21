@@ -7,15 +7,37 @@
 	"ttfis_client": {
 		"port": "GEN3FLEX@COM9"
 	},
+
 	"voltage_range": {
-		"max_threshold": 16,
-		"min_threshold": 0,
-		"shutdown": { "voltage_returned": 0, "current_returned": 0 },
-		"operating": { "voltage_returned": 12, "current_returned": 0 }
+		"max": 16,
+		"min": 0,
+		"thresholds": {
+			"critical_low": {
+				"min_voltage": 0,
+				"max_voltage": 4
+			},
+			"low": {
+				"min_voltage": 4,
+				"max_voltage": 8
+			},
+			"operating": {
+				"min_voltage": 8,
+				"max_voltage": 12
+			},
+			"high": {
+				"min_voltage": 12,
+				"max_voltage": 16
+			},
+			"critical_high": {
+				"min_voltage": 16,
+				"max_voltage": 24
+			}
+		}
 	},
+
 	"arduino_port": "COM23",
 	"power_source": {
-		"port": "COM15",
+		"port": "COM1",
 		"channel": 2
 	}
 }

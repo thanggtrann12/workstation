@@ -29,7 +29,35 @@ function uploadFile(fileInputId) {
 function monitorTargetbuttonsClick(button) {
 	const buttonElement = $("#" + button.pin)
 	buttonElement.on("click", function () {
-		console.log("button click")
 		button.action() // Call the action function
 	})
+}
+let target_status = E_NOK
+function setTargetStatus(status) {
+	target_status = status
+	if (status !== "normal") {
+		$("#target_status").css("color", "red")
+		target_status = E_NOK
+	} else {
+		target_status = E_OK
+		$("#target_status").css("color", "#A6E22E")
+	}
+	$("#target_status").text(status.split("_").join("").toUpperCase())
+}
+
+function getTargetStatus() {
+	console.log(target_status)
+	return target_status
+}
+
+function setTargetWakeup() {
+	socket.emit("set_tartget_wakeup")
+}
+function setTargetPowerDown() {
+	console.log("set_power_to_off")
+	socket.emit("set_power_to_off")
+}
+function setTargetPowerUp() {
+	console.log("set_power_to_on")
+	socket.emit("set_power_to_on")
 }

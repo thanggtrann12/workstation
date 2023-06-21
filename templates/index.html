@@ -32,7 +32,14 @@
     <script type="text/javascript"src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="/static/js/trie.js"></script>
-    <script src="/static/js/main.js"></script>
+    <script src="/static/js/timer.js"></script>
+    <script src="/static/js/log.js"></script>
+    <script src="/static/js/socket.js"></script>
+  <script src="/static/js/arduino.js"></script>
+   <script src="/static/js/power.js"></script>
+   <script src="/static/js/target.js"></script>
+   <script src="/static/js/testspec.js"></script>
+ 
 </head>
 
 <body>
@@ -112,7 +119,7 @@
                       <i class="fas fa-charging-station fa-3x text-success"></i>
                     </div>
                     <div class="col">
-                      <h1 id="current_ampe">0.2</h1>
+                      <h1 id="current_ampe">0</h1>
                     </div>
                     <div class="col">
                       <h1>A</h1>
@@ -139,11 +146,13 @@
                     </div>
                   </div>
                   <ul class="list-group mt-3 position-absolute col-xl-12" id="mainList" style="display: none; font-size: x-large;">
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;" id="set_test_time">Set<input id="test_time" placeholder="Enter test time ..."></li>
                     <li class="list-group-item bg-secondary" style ="cursor: pointer; "data-target="shortToBatList">Short to Bat</li>
                     <li class="list-group-item bg-secondary" style ="cursor: pointer;"data-target="shortToGroundList">Short to Ground</li>
                     <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="standby_buton">StandBy</li>
                     <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="shutdown_buton">ShutDown</li>
                     <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="wakeup_buton">WakeUp</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="stop_test">Stop current test</li>
                   </ul>
                   <ul id="shortToBatList" class="target-list position-absolute col-xl-5" style="display: none; margin-left: 25%; margin-top: 5%; ">
                     <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('CAM')">CAM</li>
@@ -352,7 +361,6 @@
     <script src="/static/js/trie.js"></script>
     <script>
       var session_id = "{{ session['emp_id'] }}";
-      console.log(session_id.toUpperCase())
       $("#user_name").text(session_id.toUpperCase());
     </script>
     <script>
@@ -383,7 +391,7 @@
       });
     </script>
 
-
+<script src="/static/js/main.js"></script>
 </body>
 
 </html>

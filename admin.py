@@ -7,7 +7,7 @@ import json
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("SocketIO GUI")
+        self.setWindowTitle("Admin chat")
         self.channel = "chat"
         self.text_edit = QTextEdit(self)
         self.input_box = QLineEdit(self)
@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(widget)
 
         self.socket = socketio.Client()
-        self.socket.connect("http://127.0.0.1:5000")
+        self.socket.connect("http://10.185.81.196:5000/")
 
         @self.socket.on("chat")
         def handle_message(message):
@@ -64,8 +64,6 @@ class MainWindow(QMainWindow):
             if self.isMinimized():
                 event.ignore()
                 self.hide()
-                self.tray_icon.showMessage(
-                    "SocketIO GUI", "Application minimized to tray.")
         super().changeEvent(event)
 
     def closeEvent(self, event):

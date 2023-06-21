@@ -1,439 +1,390 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>WebADB | Android Debug Bridge WebApp</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="WebUSB based Android Debug Bridge (adb) host" />
-    <meta name="keywords" content="adb, webusb, android adb, adb host, adb webapp" />
-    <link rel="manifest" href="manifest-webadb.json" />
-    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="/webadb.js"></script>
+    <title>LCM-Autosar</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+     <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <script type="text/javascript"src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- <script src="/static/js/trie.js"></script> -->
+    <script src="/static/js/button.js"></script>
+    <!-- <script src="/static/js/main.js"></script> -->
 </head>
+
 <body>
-  <form>
-    <div id="nowebusb" class="w3-container w3-block w3-sand w3-border w3-border-red w3-left-align w3-round" style="display: none">
-      <p>
-        Ouch! <a href="https://wicg.github.io/webusb">WebUSB API</a> is not supported by your browser.<br>
-        Chrome users may update to version 61.
-      </p>
+
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a class="navbar-brand mx-4 mb-3" href="#">
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>AutoSar   (<span id="lock_status">Unlock</span>)</h3>
+                    <i class="fa fa-circle text-success">&nbsp;&nbsp;<span class="text-success" id="status"style="font-size: xx-large;">Ready</span></i>
+                  </a>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                          <i class="fa fa-user me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex" id="user_name">RHN9HC</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a class="dropdown-item text-center" id="lock_button">Lock</a>
+                            <hr class="dropdown-divider">
+                            <a id="log_out_button" class="dropdown-item text-center">Log out</a>
+                        </div>
+                    </div>
+                    <!-- <button id="add_item_button">Add Item</button> -->
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Hardware stub begin -->
+            <div class="container-fluid pt-4 px-4">
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-power-off fa-3x " style="color: red; " id="power_label"></i>
+                    <div class="ms-3">
+                      <h2 class="mb-0" id="power_button" style="color: red;  cursor: pointer;">OFF</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-dog fa-3x"style="color: red;" id="wd_label"></i>
+                    <div class="ms-3">
+                      <h2 class="mb-0" id="wd_button" style="color: red; cursor: pointer;">WD_OFF</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-plug fa-3x " id="ign_label" style="color: #A6E22E;"></i>
+                    <div class="ms-3">
+                      <h2 class="mb-0" id="ign_button" style="color: #A6E22E; cursor: pointer;">IGN</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <div class="col">
+                      <i class="fas fa-bolt fa-3x " id ="voltage_label"style="color: yellow;"></i>
+                    </div>
+                    <div class="col">
+                      <h1 id="current_voltage">0</h1>
+                    </div>
+                    <div class="col">
+                      <h1>V</h1>
+                    </div>
+                    <div class="col">
+                      <i class="fas fa-charging-station fa-3x text-success"></i>
+                    </div>
+                    <div class="col">
+                      <h1 id="current_ampe">0.2</h1>
+                    </div>
+                    <div class="col">
+                      <h1>A</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-search fa-3x text-primary"></i>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h2 class="mb-0"id="trace_button" style="cursor:pointer;"> Trace</h2>
+                      </div>
+                      <div class="col-md-6 ">
+                        <input class="mb-0" type="file" name="file-dnl" id="file-trc-input">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2 position-relative">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <h2 class="mb-0" id="list_button" style="color: white; cursor: pointer; ">Test Case</h2>
+                    <div class="ms-3">
+                    </div>
+                  </div>
+                  <ul class="list-group mt-3 position-absolute col-xl-12" id="mainList" style="display: none; font-size: x-large;">
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer; "data-target="shortToBatList">Short to Bat</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"data-target="shortToGroundList">Short to Ground</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="standby_buton">StandBy</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="shutdown_buton">ShutDown</li>
+                    <li class="list-group-item bg-secondary" style ="cursor: pointer;"id="wakeup_buton">WakeUp</li>
+                  </ul>
+                  <ul id="shortToBatList" class="target-list position-absolute col-xl-5" style="display: none; margin-left: 25%; margin-top: 5%; ">
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('CAM')">CAM</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('MIC')">MIC</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('GNSS')">GNSS</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('FM1')">FM1</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('FM2')">FM2</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToBat('DAB')">DAB</li>
+                  </ul> 
+                  <ul id="shortToGroundList" class="target-list position-absolute col-xl-5" style="display: none;  margin-left: 25%; margin-top: 5%;">
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToGround('CAM')">CAM</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToGround('MIC')">MIC</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToGround('GNSS')">GNSS</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToGround('FM1')">FM1</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToGround('FM2')">FM2</li>
+                    <li class="list-group-item bg-secondary" style="border-color: rgb(238, 231, 218);" onclick="shortToGround('DAB')">DAB</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fas fa-check fa-3x  " id="set_voltage_button" style="cursor:pointer; color: #A6E22E;"></i>
+                    <div class="ms-3">
+                      <input  style="font-size: x-large;" type="text" class="form-control" placeholder="Enter voltage (0-14V)" aria-label="Enter voltage (0-14V)" id="input_voltage">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-plug fa-3x " id="opt2_label" style="color: red;" ></i>
+                    <div class="ms-3">
+                      <h2 class="mb-0" id="opt2_button"style="color: red;  cursor: pointer;">OPT2</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-plug fa-3x "id="acc_label" style="color: #A6E22E;"></i>
+                    <div class="ms-3">
+                      <h2 class="mb-0"   id="acc_button"style="color: #A6E22E; cursor: pointer; ">ACC</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fa fa-sticky-note fa-3x" style="color: white;" id="note_label"></i>
+                    <div class="ms-3">
+                      <h2 class="mb-0" style="color: white; cursor: pointer;" >
+                        <span style="margin-left: 10px;" id="chat_button">Open Chat</span>
+                        <!-- <span style="margin-left: 10px;" id="send_note">Send Note</span> -->
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <i class="fas fa-bolt fa-3x text-primary"  ></i>
+                    <div class="ms-3 align-items-center">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h2 class="mb-0" id="flash_button" style="cursor:pointer;">Flash</h2>
+                        </div>
+                        <div class="col-md-6">
+                          <input class="mb-0" type="file" name="file-dnl" id="file-dnl-input">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-2">
+                  <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-3">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h2 class="mb-0"> Target:</h2>
+                      </div>
+                      <div class="col-md-6 ">
+                        <h2 id="target_status" style="color: green;">Normal</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Hardware stub end -->
+
+            <!-- Trace Start -->
+            <div class="container-fluid pt-4 px-4" >
+              <div class="row g-2"  >
+                  <div class="col-sm-12 col-xl-6 d-flex flex-column" style="min-height: 65vh;width: 100%;">
+                      <div class="bg-secondary rounded p-4" style="min-height: 65vh;border: solid 5px rgb(185, 177, 177);" >
+                          <div class="d-flex align-items-center justify-content-between mb-4" >
+                              <h3>TTFis trace</h3>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input fa-3x" type="checkbox" id="record_scc" value="option1">
+                                <h4 style="cursor: pointer; margin-top: 20px ;">Record</h4>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input fa-3x" type="checkbox" id="pause_scc" value="option1">
+                                <h4  style="cursor: pointer; margin-top: 20px ;">Pause</h4>
+                              </div>
+                                <h4 id="export_scc" style="cursor: pointer;">Export</h4>
+                                <h4 id="clear_scc" style="cursor: pointer;">Clear</h4>
+
+                          </div>
+                          <div class="col-sm-11 col-xl-6 d-flex flex-column" style="min-height: 65vh;width: 100%;" >
+                            <div class="rounded p-4" style="min-height: 65vh; max-height: 65vh;border: solid 5px black; overflow: auto; overflow-x: hidden; background-color: rgb(46, 46, 46); color:  rgb(180, 210, 115); font-weight: 16px;" id="scc_trace" >
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <!-- Trace End -->
+
+            <!-- Command Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-3">
+                  <div class="row">
+                    <div class="col-12">
+                      <textarea class="form-control"rows="1"  style="min-height: 4vh; max-height: 6vh;color: white; font-size: xx-large; overflow: hidden; background-color: rgb(64, 65, 78);" placeholder="Command..." id="command_entry"></textarea>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- Command End -->
+            <div class="chat_popup" style="display: none;" id="chat_popup">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 mx-auto rounded-top p-1" style="position: fixed;
+                  display: block;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 9999;
+                  min-width: 200px; 
+                  min-height: 200px;
+                  resize: both;
+                  overflow: auto; ">
+                        <div class="form-control" rows="5" 
+                        style="height: 690px; 
+                        width: 100%; 
+                        margin-bottom: 10px; 
+                        background-color:#c9cfa8;
+                        font: 1em sans-serif;
+                        font-size: xx-large;
+                        color: #272822;
+                        overflow: scroll;"
+                        id="chat_box"></div>
+                        <input type="text" class="form-control" style="height: 100px; font-size: xx-large;" id="chat_entry"placeholder="Type here... 'clear' to erase all ">
+                </div>
+              </div>
+            </div>
+            <div id="force_popup" style="
+                                        position: fixed;
+                                        display: none;
+                                        justify-content: center;
+                                        align-items: center;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        background-color: rgba(0, 0, 0, 0.5);
+                                        z-index: 9999;">
+                <div class="inform_popup" style="display: block;" id="inform_popup">
+                  <div class="col-md-8 col-lg-6 mx-auto rounded-top p-1"
+                  style="position: fixed;
+                        display: block;
+                        top: 40%; left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 9999;
+                        width: 800px;
+                        height: 100px; ">
+                    <div class="form-control" rows="5"
+                        style="height:200px;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        background-color:#e9ecd7;
+                        font: 1em sans-serif;
+                        font-size: xx-large;
+                        border-radius: 20px;
+                        color: #272822;">
+                        <p style="margin-top: 5%;">User <span id="force_user"></span> request force unlock please confirm in <span id="countdown">5</span>s if not it will automatically unlock</p>
+                    </div>
+                    <div class="button-container d-flex justify-content-center">
+                      <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal"
+                      id="rejectButton"
+                      style=" margin-top: auto;
+                      height: 60px;
+                      width: 150px;
+                      border: white solid 3px;
+                      font-size: xx-large;">No</button>
+                      <button type="button" class="btn btn-primary" id="confirmButton"
+                      style=" margin-top: auto;
+                      height: 60px;
+                      width: 150px;
+                      border: white solid 3px;
+                      font-size: xx-large;">Yes (<span id="timer">5</span>)</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!-- Content End -->
     </div>
-    <div id="disclaimer" data-bind="visible: true" class="w3-container w3-block w3-sand w3-border w3-border-orange w3-left-align w3-round" style="display: none">
+    <!-- Template Javascript -->
+    <script src="/static/js/trie.js"></script>
+    <script>
+      var session_id = "{{ session['emp_id'] }}";
+      console.log(session_id.toUpperCase())
+      $("#user_name").text(session_id.toUpperCase());
+    </script>
+    <script>
+      var isShow = false;
+      document.getElementById("list_button").addEventListener("click", function() {
+        var list = document.getElementById("mainList");
+        isShow = !isShow;
+        list.style.display = (list.style.display === "block") ? "none" : "block";
+        if (isShow == false)
+        {
+          document.getElementById("shortToBatList").style.display ="none";
+          document.getElementById("shortToGroundList").style.display ="none";
+        }
+      });
+      var listItems = document.querySelectorAll("#mainList li");
+      var targetLists = document.querySelectorAll(".target-list");
+      // Add click event listeners to list items
+      listItems.forEach(function(listItem) {
+        listItem.addEventListener("click", function() {
+          // Get the target list ID from the data-target attribute
+          var targetID = this.getAttribute("data-target");
+          // Toggle the visibility of the corresponding target list
+          var targetList = document.getElementById(targetID);
+          if (targetList) {
+            targetList.style.display = (targetList.style.display === "block") ? "none" : "block";
+          }
+        });
+      });
+    </script>
 
-    </div>
-    <div data-bind="visible: 'usb' in navigator"
-         class="w3-container w3-block w3-sand w3-border w3-border-blue w3-left-align w3-round" style="display: none">
-      <p>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <input type="button" data-bind="click: connect_usb, enable: is_connect_disconnect_enabled(), value: connect_disconnect_value()" class="w3-button w3-green" />
-        </div>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <span data-bind="text: connect_message, visibile: connect_message() != ''"></span>
-        </div>
-      </p>
-    </div>
-    <div data-bind="visible: is_execute_visible()"
-         class="w3-container w3-block w3-sand w3-border w3-border-blue w3-left-align w3-round" style="display: none">
-      <p>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <input type="button" data-bind="click: push_usb, enable: is_execute_enabled() && adb && push_files().length" class="w3-button w3-green" value="Push" />
-        </div>
-        <div class="w3-container w3-cell w3-cell-middle" style="width: 50%">
-          <input type="file" data-bind="event: { change: on_file_select }, enable: is_execute_enabled() && adb" class="w3-input w3-border w3-round"/>
-        </div>
-        <!-- div class="w3-container w3-cell w3-cell-middle" style="width: 20%">
-          <input type="text" data-bind="numeric, value: push_mode, enable: is_execute_enabled() && adb" class="w3-input w3-border w3-round"/>
-        </div -->
-        <div class="w3-container w3-cell w3-cell-middle" style="width: 50%">
-          <input type="text" data-bind="value: push_dest, enable: is_execute_enabled() && adb" class="w3-input w3-border w3-round"/>
-        </div>
-      </p>
-      <p>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <input type="button" data-bind="click: pull_usb, enable: is_execute_enabled() && adb" class="w3-button w3-green" value="Pull" />
-        </div>
-        <div class="w3-container w3-cell w3-cell-middle" style="width: 100%">
-          <input type="text" data-bind="value: pull_filename, enable: is_execute_enabled() && adb" class="w3-input w3-border w3-round"/>
-        </div>
-      </p>
-      <p>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <input type="button" data-bind="click: stat_usb, enable: is_execute_enabled() && adb" class="w3-button w3-green" value="Stat" />
-        </div>
-        <div class="w3-container w3-cell w3-cell-middle" style="width: 100%">
-          <input type="text" data-bind="value: stat_filename, enable: is_execute_enabled() && adb" class="w3-input w3-border w3-round"/>
-        </div>
-      </p>
-      <p>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <input type="submit" data-bind="click: execute_usb, enable: is_execute_enabled()" class="w3-button w3-green" value="Send" />
-        </div>
-        <div class="w3-container w3-cell w3-cell-middle" style="width: 100%">
-          <input type="text" data-bind="value: execute_cmd, enable: is_execute_enabled(), hasFocus: is_execute_enabled()" class="w3-input w3-border w3-round"/>
-        </div>
-      </p>
-    </div>
-    <div data-bind="visible: is_cancel_visible(), style: { visibility: 'visible' }"
-         class="w3-container w3-block w3-sand w3-border w3-border-blue w3-left-align w3-round" style="visibility: hidden">
-      <p>
-        <pre data-bind="text: execute_output, visible: execute_output() != ''" style="font-size: 0.75em"></pre>
-        <div class="w3-container w3-cell w3-cell-middle">
-          <input type="button" data-bind="click: cancel_usb, enable: is_cancel_enabled(), hasFocus: is_cancel_enabled()" class="w3-button w3-green" value="Cancel" />
-        </div>
-      </p>
-    </div>
-    <span id="bottom"></span>
-  </form>
-  <script>
-var params = location.search.substring(1).split("&");
-var is_webapp = false;
-var webusb = null;
-var adb = null;
-var fastboot = null;
-var shell = null;
-var sync = null;
 
-for (p in params) {
-	var pair = params[p].split("=");
-	if (pair[0] == "debug" && pair[1] == "yes")
-		Adb.Opt.debug = true;
-	if (pair[0] == "dump" && pair[1] == "yes")
-		Adb.Opt.dump = true;
-	if (pair[0] == "reuse_key")
-		Adb.Opt.reuse_key = (pair[1] == "yes") ? true : (pair[1] == "no") ? false : parseInt(pair[1]);
-	if (pair[0] == "webapp")
-		is_webapp = (pair[1] == "yes");
-}
-
-function removeElementById(id)
-{
-	let node = document.getElementById(id);
-	if (node != null)
-		node.parentNode.removeChild(node);
-}
-
-async function disconnect_usb()
-{
-	if (shell != null)
-		shell.close();
-	if (sync != null)
-		await sync.abort();
-	webusb.close();
-	webusb = null;
-}
-
-async function connect_usb()
-{
-	try {
-		if (webusb != null) {
-			this.state("disconnecting");
-			disconnect_usb();
-			this.state("ready");
-			return;
-		} else {
-			this.state("connecting");
-			webusb = await Adb.open("WebUSB");
-		}
-
-		if (!webusb || !(webusb.isAdb() || webusb.isFastboot()))
-			throw new Error("Could not open either ADB or Fastboot");
-	}
-	catch(error) {
-		console.log(error);
-		this.connect_message(error.message);
-		this.state("ready");
-		webusb = null;
-		return;
-	}
-
-	if (webusb.isFastboot()) {
-		try {
-			fastboot = null;
-			fastboot = await webusb.connectFastboot();
-			if (fastboot != null) {
-				console.log("FASTBOOT mode");
-				this.state("connected");
-				this.execute_cmd("getvar:all");
-			}
-		}
-		catch(error) {
-			console.log(error);
-			this.connect_message(error.message + " Ensure that the USB port is not in use (i.e. adb server is running).");
-			this.state("ready");
-			fastboot = null;
-			webusb = null;
-			return;
-		}
-	}
-
-	if (webusb.isAdb()) {
-		try {
-			adb = null;
-			adb = await webusb.connectAdb("host::", () =>
-				this.connect_message("Please check the screen of your " + webusb.device.productName + "."));
-
-			if (adb != null) {
-				console.log("ADB mode");
-				this.state("connected");
-				this.execute_cmd("shell:ls -l ");
-				this.stat_filename("/sdcard/Download/test_webadb.txt");
-				this.pull_filename("/sdcard/Download/test_webadb.txt");
-				this.push_dest("/sdcard/Download/test_webadb.txt");
-				this.push_mode("0644");
-			}
-		}
-		catch(error) {
-			console.log(error);
-			this.connect_message(error.message + " Ensure that the USB port is not in use (i.e. adb server is running).");
-			this.state("ready");
-			adb = null;
-			webusb = null;
-			return;
-		}
-	}
-
-	let message = "";
-
-	if (webusb.isAdb())
-		message = "ADB: ";
-	if (webusb.isFastboot())
-		message = "FASTBOOT: ";
-
-	message += webusb.device.productName + " (" + webusb.device.manufacturerName + ")";
-	this.connect_message(message);
-}
-
-async function execute_usb()
-{
-	let output = this.execute_output;
-	let bottom = document.getElementById('bottom');
-	let decoder = new TextDecoder();
-
-	try {
-		if (adb != null ) {
-			this.state("running");
-			output("");
-
-			shell = await adb.open(this.execute_cmd());
-			r = await shell.receive();
-			while (r.cmd == "WRTE") {
-				if (r.data != null) {
-					output(output() + decoder.decode(r.data));
-					bottom.scrollIntoView();
-				}
-
-				shell.send("OKAY");
-				r = await shell.receive();
-			}
-
-			shell.close();
-			shell = null;
-			this.state("connected");
-		}
-
-		if (fastboot != null ) {
-			this.state("running");
-			output("");
-
-			await fastboot.send(this.execute_cmd());
-			r = await fastboot.receive();
-			while (fastboot.get_cmd(r) == "INFO") {
-				output(output() + decoder.decode(fastboot.get_payload(r)) + "\n");
-				r = await fastboot.receive();
-			}
-
-			let payload = fastboot.get_payload(r);
-			if (payload.length > 0)
-				payload += "\n";
-			output(output() + decoder.decode(payload));
-			this.state("connected");
-		}
-	}
-	catch(error) {
-		console.log(error);
-		this.connect_message(error.message);
-		this.state("ready");
-		webusb = null;
-	}
-}
-
-async function stat_usb()
-{
-	let output = this.execute_output;
-	let bottom = document.getElementById('bottom');
-
-	try {
-		if (adb != null ) {
-			this.state("running");
-			output("");
-
-			sync = await adb.sync();
-			let stat = await sync.stat(this.stat_filename());
-			output(JSON.stringify(stat));
-
-			await sync.quit();
-			sync = null;
-			this.state("connected");
-		}
-	}
-	catch(error) {
-		console.log(error);
-		this.connect_message(error.message);
-		this.state("ready");
-		webusb = null;
-	}
-}
-
-async function pull_usb()
-{
-	let output = this.execute_output;
-	let bottom = document.getElementById('bottom');
-
-	try {
-		if (adb != null ) {
-			this.state("running");
-			output("");
-
-			sync = await adb.sync();
-			let content = await sync.pull(this.pull_filename());
-
-			await sync.quit();
-			sync = null;
-			this.state("connected");
-
-			let a = document.createElement("a")
-			a.href = URL.createObjectURL(new Blob([content]));
-			a.download = this.pull_filename().split("/").pop();
-			a.click();
-		}
-	}
-	catch(error) {
-		console.log(error);
-		output(error.message);
-		this.state("connected");
-	}
-}
-
-var xfer_stats_done = 0;
-var xfer_stats_time = 0;
-
-function xfer_stats(start_time, done, total, output)
-{
-	let now = Date.now();
-
-	if (now - xfer_stats_time < 500)
-		return;
-
-	if (xfer_stats_done > done)
-		xfer_stats_done = 0;
-	if (xfer_stats_time < start_time)
-		xfer_stats_time = start_time;
-
-	let delta = Math.round((now - start_time) / 1000);
-	let instant = Math.round(((done - xfer_stats_done) * 1000) / ((now - xfer_stats_time) * 1024));
-	let average = Math.round(done * 1000 / ((now - start_time) * 1024));
-
-	xfer_stats_done = done;
-	xfer_stats_time = now;
-
-	let out = "";
-	out += Math.round(100 * done / total) + "% (";
-	out += Math.round(done / 1024) + " KiB in ~" + delta + " secs at avg " + average + " KiB/s, cur " + instant + " KiB/s)";
-	output(out);
-}
-
-async function push_usb()
-{
-	let output = this.execute_output;
-	let bottom = document.getElementById('bottom');
-
-	try {
-		if (adb != null ) {
-			this.state("running");
-			output("Loading " + this.push_files()[0].name + "...");
-
-			sync = await adb.sync();
-			let start_time = Date.now();
-			await sync.push(this.push_files()[0], this.push_dest(), this.push_mode(),
-				(done, total) => xfer_stats(start_time, done, total, output));
-
-			await sync.quit();
-			sync = null;
-			this.state("connected");
-		}
-	}
-	catch(error) {
-		console.log(error);
-		output(error.message);
-		this.state("connected");
-	}
-}
-
-function WebADBViewModel()
-{
-	this.state = ko.observable("ready");
-	this.is_webapp = ko.observable(is_webapp);
-
-	this.connect_message = ko.observable();
-	this.execute_cmd = ko.observable();
-	this.execute_output = ko.observable();
-	this.stat_filename = ko.observable();
-	this.pull_filename = ko.observable();
-	this.push_dest = ko.observable();
-	this.push_mode = ko.observable();
-	this.push_files = ko.observable([]);
-
-	this.connect_disconnect_value = function() {
-		return this.state() == "ready" || this.state() == "connecting" ? "Connect" : "Disconnect";
-	};
-
-	this.is_connect_disconnect_enabled = function() {
-		return this.state() != "running" && this.state() != "connecting";
-	};
-
-	this.is_execute_visible = function() {
-		return this.state() == "connected" || this.state() == "running";
-	};
-
-	this.is_execute_enabled = function() {
-		return this.state() == "connected";
-	};
-
-	this.is_cancel_visible = function() {
-		return this.state() == "connected" || this.state() == "running";
-	};
-
-	this.is_cancel_enabled = function() {
-		return this.state() == "running";
-	};
-
-	this.on_file_select = function(vm, evt) {
-		this.push_files(evt.target.files);
-	}
-
-	this.connect_usb = connect_usb;
-	this.execute_usb = execute_usb;
-	this.stat_usb = stat_usb;
-	this.pull_usb = pull_usb;
-	this.push_usb = push_usb;
-
-	this.cancel_usb = async function() {
-		if (shell != null)
-			shell.close();
-		if (sync != null)
-			await sync.abort();
-		this.state("connected");
-	};
-}
-
-if ('usb' in navigator) {
-	removeElementById("nowebusb");
-	ko.applyBindings(new WebADBViewModel());
-} else {
-	let nowebusb = document.getElementById("nowebusb");
-	nowebusb.style.display = null;
-}
-  </script>
 </body>
+
 </html>

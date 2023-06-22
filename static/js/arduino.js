@@ -18,7 +18,9 @@ function monitorArduinoRelayButtonClick(button) {
 	const buttonElement = $("#" + button.button)
 	buttonElement.on("click", function () {
 		button.state = !button.state
-		const matchingState = states.find((state) => state.state === button.state)
+		const matchingState = states.find(
+			(state) => state.state === button.state,
+		)
 		if (matchingState) {
 			$("#" + button.label + ", #" + button.button).css(
 				"color",
@@ -64,7 +66,7 @@ function syncData(data) {
 }
 
 function setArduinoRelayButtonStateAndColor(response) {
-	console.log(response)
+	// console.log(response)
 	let buttonName = response.button
 	let responseState = response.response
 	const matchingState = states.find((state) => state.state === responseState)

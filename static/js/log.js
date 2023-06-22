@@ -1,3 +1,5 @@
+const E_OK = true
+const E_NOK = false
 let paraTable = {}
 let sepRegex = /((^|\W)+[^ ]*)/g
 let state = 0

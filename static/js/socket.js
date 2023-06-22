@@ -29,3 +29,7 @@ socket.on("update_data_to_client", (data) => {
 socket.on("ttfis_data", (ttfis_data) => {
 	updateTtfiData(ttfis_data)
 })
+socket.on("response_from_arduino", (response) => {
+	console.log(response)
+	setArduinoRelayButtonStateAndColor(response)
+})

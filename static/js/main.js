@@ -5,17 +5,47 @@ $(document).ready(function () {
 	$("#command_entry").on("keydown", function (event) {
 		doAutoComplete(event)
 	})
-	$("#standby_buton").on("click", function () {
+	$("#standby_buton").on("click", async function () {
+		$("#acc_button , #acc_label, #ign_button, #ign_label").css(
+			"color",
+			"red",
+		)
 		$("#scc_trace").empty()
-		standby_test()
+		try {
+			await $.get(
+				"http://" +
+					location.host +
+					`/start-test/standby/${
+						$("#test_time").val() == ""
+							? 1
+							: parseInt($("#test_time").val())
+					}`,
+			)
+		} catch (error) {
+			console.error("Error occurred during the GET request:", error)
+		}
 	})
-	$("#shutdown_buton").on("click", function () {
+	$("#shutdown_buton").on("click", async function () {
 		$("#scc_trace").empty()
-		shutdown_test()
+		$("#acc_button , #acc_label, #ign_button, #ign_label").css(
+			"color",
+			"red",
+		)
+		try {
+			await $.get(
+				"http://" +
+					location.host +
+					`/start-test/shutdown/${
+						$("#test_time").val() == ""
+							? 1
+							: parseInt($("#test_time").val())
+					}`,
+			)
+		} catch (error) {
+			console.error("Error occurred during the GET request:", error)
+		}
 	})
-	$("#set_test_time").on("click", () => {
-		setTestTime()
-	})
+
 	$("#record_scc").change(function () {
 		if (this.checked) {
 			isRecording = true

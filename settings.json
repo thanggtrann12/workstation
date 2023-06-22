@@ -35,7 +35,7 @@
 		}
 	},
 
-	"arduino_port": "COM23",
+	"arduino_port": "COM15",
 	"power_source": {
 		"port": "COM30",
 		"channel": 2

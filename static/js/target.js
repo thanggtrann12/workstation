@@ -53,11 +53,11 @@ function getTargetStatus() {
 function setTargetWakeup() {
 	socket.emit("set_tartget_wakeup")
 }
-function setTargetPowerDown() {
-	console.log("set_power_to_off")
+console.log("set_power_to_off")
+async function setTargetPowerDown() {
 	socket.emit("set_power_to_off")
 }
-function setTargetPowerUp() {
+async function setTargetPowerUp() {
 	console.log("set_power_to_on")
 	socket.emit("set_power_to_on")
 }

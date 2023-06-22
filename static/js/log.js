@@ -105,32 +105,31 @@ async function doAutoComplete(event) {
 }
 
 function updateTtfiData(data) {
-	console.log("ttfis data", data)
 	if (isPausing) {
 		// do not thing
 	} else {
 		$("#scc_trace").append(
-			"<div><pre>" + $("<div/>").text(data).html() + "</pre></div>",
+			"<div><pre>" +
+				$("<div/>")
+					.text(data + "\r\n")
+					.html() +
+				"</pre></div>",
 		)
 		document.getElementById("scc_trace").scrollTop =
 			document.getElementById("scc_trace").scrollHeight
 		if (isRecording) {
-			recordedText += data
-			console.log("record", recordedText)
+			recordedText += data + "\r\n"
+			console.log(recordedText)
 		} else {
 			recordedText = ""
-			console.log("not record", recordedText)
 		}
 	}
 }
 
 function saveLog(testcase, result, counter_standby_test) {
-	var checkbox = document.getElementById("record_scc")
-	console.log("save log")
-	checkbox.checked = false
-	isRecording = false
+	let text = $("#scc_trace").text()
 	var fileName = `recorded_${testcase}_${result}_time_${counter_standby_test}.pro`
-	var blob = new Blob([recordedText], {
+	var blob = new Blob([text], {
 		type: "text/plain;charset=utf-8",
 	})
 	var formData = new FormData()
@@ -140,5 +139,4 @@ function saveLog(testcase, result, counter_standby_test) {
 		method: "POST",
 		body: formData,
 	})
-	recordedText = ""
 }

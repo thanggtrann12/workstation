@@ -50,8 +50,8 @@ def send_status(status):
 @socketio.on("submit_ttfis_cmd")
 def submit_ttfis_cmd(ttfis_cmd):
     ttfis_command = str(ttfis_cmd).replace(",", " ")
-    # global ttfisClient
-    # ttfisClient.Cmd(ttfis_command)
+    global ttfisClient
+    ttfisClient.Cmd(ttfis_command)
 
 
 @socketio.on("get_sync_data")
@@ -100,7 +100,38 @@ def set_power_to_on():
         if event_name == "set_power_to_off":
             ToellnerDriver_connection.set_voltage(0)
 
-    # Handle the event logic for turning power on or off
+
+@socketio.on("remove_accign")
+def remove_accign():
+    print("remove_accign")
+    arduino_connection.send_command(Command.ACC, E_NOK)
+    arduino_connection.send_command(Command.IGN, E_NOK)
+
+
+@socketio.on("reconnect_accign")
+def reconnect_accign():
+    print("reconnect_accign")
+    arduino_connection.send_command(Command.ACC, E_OK)
+    arduino_connection.send_command(Command.IGN, E_OK)
+
+
+@socketio.on("request_to_arduino")
+def request_to_arduino(payload):
+    global arduino_connection
+    button_name = payload["button"]
+    button_state = E_OK if payload["state"] == True else E_NOK
+    response = E_NOK
+    if button_name == "acc_button":
+        response = arduino_connection.send_command(Command.ACC, button_state)
+    if button_name == "ign_button":
+        response = arduino_connection.send_command(Command.IGN, button_state)
+    if button_name == "wd_button":
+        response = arduino_connection.send_command(Command.WD, button_state)
+    if button_name == "opt2_button":
+        response = arduino_connection.send_command(Command.OPT2, button_state)
+
+    socketio.emit("response_from_arduino", data={
+                  "button": button_name.split('_')[0], "response": response})
 
 
 def get_data_from_toellner():
@@ -144,31 +175,34 @@ def upload_file():
 @ app.route("/getTTFisCmd/", methods=["GET"])
 def get_command_set():
     global trace_path
-    if (os.listdir(trace_path)) is None:
-        print("No trace file, using default file name")
-        trace_file_name = DEFAULT_TRACE_FILE_NAME
-    else:
-        trace_file_name = os.listdir(trace_path)[0]
-    traceFilePath = trace_path + trace_file_name
-    return process_instruction_file(traceFilePath)
+    try:
+        if (os.listdir(trace_path)) is None:
+            print("No trace file, using default file name")
+            trace_file_name = DEFAULT_TRACE_FILE_NAME
+        else:
+            trace_file_name = os.listdir(trace_path)[0]
+        traceFilePath = trace_path + trace_file_name
+        return process_instruction_file(traceFilePath)
+    except:
+        pass
 
 
 if __name__ == '__main__':
     # ttfisClient = TTFisClient()
     # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
     # ttfisClient.Connect(ttfis_client_port)
-    ToellnerDriver_connection = ToellnerDriver(
-        ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
+    # ToellnerDriver_connection = ToellnerDriver(
+    #     ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
     # if arduino_port:
-    # arduino_connection = Arduino(arduino_port)
-    # print("update_voltage_and_current_to_server")
-    Thread(target=update_voltage_and_current_to_server).start()
-    # Thread(target=callback_power_state).start()
-    # print("start_socketio")
-    status = "Ready"
-    print("socket init")
+    #     arduino_connection = Arduino(arduino_port)
+    # # print("update_voltage_and_current_to_server")
+    # Thread(target=update_voltage_and_current_to_server).start()
+    # # Thread(target=callback_power_state).start()
+    # # print("start_socketio")
+    # status = "Ready"
+    # print("socket init")
     socketio.run(app, host='0.0.0.0', port=5000)
 
-    ToellnerDriver_connection .__del__()
+    # ToellnerDriver_connection .__del__()
     # arduino_connection.close()
     # ttfisClient.Quit()

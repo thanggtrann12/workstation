@@ -18,9 +18,7 @@ function monitorArduinoRelayButtonClick(button) {
 	const buttonElement = $("#" + button.button)
 	buttonElement.on("click", function () {
 		button.state = !button.state
-		const matchingState = states.find(
-			(state) => state.state === button.state,
-		)
+		const matchingState = states.find((state) => state.state === button.state)
 		if (matchingState) {
 			$("#" + button.label + ", #" + button.button).css(
 				"color",
@@ -37,22 +35,43 @@ function monitorArduinoRelayButtonClick(button) {
 	})
 }
 
-function setArduinoRelayButtonStateAndColor(response) {
-	for (let buttonIndex = 0; buttonIndex < response.length; buttonIndex++) {
-		console.log(parseInt(response[buttonIndex]))
-		ArduinoRelayButton[buttonIndex].state =
-			parseInt(response[buttonIndex]) == 0 ? E_OK : E_NOK
+function syncData(data) {
+	console.log(data[0], data[1], data[2], data[3])
+	ArduinoRelayButton[0].state = parseInt(data[0]) == 0 ? E_OK : E_NOK
+	ArduinoRelayButton[1].state = parseInt(data[2]) == 0 ? E_OK : E_NOK
+	ArduinoRelayButton[2].state = parseInt(data[1]) == 0 ? E_OK : E_NOK
+	ArduinoRelayButton[3].state = parseInt(data[3]) == 0 ? E_OK : E_NOK
+	payload = {
+		button: ArduinoRelayButton[0].button.split("_")[0],
+		response: ArduinoRelayButton[0].state,
+	}
+	setArduinoRelayButtonStateAndColor(payload)
+	payload = {
+		button: ArduinoRelayButton[1].button.split("_")[0],
+		response: ArduinoRelayButton[1].state,
+	}
+	setArduinoRelayButtonStateAndColor(payload)
+	payload = {
+		button: ArduinoRelayButton[2].button.split("_")[0],
+		response: ArduinoRelayButton[2].state,
+	}
+	setArduinoRelayButtonStateAndColor(payload)
+	payload = {
+		button: ArduinoRelayButton[3].button.split("_")[0],
+		response: ArduinoRelayButton[3].state,
+	}
+	setArduinoRelayButtonStateAndColor(payload)
+}
 
-		const matchingState = states.find(
-			(state) => state.state === ArduinoRelayButton[buttonIndex].state,
+function setArduinoRelayButtonStateAndColor(response) {
+	console.log(response)
+	let buttonName = response.button
+	let responseState = response.response
+	const matchingState = states.find((state) => state.state === responseState)
+	if (matchingState) {
+		$("#" + buttonName + "_button, #" + buttonName + "_label").css(
+			"color",
+			matchingState.color,
 		)
-		if (matchingState) {
-			$(
-				"#" +
-					ArduinoRelayButton[buttonIndex].label +
-					", #" +
-					ArduinoRelayButton[buttonIndex].button,
-			).css("color", matchingState.color)
-		}
 	}
 }

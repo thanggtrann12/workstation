@@ -8,7 +8,8 @@ socket.on("connect", () => {
 })
 
 socket.on("set_sync_data", (data) => {
-	setArduinoRelayButtonStateAndColor(data)
+	console.log(data)
+	syncData(data)
 })
 
 socket.on("status", (status) => {
@@ -17,10 +18,14 @@ socket.on("status", (status) => {
 })
 
 socket.on("update_data_to_client", (data) => {
-	console.log(data)
 	let voltage = data.voltage
 	let current = data.current
+	$("#voltage").text(voltage)
+	$("#current").text(current)
 	if (voltage == 0 && current == 0) setCurrentPowerState("power_off")
 	else if (voltage > 0 && current > 0) setCurrentPowerState("normal")
 	else if (voltage > 0 && current == 0) setCurrentPowerState("stand_by")
+})
+socket.on("ttfis_data", (ttfis_data) => {
+	updateTtfiData(ttfis_data)
 })

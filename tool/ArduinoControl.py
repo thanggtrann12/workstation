@@ -58,34 +58,3 @@ class Arduino:
     def close(self):
         if self.ser:
             self.ser.close()
-
-
-if __name__ == "__main__":
-    arduino = Arduino(port="COM23")
-    time.sleep(1)
-    payload = None
-    if arduino is not None:
-        print("Arduino connected.")
-        while True:
-            try:
-                cmd = (input("1-8: "))
-                if cmd != "ALL":
-                    cmd = int(cmd)
-                    state = int(input("state: "))
-                    if cmd == 1:
-                        payload = Command.ACC
-                    if cmd == 2:
-                        payload = Command.IGN
-                    if cmd == 3:
-                        payload = Command.WD
-                    if cmd == 4:
-                        payload = Command.OPT2
-                    resp = arduino.send_command(payload, state)
-                    print("COMMAND: ", payload, "resp ->  ",
-                          state_mapping[resp])
-                else:
-                    print(arduino.get_all_pin_state())
-            except Exception as e:
-                print(e)
-    else:
-        print("Failed to connect to Arduino.")

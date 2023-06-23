@@ -946,7 +946,6 @@ class TTFisClient(Singleton):
             self._csm.SetActiveDevice(self._csm_client_id, device)
             self.__class__._dev_active = device
         self._csm.SendCommandOption(self._csm_client_id, command)
-        print("===========================", command)
 
     def __Thrd_CallCmdsFromCSM(self):
         """

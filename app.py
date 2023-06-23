@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from flask_socketio import SocketIO
 from threading import Thread
 import threading
-from time import sleep
+import time
 import eventlet
 import sys
 import os
@@ -42,6 +42,11 @@ def update_scc_trace(trace):
     """
     if "Current state after transition [ST_Supervisor_States_Run]" in trace:
         isStateRun = True
+        socketio.emit("status", "State: ST_Supervisor_States_Run")
+    if "Current state after transition " in trace:
+        data_within_brackets = trace[trace.rfind('[')+1:trace.rfind(']')]
+        # print(data_within_brackets)
+        socketio.emit("status", "State: "+data_within_brackets)
     data += "\r\n"+trace
     socketio.emit("ttfis_data", trace+"\n", broadcast=True)
 
@@ -61,10 +66,10 @@ def submit_ttfis_cmd(ttfis_cmd):
 
 @socketio.on("get_sync_data")
 def get_sync_data():
-    global arduino_connection
+    global arduino_connection, data
     if arduino_connection is not None:
         ret = arduino_connection.get_all_pin_state()
-        socketio.emit("set_sync_data", ret)
+        socketio.emit("set_sync_data", {"arduino": ret, "trace": data})
 
 
 def update_voltage_and_current_to_server():
@@ -93,23 +98,24 @@ def update_data_to_toellner(data):
 
 
 def get_data_from_toellner():
-    global ToellnerDriver_connection, status, isStandBy, socketio
+    global ToellnerDriver_connection, status, isStandBy, socketio, data
     while True:
-        sleep(1)
+        time.sleep(1)
         if ToellnerDriver_connection is not None:
             try:
                 voltage_returned = float(
                     ToellnerDriver_connection.get_voltage())
                 current_returned = float(
                     ToellnerDriver_connection.get_current())
-                data = {"voltage": voltage_returned,
-                        "current": current_returned}
+                paload = {"voltage": voltage_returned,
+                          "current": current_returned}
                 if voltage_returned > 0 and current_returned == 0:
                     isStandBy = True
+                    data += "\n\r[STANDBY]"
                 else:
                     isStandBy = False
                 if socketio is not None:
-                    socketio.emit("update_data_to_client", data=data)
+                    socketio.emit("update_data_to_client", data=paload)
             except:
                 pass
         else:
@@ -136,6 +142,10 @@ def set_power_to_on():
 @socketio.on("remove_accign")
 def remove_accign():
     print("remove_accign")
+    socketio.emit("submit_ttfis_cmd", "SUPERVISOR_GET_ALL_DATA")
+    global data, isStateRun
+    isStateRun = False
+    data += '\n [UNPLUG ACC + IGN] \n'
     arduino_connection.send_command(Command.ACC, E_NOK)
     arduino_connection.send_command(Command.IGN, E_NOK)
 
@@ -143,6 +153,8 @@ def remove_accign():
 @socketio.on("reconnect_accign")
 def reconnect_accign():
     print("reconnect_accign")
+    global data
+    data += '\n [PLUG ACC + IGN] \n'
     arduino_connection.send_command(Command.ACC, E_OK)
     socketio.emit("response_from_arduino", data={
                   "button": "acc", "response": True})
@@ -204,31 +216,48 @@ def StandBy():
     return isStandBy
 
 
+TIMEOUT_TEST_SPEC = 10*60
+
+
 @app.route('/start-test/<test_name>/<int:time>', methods=['GET'])
 def start_test(test_name, time):
     global subfix
     if test_name == "standby":
         subfix = "standby"
-        threading.Thread(target=test_flow.execute_test(time, remove_accign, 5*60,
+        threading.Thread(target=test_flow.execute_test(time, remove_accign, TIMEOUT_TEST_SPEC,
                                                        StandBy, reconnect_accign, reconnect_accign, log)).start()
 
     if test_name == "shutdown":
         subfix = "shutdown"
-        threading.Thread(test_flow.execute_test(time, remove_accign, 5*60,
+        threading.Thread(test_flow.execute_test(time, remove_accign, TIMEOUT_TEST_SPEC,
                                                 StandBy, reconnect_accign, reconnect_accign, log)).start()
 
     return jsonify({'message': f'Test "{test_name}" started'})
 
 
-async def log(time, prefix):
+@app.route("/wakeup", methods=['GET'])
+def wake_up():
+    print("wake up")
+    reconnect_accign()
+    return "wakeup"
+
+
+def log(time_, prefix):
     global data, subfix
-    sleep(3)
+    time.sleep(3)
+    socketio.emit("submit_ttfis_cmd", "SUPERVISOR_GET_ALL_DATA")
     file_path = os.path.join(
-        app.root_path, 'static', 'uploads/test/', f"test_{subfix}_{time}_{prefix}.txt")
-    data += "\n"+prefix
-    with open(file_path, 'a') as file:
+        app.root_path, 'static', 'uploads/test/', f"test_{subfix}_{time_}_{prefix}.pro")
+    data += "\n" + prefix
+    while os.path.exists(file_path):
+        time_ += 1
+        file_path = os.path.join(
+            app.root_path, 'static', 'uploads/test/', f"test_{subfix}_{time_}_{prefix}.pro")
+
+    with open(file_path, 'w', encoding='utf-8', errors='ignore') as file:
         file.write(data)
-    data, prefix, = "", ""
+
+    data = ""
     print("Data successfully written to the file.")
 
 
@@ -236,7 +265,6 @@ async def log(time, prefix):
 
 if __name__ == '__main__':
     test_flow = TestFlow()
-
     ttfisClient = TTFisClient()
     ttfisClient.registerUpdateTraceCallback(update_scc_trace)
     ttfisClient.Connect(ttfis_client_port)
@@ -244,14 +272,10 @@ if __name__ == '__main__':
         ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
     if arduino_port:
         arduino_connection = Arduino(arduino_port)
-
-    status = "Ready"
-
+    print("update_voltage_and_current_to_server")
     Thread(target=update_voltage_and_current_to_server).start()
-    print("socket init")
+    print("start_socketio")
     socketio.run(app, host='0.0.0.0', port=5000)
-
-    # ToellnerDriver_connection .__del__()
+    ToellnerDriver_connection .__del__()
     arduino_connection.close()
-    sys.exit()
-    # ttfisClient.Quit()
+    ttfisClient.Quit()

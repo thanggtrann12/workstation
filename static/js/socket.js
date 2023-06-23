@@ -9,7 +9,8 @@ socket.on("connect", () => {
 
 socket.on("set_sync_data", (data) => {
 	console.log(data)
-	syncData(data)
+	syncData(data.arduino)
+	updateTtfiData(data.trace)
 })
 
 socket.on("status", (status) => {

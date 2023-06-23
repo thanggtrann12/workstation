@@ -33,7 +33,14 @@ $(document).ready(function () {
 			console.error("Error occurred during the GET request:", error)
 		}
 	})
-
+	$("#wakeup_buton").on("click", () => {
+		$.get(
+			"http://" +
+				location.host +
+				`/wakeup/)
+        }`,
+		)
+	})
 	$("#record_scc").change(function () {
 		if (this.checked) {
 			isRecording = true

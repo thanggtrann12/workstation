@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO
 from threading import Thread
 import threading
-import time
+from time import sleep
 import eventlet
 import sys
 import os
@@ -12,18 +12,14 @@ from tool.TTFisClient import TTFisClient
 from tool.ToellnerDriver import ToellnerDriver
 from tool.TestSpec import TestFlow
 from config import *
-import random
-import asyncio
 from werkzeug.utils import secure_filename
 eventlet.monkey_patch()
-stop_event = threading.Event()
 # run this in cmd: NETSH advfirewall firewall add rule name="LCM development" dir=in action=allow enable=yes protocol=TCP localport=5000 remoteip="10.0.0.0/8" localip="10.0.0.0/8" description="LCM workstation" Profile=domain
 
 # ssh workstation@10.185.81.196
 # pass: lcm
 
 status = ""
-start_time = time.time()
 logged_in_users = []
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = binary_path
@@ -48,7 +44,6 @@ def update_scc_trace(trace):
         isStateRun = True
     data += "\r\n"+trace
     socketio.emit("ttfis_data", trace+"\n", broadcast=True)
-    asyncio.sleep(1)
 
 
 @socketio.on("status")
@@ -58,9 +53,10 @@ def send_status(status):
 
 @socketio.on("submit_ttfis_cmd")
 def submit_ttfis_cmd(ttfis_cmd):
+    print("cmd")
     ttfis_command = str(ttfis_cmd).replace(",", " ")
-    # global ttfisClient
-    # ttfisClient.Cmd(ttfis_command)
+    global ttfisClient
+    ttfisClient.Cmd(ttfis_command)
 
 
 @socketio.on("get_sync_data")
@@ -77,13 +73,11 @@ def update_voltage_and_current_to_server():
     :return: None
     """
     global socketio,  ToellnerDriver_connection, logged_in_users
-    print("assigned call back")
-    while True:
-        if socketio is not None:
-            if logged_in_users:
-                socketio.emit("list_user", logged_in_users)
-        get_data_from_toellner()
-        time.sleep(.1)
+    # while True:
+    # if socketio is not None:
+    #     if logged_in_users:
+    #         socketio.emit("list_user", logged_in_users)
+    get_data_from_toellner()
 
 
 @socketio.on("update_data_to_toellner")
@@ -98,6 +92,33 @@ def update_data_to_toellner(data):
     socketio.emit("status", status)
 
 
+def get_data_from_toellner():
+    global ToellnerDriver_connection, status, isStandBy, socketio
+    while True:
+        sleep(1)
+        if ToellnerDriver_connection is not None:
+            try:
+                voltage_returned = float(
+                    ToellnerDriver_connection.get_voltage())
+                current_returned = float(
+                    ToellnerDriver_connection.get_current())
+                data = {"voltage": voltage_returned,
+                        "current": current_returned}
+                if voltage_returned > 0 and current_returned == 0:
+                    isStandBy = True
+                else:
+                    isStandBy = False
+                if socketio is not None:
+                    socketio.emit("update_data_to_client", data=data)
+            except:
+                pass
+        else:
+            if socketio is not None:
+                status = "ToellnerDriver is not CONNECTED"
+                socketio.emit("status", status)
+    # print(status)
+
+
 @socketio.on('set_power_to_on')
 @socketio.on('set_power_to_off')
 def set_power_to_on():
@@ -110,30 +131,6 @@ def set_power_to_on():
             ToellnerDriver_connection.set_voltage(0)
 
     # Handle the event logic for turning power on or off
-
-
-def get_data_from_toellner():
-    global ToellnerDriver_connection, status, isStandBy
-    if ToellnerDriver_connection is not None:
-        try:
-            voltage_returned = float(ToellnerDriver_connection.get_voltage())
-            current_returned = float(ToellnerDriver_connection.get_current())
-            data = {"voltage": voltage_returned,
-                    "current": current_returned}
-            # socketio.emit("current_power_state",
-            #               ToellnerDriver_connection.get_current_power_state())
-            if voltage_returned > 0 and current_returned == 0:
-                isStandBy = True
-            else:
-                isStandBy = False
-            socketio.emit("update_data_to_client", data=data)
-        except Exception as e:
-            print(e)
-            pass
-    else:
-        status = "ToellnerDriver is not CONNECTED"
-        socketio.emit("status", status)
-    # print(status)
 
 
 @socketio.on("remove_accign")
@@ -204,7 +201,6 @@ def get_command_set():
 
 
 def StandBy():
-    print("isStandBy")
     return isStandBy
 
 
@@ -213,20 +209,20 @@ def start_test(test_name, time):
     global subfix
     if test_name == "standby":
         subfix = "standby"
-        asyncio.run(test_flow.execute_test(time, remove_accign, 5*60,
-                    StandBy, reconnect_accign, reconnect_accign, log))
+        threading.Thread(target=test_flow.execute_test(time, remove_accign, 5*60,
+                                                       StandBy, reconnect_accign, reconnect_accign, log)).start()
 
     if test_name == "shutdown":
         subfix = "shutdown"
-        asyncio.run(test_flow.execute_test(time, remove_accign, 5*60,
-                    StandBy, reconnect_accign, reconnect_accign, log))
+        threading.Thread(test_flow.execute_test(time, remove_accign, 5*60,
+                                                StandBy, reconnect_accign, reconnect_accign, log)).start()
 
     return jsonify({'message': f'Test "{test_name}" started'})
 
 
 async def log(time, prefix):
     global data, subfix
-    await asyncio.sleep(3)
+    sleep(3)
     file_path = os.path.join(
         app.root_path, 'static', 'uploads/test/', f"test_{subfix}_{time}_{prefix}.txt")
     data += "\n"+prefix
@@ -236,23 +232,25 @@ async def log(time, prefix):
     print("Data successfully written to the file.")
 
 
+# Existing code...
+
 if __name__ == '__main__':
     test_flow = TestFlow()
 
-    # ttfisClient = TTFisClient()
-    # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
-    # ttfisClient.Connect(ttfis_client_port)
-    # ToellnerDriver_connection = ToellnerDriver(
-    #     ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
+    ttfisClient = TTFisClient()
+    ttfisClient.registerUpdateTraceCallback(update_scc_trace)
+    ttfisClient.Connect(ttfis_client_port)
+    ToellnerDriver_connection = ToellnerDriver(
+        ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
     if arduino_port:
         arduino_connection = Arduino(arduino_port)
-    # print("update_voltage_and_current_to_server")
-    # Thread(target=update_voltage_and_current_to_server).start()
-    # Thread(target=callback_power_state).start()
-    # print("start_socketio")
+
     status = "Ready"
+
+    Thread(target=update_voltage_and_current_to_server).start()
     print("socket init")
     socketio.run(app, host='0.0.0.0', port=5000)
+
     # ToellnerDriver_connection .__del__()
     arduino_connection.close()
     sys.exit()

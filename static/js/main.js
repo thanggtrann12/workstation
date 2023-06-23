@@ -6,19 +6,13 @@ $(document).ready(function () {
 		doAutoComplete(event)
 	})
 	$("#standby_buton").on("click", async function () {
-		$("#acc_button , #acc_label, #ign_button, #ign_label").css(
-			"color",
-			"red",
-		)
-		$("#scc_trace").empty()
+		$("#acc_button , #acc_label, #ign_button, #ign_label").css("color", "red")
 		try {
 			await $.get(
 				"http://" +
 					location.host +
 					`/start-test/standby/${
-						$("#test_time").val() == ""
-							? 1
-							: parseInt($("#test_time").val())
+						$("#test_time").val() == "" ? 1 : parseInt($("#test_time").val())
 					}`,
 			)
 		} catch (error) {
@@ -26,19 +20,13 @@ $(document).ready(function () {
 		}
 	})
 	$("#shutdown_buton").on("click", async function () {
-		$("#scc_trace").empty()
-		$("#acc_button , #acc_label, #ign_button, #ign_label").css(
-			"color",
-			"red",
-		)
+		$("#acc_button , #acc_label, #ign_button, #ign_label").css("color", "red")
 		try {
 			await $.get(
 				"http://" +
 					location.host +
 					`/start-test/shutdown/${
-						$("#test_time").val() == ""
-							? 1
-							: parseInt($("#test_time").val())
+						$("#test_time").val() == "" ? 1 : parseInt($("#test_time").val())
 					}`,
 			)
 		} catch (error) {

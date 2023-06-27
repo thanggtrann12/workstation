@@ -33,6 +33,7 @@ function monitorTargetbuttonsClick(button) {
 	})
 }
 let target_status = E_NOK
+
 function setTargetStatus(status) {
 	target_status = status
 	if (status !== "normal") {

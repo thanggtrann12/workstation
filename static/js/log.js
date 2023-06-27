@@ -107,6 +107,7 @@ async function doAutoComplete(event) {
 }
 
 function updateTtfiData(data) {
+	console.log(data)
 	if (isPausing) {
 		// do not thing
 	} else {

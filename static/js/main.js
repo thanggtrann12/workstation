@@ -33,14 +33,18 @@ $(document).ready(function () {
 			console.error("Error occurred during the GET request:", error)
 		}
 	})
-	$("#wakeup_buton").on("click", () => {
-		$.get(
-			"http://" +
-				location.host +
-				`/wakeup/)
-        }`,
+	$("#wakeup_buton").on("click", async () => {
+		$("#acc_button , #acc_label, #ign_button, #ign_label").css(
+			"color",
+			"#A6E22E",
 		)
+		try {
+			await $.post("http://" + location.host + "/wakeup")
+		} catch (error) {
+			console.error("Error occurred during the GET request:", error)
+		}
 	})
+
 	$("#record_scc").change(function () {
 		if (this.checked) {
 			isRecording = true
@@ -77,7 +81,38 @@ $(document).ready(function () {
 			saveAs(blob, filename)
 		}
 	})
+	function fetchData() {
+		fetch("/get_data", {
+			method: "GET",
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				updataPowerData(data)
+			})
+			.catch((error) => {})
+	}
+	$("#log_out_button").on("click", () => {
+		window.location.href = "http://" + location.host + "/logout"
+	})
+	fetchData()
+	setInterval(fetchData, 1000)
 
+	function getAdmin() {
+		fetch("/admin", {
+			method: "GET",
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data.admin)
+				adminSetting(data.admin)
+			})
+	}
+	getAdmin()
+	var lockStatus = false
+	$("#lock_button").on("click", () => {
+		lockStatus = !lockStatus
+		socket.emit("lock", lockStatus)
+	})
 	ArduinoRelayButton.forEach(monitorArduinoRelayButtonClick)
 	TargetButtons.forEach(monitorTargetbuttonsClick)
 	PowerButtons.forEach(monitorPowerButtonsClick)

@@ -1,7 +1,6 @@
 import json
 
 with open('settings.json', 'rb') as settingFile:
-
     settings = json.loads(settingFile.read())
 
 
@@ -15,7 +14,6 @@ voltage_min = settings['voltage_range']['min']
 normal_voltage = settings['voltage_range']['thresholds']['operating']
 shutdown_voltage = settings['voltage_range']['thresholds']['critical_low']
 ttfis_client_port = settings['ttfis_client']['port']
-log_file_path = settings['filePath']['log']
 ToellnerDriver_connection_port = settings['power_source']['port']
 ToellnerDriver_connection_channel = settings['power_source']['channel']
 

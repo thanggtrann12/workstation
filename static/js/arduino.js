@@ -10,59 +10,43 @@ var opt2State = E_NOK
 
 const ArduinoRelayButton = [
 	{ button: "acc_button", label: "acc_label", state: accState },
-	{ button: "wd_button", label: "wd_label", state: wdState },
 	{ button: "ign_button", label: "ign_label", state: ignState },
 	{ button: "opt2_button", label: "opt2_label", state: opt2State },
+	{ button: "wd_button", label: "wd_label", state: wdState },
 ]
 function monitorArduinoRelayButtonClick(button) {
 	const buttonElement = $("#" + button.button)
 	buttonElement.on("click", function () {
 		button.state = !button.state
-		const matchingState = states.find(
-			(state) => state.state === button.state,
-		)
-		if (matchingState) {
-			$("#" + button.label + ", #" + button.button).css(
-				"color",
-				matchingState.color,
-			)
-			payload = { button: button.button, state: matchingState.state }
-			// Send button state to arduino
-			socket.emit("request_to_arduino", payload)
-			// Get response from arduino
-			socket.on("response_from_arduino", (response) => {
-				setArduinoRelayButtonStateAndColor(response)
+
+		fetch(`/turn/${button.button}/${button.state == true ? 0 : 1}`, {
+			method: "GET",
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				syncData(data.message)
 			})
-		}
+			.catch((error) => {
+				console.error("Error:", error)
+			})
 	})
 }
 
 function syncData(data) {
-	console.log(data[0], data[1], data[2], data[3])
-	ArduinoRelayButton[0].state = parseInt(data[0]) == 0 ? E_OK : E_NOK
-	ArduinoRelayButton[1].state = parseInt(data[2]) == 0 ? E_OK : E_NOK
-	ArduinoRelayButton[2].state = parseInt(data[1]) == 0 ? E_OK : E_NOK
-	ArduinoRelayButton[3].state = parseInt(data[3]) == 0 ? E_OK : E_NOK
-	payload = {
-		button: ArduinoRelayButton[0].button.split("_")[0],
-		response: ArduinoRelayButton[0].state,
+	if (data.includes("Arduino not CONNECTED")) {
+		$("#status").text(data)
+	} else {
+		for (let i = 0; i < 4; i++) {
+			let button = ArduinoRelayButton[i].button.split("_")[0]
+			let state = parseInt(data[i]) === 0 ? E_OK : E_NOK
+			ArduinoRelayButton[i].state = state
+			let payload = {
+				button: button,
+				response: state,
+			}
+			setArduinoRelayButtonStateAndColor(payload)
+		}
 	}
-	setArduinoRelayButtonStateAndColor(payload)
-	payload = {
-		button: ArduinoRelayButton[1].button.split("_")[0],
-		response: ArduinoRelayButton[1].state,
-	}
-	setArduinoRelayButtonStateAndColor(payload)
-	payload = {
-		button: ArduinoRelayButton[2].button.split("_")[0],
-		response: ArduinoRelayButton[2].state,
-	}
-	setArduinoRelayButtonStateAndColor(payload)
-	payload = {
-		button: ArduinoRelayButton[3].button.split("_")[0],
-		response: ArduinoRelayButton[3].state,
-	}
-	setArduinoRelayButtonStateAndColor(payload)
 }
 
 function setArduinoRelayButtonStateAndColor(response) {

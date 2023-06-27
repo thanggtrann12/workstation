@@ -7,7 +7,7 @@ import eventlet
 import sys
 import os
 from InstructionSetProcess import *
-from tool.ArduinoControl import Arduino, Command, E_OK, E_NOK
+from tool.ArduinoControl import Arduino
 from tool.TTFisClient import TTFisClient
 from tool.ToellnerDriver import ToellnerDriver
 from tool.TestSpec import TestFlow
@@ -31,6 +31,7 @@ isStateRun = True
 isStandBy = False
 data = ""
 subfix = ""
+ADMIN = None
 
 
 def update_scc_trace(trace):
@@ -64,25 +65,16 @@ def submit_ttfis_cmd(ttfis_cmd):
     ttfisClient.Cmd(ttfis_command)
 
 
-@socketio.on("get_sync_data")
-def get_sync_data():
-    global arduino_connection, data
+@socketio.on("request_sync_data")
+def request_sync_data():
+    global arduino_connection, data, ToellnerDriver_connection
+    response = payload = None
     if arduino_connection is not None:
-        ret = arduino_connection.get_all_pin_state()
-        socketio.emit("set_sync_data", {"arduino": ret, "trace": data})
-
-
-def update_voltage_and_current_to_server():
-    """
-    Update voltage_returned and current_returned to server
-    :return: None
-    """
-    global socketio,  ToellnerDriver_connection, logged_in_users
-    # while True:
-    # if socketio is not None:
-    #     if logged_in_users:
-    #         socketio.emit("list_user", logged_in_users)
-    get_data_from_toellner()
+        response = arduino_connection.send_command('ALL', "")
+    if ToellnerDriver_connection is not None:
+        payload = {
+            "arduino": response if response is not None else "1111", "power_state": True}
+    socketio.emit("sync_data", payload)
 
 
 @socketio.on("update_data_to_toellner")
@@ -90,39 +82,39 @@ def update_data_to_toellner(data):
     global ToellnerDriver_connection, status
     voltage = data["voltage"]
     if ToellnerDriver_connection is not None:
-        ToellnerDriver_connection.set_voltage(voltage)
-        status = "Updated"
+        if voltage_min > voltage:
+            status = "Voltage must greater than " + str(voltage_min)
+        elif voltage_max < voltage:
+            status = "Voltage must less than " + str(voltage_max)
+        else:
+            ToellnerDriver_connection.set_voltage(voltage)
+            status = "Updated"
     else:
         status = "ToellnerDriver is not CONNECTED"
     socketio.emit("status", status)
 
 
-def get_data_from_toellner():
-    global ToellnerDriver_connection, status, isStandBy, socketio, data
-    while True:
-        time.sleep(1)
-        if ToellnerDriver_connection is not None:
-            try:
-                voltage_returned = float(
-                    ToellnerDriver_connection.get_voltage())
-                current_returned = float(
-                    ToellnerDriver_connection.get_current())
-                paload = {"voltage": voltage_returned,
-                          "current": current_returned}
-                if voltage_returned > 0 and current_returned == 0:
-                    isStandBy = True
-                    data += "\n\r[STANDBY]"
-                else:
-                    isStandBy = False
-                if socketio is not None:
-                    socketio.emit("update_data_to_client", data=paload)
-            except:
-                pass
-        else:
-            if socketio is not None:
-                status = "ToellnerDriver is not CONNECTED"
-                socketio.emit("status", status)
-    # print(status)
+@app.route('/get_data', methods=['GET'])
+def get_data():
+    global ToellnerDriver_connection, status, isStandBy, data
+    if ToellnerDriver_connection is not None:
+        try:
+            voltage_returned = float(ToellnerDriver_connection.get_voltage())
+            current_returned = float(ToellnerDriver_connection.get_current())
+            payload = {"voltage": voltage_returned,
+                       "current": current_returned}
+            if voltage_returned > 0 and current_returned == 0:
+                isStandBy = True
+                data += "\n\r[STANDBY]"
+            else:
+                isStandBy = False
+            return jsonify(payload), 200
+        except:
+            return jsonify({"error": "An error occurred"}), 500
+    else:
+        status = "ToellnerDriver is not CONNECTED"
+        socketio.emit("status", status)
+        return jsonify({"error": status}), 500
 
 
 @socketio.on('set_power_to_on')
@@ -135,56 +127,84 @@ def set_power_to_on():
             ToellnerDriver_connection.set_voltage(12)
         if event_name == "set_power_to_off":
             ToellnerDriver_connection.set_voltage(0)
-
-    # Handle the event logic for turning power on or off
-
-
-@socketio.on("remove_accign")
-def remove_accign():
-    print("remove_accign")
-    socketio.emit("submit_ttfis_cmd", "SUPERVISOR_GET_ALL_DATA")
-    global data, isStateRun
-    isStateRun = False
-    data += '\n [UNPLUG ACC + IGN] \n'
-    arduino_connection.send_command(Command.ACC, E_NOK)
-    arduino_connection.send_command(Command.IGN, E_NOK)
+    else:
+        socketio.emit("status", "ToellnerDriver is not CONNECTED")
 
 
-@socketio.on("reconnect_accign")
-def reconnect_accign():
-    print("reconnect_accign")
-    global data
-    data += '\n [PLUG ACC + IGN] \n'
-    arduino_connection.send_command(Command.ACC, E_OK)
-    socketio.emit("response_from_arduino", data={
-                  "button": "acc", "response": True})
-    arduino_connection.send_command(Command.IGN, E_OK)
-    socketio.emit("response_from_arduino", data={
-                  "button": "ign", "response": True})
+@app.route("/power", methods=['POST'])
+def power():
+    data = request.get_json()
+    state = data.get('state')
+    global ToellnerDriver_connection
+    if state is None:
+        return jsonify({"error": "Missing 'state' parameter"}), 400
+
+    if state:
+        if ToellnerDriver_connection is not None:
+            ToellnerDriver_connection.set_voltage(12)
+            return jsonify({"message": "Power is ON"}), 200
+        return jsonify({"message": "Power is OFF"}), 200
+    else:
+        if ToellnerDriver_connection is not None:
+            ToellnerDriver_connection.set_voltage(0)
+        return jsonify({"message": "Power is OFF"}), 200
 
 
-@socketio.on("request_to_arduino")
-def request_to_arduino(payload):
+@app.route("/turn/<button_name>/<int:state>", methods=['GET'])
+def request_to_arduino(button_name, state):
     global arduino_connection
-    button_name = payload["button"]
-    button_state = E_OK if payload["state"] == True else E_NOK
-    response = E_NOK
-    if button_name == "acc_button":
-        response = arduino_connection.send_command(Command.ACC, button_state)
-    if button_name == "ign_button":
-        response = arduino_connection.send_command(Command.IGN, button_state)
-    if button_name == "wd_button":
-        response = arduino_connection.send_command(Command.WD, button_state)
-    if button_name == "opt2_button":
-        response = arduino_connection.send_command(Command.OPT2, button_state)
-
-    socketio.emit("response_from_arduino", data={
-                  "button": button_name.split('_')[0], "response": response})
+    if arduino_connection:
+        response = arduino_connection.send_command(button_name, state)
+        return jsonify({"message": response}), 200
+    else:
+        return jsonify({"message": "Arduino not CONNECTED"}), 200
 
 
-@app.route("/")
+@ app.route('/', methods=['GET', 'POST'])
+def login():
+    global logged_in_users, ADMIN, current
+    user_login = ""
+    if request.method == 'POST':
+        user_login = request.form["emp_id"]
+        if user_login in ALLOWED_USER and ADMIN is None:
+            logged_in_users.append(user_login)
+            session["emp_id"] = user_login
+            ADMIN = user_login
+            print("admin: ", ADMIN)
+            return redirect(url_for('index'))
+        elif user_login not in logged_in_users:
+            logged_in_users.append(user_login)
+            session["emp_id"] = user_login
+            print("New user loggin:", logged_in_users)
+            return redirect(url_for('index'))
+        else:
+            print("User is already logged in", user_login)
+            return redirect(url_for('index'))
+    else:
+        if user_login == "":
+            return render_template('signin.html', error="")
+        error = "I'm sorry but you are not allowed"
+        return render_template('signin.html', error=error)
+
+
+@socketio.on("lock")
+def lock(locked):
+    socketio.emit("lock", locked)
+
+
+@ app.route('/index')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
+
+
+@ app.route('/logout')
+def logout():
+    global logged_in_users
+    user_remove = str(session["emp_id"])
+    if user_remove is not None:
+        logged_in_users.remove(user_remove)
+    print("remove user: ", user_remove)
+    return render_template('signin.html', error="")
 
 
 @app.route('/result', methods=['POST'])
@@ -212,6 +232,14 @@ def get_command_set():
     return process_instruction_file(traceFilePath)
 
 
+def plug_accign():
+    arduino_connection.send_command("WAKEUP", "")
+
+
+def unplug_accign():
+    arduino_connection.send_command("STANDBY", "")
+
+
 def StandBy():
     return isStandBy
 
@@ -224,22 +252,31 @@ def start_test(test_name, time):
     global subfix
     if test_name == "standby":
         subfix = "standby"
-        threading.Thread(target=test_flow.execute_test(time, remove_accign, TIMEOUT_TEST_SPEC,
-                                                       StandBy, reconnect_accign, reconnect_accign, log)).start()
+        threading.Thread(target=test_flow.execute_test(time, unplug_accign, TIMEOUT_TEST_SPEC,
+                                                       StandBy, plug_accign, plug_accign, log)).start()
 
     if test_name == "shutdown":
         subfix = "shutdown"
-        threading.Thread(test_flow.execute_test(time, remove_accign, TIMEOUT_TEST_SPEC,
-                                                StandBy, reconnect_accign, reconnect_accign, log)).start()
+        threading.Thread(test_flow.execute_test(time, unplug_accign, TIMEOUT_TEST_SPEC,
+                                                StandBy, plug_accign, plug_accign, log)).start()
 
     return jsonify({'message': f'Test "{test_name}" started'})
 
 
-@app.route("/wakeup", methods=['GET'])
+@app.route('/wakeup', methods=['POST'])
 def wake_up():
     print("wake up")
-    reconnect_accign()
+    socketio.emit("submit_ttfis_cmd", "SUPERVISOR_GET_ALL_DATA")
+    global arduino_connection
+    if arduino_connection:
+        arduino_connection.send_command("WAKEUP", "")
     return "wakeup"
+
+
+@app.route('/admin', methods=['GET'])
+def get_admin():
+    global ADMIN
+    return jsonify({"admin": ADMIN}), 200
 
 
 def log(time_, prefix):
@@ -261,21 +298,19 @@ def log(time_, prefix):
     print("Data successfully written to the file.")
 
 
-# Existing code...
-
 if __name__ == '__main__':
     test_flow = TestFlow()
-    ttfisClient = TTFisClient()
-    ttfisClient.registerUpdateTraceCallback(update_scc_trace)
-    ttfisClient.Connect(ttfis_client_port)
-    ToellnerDriver_connection = ToellnerDriver(
-        ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
-    if arduino_port:
-        arduino_connection = Arduino(arduino_port)
+    # ttfisClient = TTFisClient()
+    # ttfisClient.registerUpdateTraceCallback(update_scc_trace)
+    # ttfisClient.Connect(ttfis_client_port)
+    # ToellnerDriver_connection = ToellnerDriver(
+    #     ToellnerDriver_connection_port, ToellnerDriver_connection_channel)
+    # if arduino_port:
+    #     arduino_connection = Arduino(arduino_port)
+    time.sleep(1)
     print("update_voltage_and_current_to_server")
-    Thread(target=update_voltage_and_current_to_server).start()
     print("start_socketio")
     socketio.run(app, host='0.0.0.0', port=5000)
     ToellnerDriver_connection .__del__()
-    arduino_connection.close()
-    ttfisClient.Quit()
+    # arduino_connection.close()
+    # ttfisClient.Quit()
